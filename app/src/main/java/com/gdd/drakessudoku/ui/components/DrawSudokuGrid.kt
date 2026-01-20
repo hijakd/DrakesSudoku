@@ -16,7 +16,7 @@ import com.gdd.drakessudoku.ui.theme.Purple40
 import com.gdd.drakessudoku.ui.theme.Red
 
 @Composable
-fun SudokuGrid(
+fun DrawSudokuGrid(
     modifier: Modifier,
     x1y1: Int,
     x2y1: Int,
