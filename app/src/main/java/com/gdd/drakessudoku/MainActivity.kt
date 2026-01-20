@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
@@ -17,9 +18,11 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.gdd.drakessudoku.ui.components.ColouredText
 import com.gdd.drakessudoku.ui.theme.*
@@ -501,7 +504,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y6 = shuffled.first()
 
     /* Grid6 MiddleRight */
-    // grid++ // for debugging
 
     shuffled.clear()
     numbers.forEach { shuffled.add(it) }
@@ -594,7 +596,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     shuffled.remove(x1y9)
 
     /* Grid7 BottomLeft */
-    // grid++
     /* row 1 */
     /* x2y7 */
     val x2y7 =
@@ -840,186 +841,359 @@ fun AppCore(modifier: Modifier = Modifier) {
         // Text("Slice2: $tmpSlice2  size: ${tmpSlice2.size}")
         Spacer(modifier = Modifier.size(5.dp))
 
-        Column(modifier = modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+        SudokuGrid(
+            modifier,
+            x1y1,
+            x2y1,
+            x3y1,
+            x1y2,
+            x2y2,
+            x3y2,
+            x1y3,
+            x2y3,
+            x3y3,
+            x4y1,
+            x5y1,
+            x6y1,
+            x4y2,
+            x5y2,
+            x6y2,
+            x4y3,
+            x5y3,
+            x6y3,
+            x7y1,
+            x8y1,
+            x9y1,
+            x7y2,
+            x8y2,
+            x9y2,
+            x7y3,
+            x8y3,
+            x9y3,
+            x1y4,
+            x2y4,
+            x3y4,
+            x1y5,
+            x2y5,
+            x3y5,
+            x1y6,
+            x2y6,
+            x3y6,
+            x4y4,
+            x5y4,
+            x6y4,
+            x4y5,
+            x5y5,
+            x6y5,
+            x4y6,
+            x5y6,
+            x6y6,
+            x7y4,
+            x8y4,
+            x9y4,
+            x7y5,
+            x8y5,
+            x9y5,
+            x7y6,
+            x8y6,
+            x9y6,
+            x1y7,
+            x2y7,
+            x3y7,
+            x1y8,
+            x2y8,
+            x3y8,
+            x1y9,
+            x2y9,
+            x3y9,
+            x4y7,
+            x5y7,
+            x6y7,
+            x4y8,
+            x5y8,
+            x6y8,
+            x4y9,
+            x5y9,
+            x6y9,
+            x7y7,
+            x8y7,
+            x9y7,
+            x7y8,
+            x8y8,
+            x9y8,
+            x7y9,
+            x8y9,
+            x9y9
+        )
 
-            /* Top Row */
-            Row {
-                /* Left */
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x1y1, Black)
-                        ColouredText(x2y1, Black)
-                        ColouredText(x3y1, Black)
-                    }
-                    Row() {
-                        ColouredText(x1y2, Black)
-                        ColouredText(x2y2, Black)
-                        ColouredText(x3y2, Black)
-                    }
-                    Row() {
-                        ColouredText(x1y3, Black)
-                        ColouredText(x2y3, Black)
-                        ColouredText(x3y3, Black)
-                    }
-                } // End of Left
+        Spacer(modifier = Modifier.size(10.dp))
+    }
+}
 
-                /* Center */
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x4y1, Red)
-                        ColouredText(x5y1, Red)
-                        ColouredText(x6y1, Red)
-                    }
-                    Row() {
-                        ColouredText(x4y2, Red)
-                        ColouredText(x5y2, Red)
-                        ColouredText(x6y2, Red)
-                    }
-                    Row() {
-                        ColouredText(x4y3, Red)
-                        ColouredText(x5y3, Red)
-                        ColouredText(x6y3, Red)
-                    }
-                } // End of Center
+@Composable
+private fun SudokuGrid(
+    modifier: Modifier,
+    x1y1: Int,
+    x2y1: Int,
+    x3y1: Int,
+    x1y2: Int,
+    x2y2: Int,
+    x3y2: Int,
+    x1y3: Int,
+    x2y3: Int,
+    x3y3: Int,
+    x4y1: Int,
+    x5y1: Int,
+    x6y1: Int,
+    x4y2: Int,
+    x5y2: Int,
+    x6y2: Int,
+    x4y3: Int,
+    x5y3: Int,
+    x6y3: Int,
+    x7y1: Int,
+    x8y1: Int,
+    x9y1: Int,
+    x7y2: Int,
+    x8y2: Int,
+    x9y2: Int,
+    x7y3: Int,
+    x8y3: Int,
+    x9y3: Int,
+    x1y4: Int,
+    x2y4: Int,
+    x3y4: Int,
+    x1y5: Int,
+    x2y5: Int,
+    x3y5: Int,
+    x1y6: Int,
+    x2y6: Int,
+    x3y6: Int,
+    x4y4: Int,
+    x5y4: Int,
+    x6y4: Int,
+    x4y5: Int,
+    x5y5: Int,
+    x6y5: Int,
+    x4y6: Int,
+    x5y6: Int,
+    x6y6: Int,
+    x7y4: Int,
+    x8y4: Int,
+    x9y4: Int,
+    x7y5: Int,
+    x8y5: Int,
+    x9y5: Int,
+    x7y6: Int,
+    x8y6: Int,
+    x9y6: Int,
+    x1y7: Int,
+    x2y7: Int,
+    x3y7: Int,
+    x1y8: Int,
+    x2y8: Int,
+    x3y8: Int,
+    x1y9: Int,
+    x2y9: Int,
+    x3y9: Int,
+    x4y7: Int,
+    x5y7: Int,
+    x6y7: Int,
+    x4y8: Int,
+    x5y8: Int,
+    x6y8: Int,
+    x4y9: Int,
+    x5y9: Int,
+    x6y9: Int,
+    x7y7: Int,
+    x8y7: Int,
+    x9y7: Int,
+    x7y8: Int,
+    x8y8: Int,
+    x9y8: Int,
+    x7y9: Int,
+    x8y9: Int,
+    x9y9: Int
+) {
+    Column(modifier = modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
 
-                /* Right */
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x7y1, NeonGreen)
-                        ColouredText(x8y1, NeonGreen)
-                        ColouredText(x9y1, NeonGreen)
-                    }
-                    Row() {
-                        ColouredText(x7y2, NeonGreen)
-                        ColouredText(x8y2, NeonGreen)
-                        ColouredText(x9y2, NeonGreen)
-                    }
-                    Row() {
-                        ColouredText(x7y3, NeonGreen)
-                        ColouredText(x8y3, NeonGreen)
-                        ColouredText(x9y3, NeonGreen)
-                    }
-                } // End of Right
-            } // End Top Row
+        /* Top Row */
+        Row {
+            /* Left */
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x1y1, Black)
+                    ColouredText(x2y1, Black)
+                    ColouredText(x3y1, Black)
+                }
+                Row() {
+                    ColouredText(x1y2, Black)
+                    ColouredText(x2y2, Black)
+                    ColouredText(x3y2, Black)
+                }
+                Row() {
+                    ColouredText(x1y3, Black)
+                    ColouredText(x2y3, Black)
+                    ColouredText(x3y3, Black)
+                }
+            } // End of Left
 
-            /* Middle Row */
-            Row {
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x1y4, Blue)
-                        ColouredText(x2y4, Blue)
-                        ColouredText(x3y4, Blue)
-                    }
-                    Row() {
-                        ColouredText(x1y5, Blue)
-                        ColouredText(x2y5, Blue)
-                        ColouredText(x3y5, Blue)
-                    }
-                    Row() {
-                        ColouredText(x1y6, Blue)
-                        ColouredText(x2y6, Blue)
-                        ColouredText(x3y6, Blue)
-                    }
-                } // End of Left
+            /* Center */
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x4y1, Red)
+                    ColouredText(x5y1, Red)
+                    ColouredText(x6y1, Red)
+                }
+                Row() {
+                    ColouredText(x4y2, Red)
+                    ColouredText(x5y2, Red)
+                    ColouredText(x6y2, Red)
+                }
+                Row() {
+                    ColouredText(x4y3, Red)
+                    ColouredText(x5y3, Red)
+                    ColouredText(x6y3, Red)
+                }
+            } // End of Center
 
-                /* Center */
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x4y4, Gold)
-                        ColouredText(x5y4, Gold)
-                        ColouredText(x6y4, Gold)
-                    }
-                    Row() {
-                        ColouredText(x4y5, Gold)
-                        ColouredText(x5y5, Gold)
-                        ColouredText(x6y5, Gold)
-                    }
-                    Row() {
-                        ColouredText(x4y6, Gold)
-                        ColouredText(x5y6, Gold)
-                        ColouredText(x6y6, Gold)
-                    }
-                } // End of Center
+            /* Right */
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x7y1, NeonGreen)
+                    ColouredText(x8y1, NeonGreen)
+                    ColouredText(x9y1, NeonGreen)
+                }
+                Row() {
+                    ColouredText(x7y2, NeonGreen)
+                    ColouredText(x8y2, NeonGreen)
+                    ColouredText(x9y2, NeonGreen)
+                }
+                Row() {
+                    ColouredText(x7y3, NeonGreen)
+                    ColouredText(x8y3, NeonGreen)
+                    ColouredText(x9y3, NeonGreen)
+                }
+            } // End of Right
+        } // End Top Row
 
-                /* Right */
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x7y4, DarkGrey)
-                        ColouredText(x8y4, DarkGrey)
-                        ColouredText(x9y4, DarkGrey)
-                    }
-                    Row() {
-                        ColouredText(x7y5, DarkGrey)
-                        ColouredText(x8y5, DarkGrey)
-                        ColouredText(x9y5, DarkGrey)
-                    }
-                    Row() {
-                        ColouredText(x7y6, DarkGrey)
-                        ColouredText(x8y6, DarkGrey)
-                        ColouredText(x9y6, DarkGrey)
-                    }
-                } // End of Right
-            } // End Middle Row
+        /* Middle Row */
+        Row {
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x1y4, Blue)
+                    ColouredText(x2y4, Blue)
+                    ColouredText(x3y4, Blue)
+                }
+                Row() {
+                    ColouredText(x1y5, Blue)
+                    ColouredText(x2y5, Blue)
+                    ColouredText(x3y5, Blue)
+                }
+                Row() {
+                    ColouredText(x1y6, Blue)
+                    ColouredText(x2y6, Blue)
+                    ColouredText(x3y6, Blue)
+                }
+            } // End of Left
 
-            /* Bottom Row */
-            Row {
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x1y7, Purple40)
-                        ColouredText(x2y7, Purple40)
-                        ColouredText(x3y7, Purple40)
-                    }
-                    Row() {
-                        ColouredText(x1y8, Purple40)
-                        ColouredText(x2y8, Purple40)
-                        ColouredText(x3y8, Purple40)
-                    }
-                    Row() {
-                        ColouredText(x1y9, Purple40)
-                        ColouredText(x2y9, Purple40)
-                        ColouredText(x3y9, Purple40)
-                    }
-                } // End of Left
+            /* Center */
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x4y4, Gold)
+                    ColouredText(x5y4, Gold)
+                    ColouredText(x6y4, Gold)
+                }
+                Row() {
+                    ColouredText(x4y5, Gold)
+                    ColouredText(x5y5, Gold)
+                    ColouredText(x6y5, Gold)
+                }
+                Row() {
+                    ColouredText(x4y6, Gold)
+                    ColouredText(x5y6, Gold)
+                    ColouredText(x6y6, Gold)
+                }
+            } // End of Center
 
-                /* Center */
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x4y7, MathBlue)
-                        ColouredText(x5y7, MathBlue)
-                        ColouredText(x6y7, MathBlue)
-                    }
-                    Row() {
-                        ColouredText(x4y8, MathBlue)
-                        ColouredText(x5y8, MathBlue)
-                        ColouredText(x6y8, MathBlue)
-                    }
-                    Row() {
-                        ColouredText(x4y9, MathBlue)
-                        ColouredText(x5y9, MathBlue)
-                        ColouredText(x6y9, MathBlue)
-                    }
-                } // End of Center
+            /* Right */
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x7y4, DarkGrey)
+                    ColouredText(x8y4, DarkGrey)
+                    ColouredText(x9y4, DarkGrey)
+                }
+                Row() {
+                    ColouredText(x7y5, DarkGrey)
+                    ColouredText(x8y5, DarkGrey)
+                    ColouredText(x9y5, DarkGrey)
+                }
+                Row() {
+                    ColouredText(x7y6, DarkGrey)
+                    ColouredText(x8y6, DarkGrey)
+                    ColouredText(x9y6, DarkGrey)
+                }
+            } // End of Right
+        } // End Middle Row
 
-                /* Right */
-                Column(modifier = Modifier) {
-                    Row() {
-                        ColouredText(x7y7, Red)
-                        ColouredText(x8y7, Red)
-                        ColouredText(x9y7, Red)
-                    }
-                    Row() {
-                        ColouredText(x7y8, Red)
-                        ColouredText(x8y8, Red)
-                        ColouredText(x9y8, Red)
-                    }
-                    Row() {
-                        ColouredText(x7y9, Red)
-                        ColouredText(x8y9, Red)
-                        ColouredText(x9y9, Red)
-                    }
-                } // End of Right
-            } // End Bottom Row
-        }
+        /* Bottom Row */
+        Row {
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x1y7, Purple40)
+                    ColouredText(x2y7, Purple40)
+                    ColouredText(x3y7, Purple40)
+                }
+                Row() {
+                    ColouredText(x1y8, Purple40)
+                    ColouredText(x2y8, Purple40)
+                    ColouredText(x3y8, Purple40)
+                }
+                Row() {
+                    ColouredText(x1y9, Purple40)
+                    ColouredText(x2y9, Purple40)
+                    ColouredText(x3y9, Purple40)
+                }
+            } // End of Left
+
+            /* Center */
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x4y7, MathBlue)
+                    ColouredText(x5y7, MathBlue)
+                    ColouredText(x6y7, MathBlue)
+                }
+                Row() {
+                    ColouredText(x4y8, MathBlue)
+                    ColouredText(x5y8, MathBlue)
+                    ColouredText(x6y8, MathBlue)
+                }
+                Row() {
+                    ColouredText(x4y9, MathBlue)
+                    ColouredText(x5y9, MathBlue)
+                    ColouredText(x6y9, MathBlue)
+                }
+            } // End of Center
+
+            /* Right */
+            Column(modifier = Modifier) {
+                Row() {
+                    ColouredText(x7y7, Red)
+                    ColouredText(x8y7, Red)
+                    ColouredText(x9y7, Red)
+                }
+                Row() {
+                    ColouredText(x7y8, Red)
+                    ColouredText(x8y8, Red)
+                    ColouredText(x9y8, Red)
+                }
+                Row() {
+                    ColouredText(x7y9, Red)
+                    ColouredText(x8y9, Red)
+                    ColouredText(x9y9, Red)
+                }
+            } // End of Right
+        } // End Bottom Row
     }
 } // End of AppCore
 
