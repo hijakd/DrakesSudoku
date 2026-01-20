@@ -34,3 +34,5 @@ val Teal = Color(0xFF008080)
 val IceBlue = Color(0xFF63B5F6)
 val MathBlue = Color(0xFF0479D6)
 val Blue = Color(0xFF0000FF)
+
+val Violet = Color(0xFFEE82EE)

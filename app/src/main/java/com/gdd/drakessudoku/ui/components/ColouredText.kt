@@ -17,7 +17,7 @@ import com.gdd.drakessudoku.ui.theme.Black
 import com.gdd.drakessudoku.ui.theme.White
 
 @Composable
-fun ColouredText(value: Int, colour: Color, modifier: Modifier = Modifier) {
+fun ColouredText(value: Int, colour: Color, hidden: Boolean, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier.padding(Dp.Hairline),
         shape = RectangleShape,
@@ -26,11 +26,11 @@ fun ColouredText(value: Int, colour: Color, modifier: Modifier = Modifier) {
         border = BorderStroke(width = Dp.Hairline, color = Black)
     ) {
         Text(
-            text = "$value",
+            text = if (!hidden) "$value" else "0",
             modifier = Modifier.padding(horizontal = 15.dp, vertical = 10.dp),
             fontSize = 22.sp,
             fontWeight = FontWeight.Black,
-            color = colour,
+            color = if (!hidden) colour else White,
         )
     }
 }

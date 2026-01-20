@@ -7,14 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.gdd.drakessudoku.model.GridCell
-import com.gdd.drakessudoku.ui.theme.Black
-import com.gdd.drakessudoku.ui.theme.Blue
-import com.gdd.drakessudoku.ui.theme.DarkGrey
-import com.gdd.drakessudoku.ui.theme.Gold
-import com.gdd.drakessudoku.ui.theme.MathBlue
-import com.gdd.drakessudoku.ui.theme.NeonGreen
-import com.gdd.drakessudoku.ui.theme.Purple40
-import com.gdd.drakessudoku.ui.theme.Red
 
 @Suppress("RemoveEmptyParenthesesFromLambdaCall")
 @Composable
@@ -109,57 +101,57 @@ fun DrawSudokuGrid(
             /* Left */
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x1y1.value, x1y1.txtColour)
-                    ColouredText(x2y1.value, x2y1.txtColour)
-                    ColouredText(x3y1.value, x3y1.txtColour)
+                    ColouredText(value = x1y1.value, colour = x1y1.txtColour, hidden = x1y1.hidden)
+                    ColouredText(value = x2y1.value, colour = x2y1.txtColour, hidden = x2y1.hidden)
+                    ColouredText(value = x3y1.value, colour = x3y1.txtColour, hidden = x3y1.hidden)
                 }
                 Row() {
-                    ColouredText(x1y2.value, x1y2.txtColour)
-                    ColouredText(x2y2.value, x2y2.txtColour)
-                    ColouredText(x3y2.value, x3y2.txtColour)
+                    ColouredText(value = x1y2.value, colour = x1y2.txtColour, hidden = x1y2.hidden)
+                    ColouredText(value = x2y2.value, colour = x2y2.txtColour, hidden = x2y2.hidden)
+                    ColouredText(value = x3y2.value, colour = x3y2.txtColour, hidden = x3y2.hidden)
                 }
                 Row() {
-                    ColouredText(x1y3.value, x1y3.txtColour)
-                    ColouredText(x2y3.value, x2y3.txtColour)
-                    ColouredText(x3y3.value, x3y3.txtColour)
+                    ColouredText(value = x1y3.value, colour = x1y3.txtColour, hidden = x1y3.hidden)
+                    ColouredText(value = x2y3.value, colour = x2y3.txtColour, hidden = x2y3.hidden)
+                    ColouredText(value = x3y3.value, colour = x3y3.txtColour, hidden = x3y3.hidden)
                 }
             } // End of Left
 
             /* Center */
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x4y1.value, x4y1.txtColour)
-                    ColouredText(x5y1.value, x5y1.txtColour)
-                    ColouredText(x6y1.value, x6y1.txtColour)
+                    ColouredText(value = x4y1.value, colour = x4y1.txtColour, hidden = x4y1.hidden)
+                    ColouredText(value = x5y1.value, colour = x5y1.txtColour, hidden = x5y1.hidden)
+                    ColouredText(value = x6y1.value, colour = x6y1.txtColour, hidden = x6y1.hidden)
                 }
                 Row() {
-                    ColouredText(x4y2.value, x4y2.txtColour)
-                    ColouredText(x5y2.value, x5y2.txtColour)
-                    ColouredText(x6y2.value, x6y2.txtColour)
+                    ColouredText(value = x4y2.value, colour = x4y2.txtColour, hidden = x4y2.hidden)
+                    ColouredText(value = x5y2.value, colour = x5y2.txtColour, hidden = x5y2.hidden)
+                    ColouredText(value = x6y2.value, colour = x6y2.txtColour, hidden = x6y2.hidden)
                 }
                 Row() {
-                    ColouredText(x4y3.value, x4y3.txtColour)
-                    ColouredText(x5y3.value, x5y3.txtColour)
-                    ColouredText(x6y3.value, x6y3.txtColour)
+                    ColouredText(value = x4y3.value, colour = x4y3.txtColour, hidden = x4y3.hidden)
+                    ColouredText(value = x5y3.value, colour = x5y3.txtColour, hidden = x5y3.hidden)
+                    ColouredText(value = x6y3.value, colour = x6y3.txtColour, hidden = x6y3.hidden)
                 }
             } // End of Center
 
             /* Right */
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x7y1.value, x7y1.txtColour)
-                    ColouredText(x8y1.value, x8y1.txtColour)
-                    ColouredText(x9y1.value, x9y1.txtColour)
+                    ColouredText(value = x7y1.value, colour = x7y1.txtColour, hidden = x7y1.hidden)
+                    ColouredText(value = x8y1.value, colour = x8y1.txtColour, hidden = x8y1.hidden)
+                    ColouredText(value = x9y1.value, colour = x9y1.txtColour, hidden = x9y1.hidden)
                 }
                 Row() {
-                    ColouredText(x7y2.value, x7y2.txtColour)
-                    ColouredText(x8y2.value, x8y2.txtColour)
-                    ColouredText(x9y2.value, x9y2.txtColour)
+                    ColouredText(value = x7y2.value, colour = x7y2.txtColour, hidden = x7y2.hidden)
+                    ColouredText(value = x8y2.value, colour = x8y2.txtColour, hidden = x8y2.hidden)
+                    ColouredText(value = x9y2.value, colour = x9y2.txtColour, hidden = x9y2.hidden)
                 }
                 Row() {
-                    ColouredText(x7y3.value, x7y3.txtColour)
-                    ColouredText(x8y3.value, x8y3.txtColour)
-                    ColouredText(x9y3.value, x9y3.txtColour)
+                    ColouredText(value = x7y3.value, colour = x7y3.txtColour, hidden = x7y3.hidden)
+                    ColouredText(value = x8y3.value, colour = x8y3.txtColour, hidden = x8y3.hidden)
+                    ColouredText(value = x9y3.value, colour = x9y3.txtColour, hidden = x9y3.hidden)
                 }
             } // End of Right
         } // End Top Row
@@ -168,57 +160,57 @@ fun DrawSudokuGrid(
         Row {
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x1y4.value, x1y4.txtColour)
-                    ColouredText(x2y4.value, x2y4.txtColour)
-                    ColouredText(x3y4.value, x3y4.txtColour)
+                    ColouredText(value = x1y4.value, colour = x1y4.txtColour, hidden = x1y4.hidden)
+                    ColouredText(value = x2y4.value, colour = x2y4.txtColour, hidden = x2y4.hidden)
+                    ColouredText(value = x3y4.value, colour = x3y4.txtColour, hidden = x3y4.hidden)
                 }
                 Row() {
-                    ColouredText(x1y5.value, x1y5.txtColour)
-                    ColouredText(x2y5.value, x2y5.txtColour)
-                    ColouredText(x3y5.value, x3y5.txtColour)
+                    ColouredText(value = x1y5.value, colour = x1y5.txtColour, hidden = x1y5.hidden)
+                    ColouredText(value = x2y5.value, colour = x2y5.txtColour, hidden = x2y5.hidden)
+                    ColouredText(value = x3y5.value, colour = x3y5.txtColour, hidden = x3y5.hidden)
                 }
                 Row() {
-                    ColouredText(x1y6.value, x1y6.txtColour)
-                    ColouredText(x2y6.value, x2y6.txtColour)
-                    ColouredText(x3y6.value, x3y6.txtColour)
+                    ColouredText(value = x1y6.value, colour = x1y6.txtColour, hidden = x1y6.hidden)
+                    ColouredText(value = x2y6.value, colour = x2y6.txtColour, hidden = x2y6.hidden)
+                    ColouredText(value = x3y6.value, colour = x3y6.txtColour, hidden = x3y6.hidden)
                 }
             } // End of Left
 
             /* Center */
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x4y4.value, x4y4.txtColour)
-                    ColouredText(x5y4.value, x5y4.txtColour)
-                    ColouredText(x6y4.value, x6y4.txtColour)
+                    ColouredText(value = x4y4.value, colour = x4y4.txtColour, hidden = x4y4.hidden)
+                    ColouredText(value = x5y4.value, colour = x5y4.txtColour, hidden = x5y4.hidden)
+                    ColouredText(value = x6y4.value, colour = x6y4.txtColour, hidden = x6y4.hidden)
                 }
                 Row() {
-                    ColouredText(x4y5.value, x4y5.txtColour)
-                    ColouredText(x5y5.value, x5y5.txtColour)
-                    ColouredText(x6y5.value, x6y5.txtColour)
+                    ColouredText(value = x4y5.value, colour = x4y5.txtColour, hidden = x4y5.hidden)
+                    ColouredText(value = x5y5.value, colour = x5y5.txtColour, hidden = x5y5.hidden)
+                    ColouredText(value = x6y5.value, colour = x6y5.txtColour, hidden = x6y5.hidden)
                 }
                 Row() {
-                    ColouredText(x4y6.value, x4y6.txtColour)
-                    ColouredText(x5y6.value, x5y6.txtColour)
-                    ColouredText(x6y6.value, x6y6.txtColour)
+                    ColouredText(value = x4y6.value, colour = x4y6.txtColour, hidden = x4y6.hidden)
+                    ColouredText(value = x5y6.value, colour = x5y6.txtColour, hidden = x5y6.hidden)
+                    ColouredText(value = x6y6.value, colour = x6y6.txtColour, hidden = x6y6.hidden)
                 }
             } // End of Center
 
             /* Right */
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x7y4.value, x7y4.txtColour)
-                    ColouredText(x8y4.value, x8y4.txtColour)
-                    ColouredText(x9y4.value, x9y4.txtColour)
+                    ColouredText(value = x7y4.value, colour = x7y4.txtColour, hidden = x7y4.hidden)
+                    ColouredText(value = x8y4.value, colour = x8y4.txtColour, hidden = x8y4.hidden)
+                    ColouredText(value = x9y4.value, colour = x9y4.txtColour, hidden = x9y4.hidden)
                 }
                 Row() {
-                    ColouredText(x7y5.value, x7y5.txtColour)
-                    ColouredText(x8y5.value, x8y5.txtColour)
-                    ColouredText(x9y5.value, x9y5.txtColour)
+                    ColouredText(value = x7y5.value, colour = x7y5.txtColour, hidden = x7y5.hidden)
+                    ColouredText(value = x8y5.value, colour = x8y5.txtColour, hidden = x8y5.hidden)
+                    ColouredText(value = x9y5.value, colour = x9y5.txtColour, hidden = x9y5.hidden)
                 }
                 Row() {
-                    ColouredText(x7y6.value, x7y6.txtColour)
-                    ColouredText(x8y6.value, x8y6.txtColour)
-                    ColouredText(x9y6.value, x9y6.txtColour)
+                    ColouredText(value = x7y6.value, colour = x7y6.txtColour, hidden = x7y6.hidden)
+                    ColouredText(value = x8y6.value, colour = x8y6.txtColour, hidden = x8y6.hidden)
+                    ColouredText(value = x9y6.value, colour = x9y6.txtColour, hidden = x9y6.hidden)
                 }
             } // End of Right
         } // End Middle Row
@@ -227,57 +219,57 @@ fun DrawSudokuGrid(
         Row {
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x1y7.value, x1y7.txtColour)
-                    ColouredText(x2y7.value, x2y7.txtColour)
-                    ColouredText(x3y7.value, x3y7.txtColour)
+                    ColouredText(value = x1y7.value, colour = x1y7.txtColour, hidden = x1y7.hidden)
+                    ColouredText(value = x2y7.value, colour = x2y7.txtColour, hidden = x2y7.hidden)
+                    ColouredText(value = x3y7.value, colour = x3y7.txtColour, hidden = x3y7.hidden)
                 }
                 Row() {
-                    ColouredText(x1y8.value, x1y8.txtColour)
-                    ColouredText(x2y8.value, x2y8.txtColour)
-                    ColouredText(x3y8.value, x3y8.txtColour)
+                    ColouredText(value = x1y8.value, colour = x1y8.txtColour, hidden = x1y8.hidden)
+                    ColouredText(value = x2y8.value, colour = x2y8.txtColour, hidden = x2y8.hidden)
+                    ColouredText(value = x3y8.value, colour = x3y8.txtColour, hidden = x3y8.hidden)
                 }
                 Row() {
-                    ColouredText(x1y9.value, x1y9.txtColour)
-                    ColouredText(x2y9.value, x2y9.txtColour)
-                    ColouredText(x3y9.value, x3y9.txtColour)
+                    ColouredText(value = x1y9.value, colour = x1y9.txtColour, hidden = x1y9.hidden)
+                    ColouredText(value = x2y9.value, colour = x2y9.txtColour, hidden = x2y9.hidden)
+                    ColouredText(value = x3y9.value, colour = x3y9.txtColour, hidden = x3y9.hidden)
                 }
             } // End of Left
 
             /* Center */
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x4y7.value, x4y7.txtColour)
-                    ColouredText(x5y7.value, x5y7.txtColour)
-                    ColouredText(x6y7.value, x6y7.txtColour)
+                    ColouredText(value = x4y7.value, colour = x4y7.txtColour, hidden = x4y7.hidden)
+                    ColouredText(value = x5y7.value, colour = x5y7.txtColour, hidden = x5y7.hidden)
+                    ColouredText(value = x6y7.value, colour = x6y7.txtColour, hidden = x6y7.hidden)
                 }
                 Row() {
-                    ColouredText(x4y8.value, x4y8.txtColour)
-                    ColouredText(x5y8.value, x5y8.txtColour)
-                    ColouredText(x6y8.value, x6y8.txtColour)
+                    ColouredText(value = x4y8.value, colour = x4y8.txtColour, hidden = x4y8.hidden)
+                    ColouredText(value = x5y8.value, colour = x5y8.txtColour, hidden = x5y8.hidden)
+                    ColouredText(value = x6y8.value, colour = x6y8.txtColour, hidden = x6y8.hidden)
                 }
                 Row() {
-                    ColouredText(x4y9.value, x4y9.txtColour)
-                    ColouredText(x5y9.value, x5y9.txtColour)
-                    ColouredText(x6y9.value, x6y9.txtColour)
+                    ColouredText(value = x4y9.value, colour = x4y9.txtColour, hidden = x4y9.hidden)
+                    ColouredText(value = x5y9.value, colour = x5y9.txtColour, hidden = x5y9.hidden)
+                    ColouredText(value = x6y9.value, colour = x6y9.txtColour, hidden = x6y9.hidden)
                 }
             } // End of Center
 
             /* Right */
             Column(modifier = Modifier) {
                 Row() {
-                    ColouredText(x7y7.value, x7y7.txtColour)
-                    ColouredText(x8y7.value, x8y7.txtColour)
-                    ColouredText(x9y7.value, x9y7.txtColour)
+                    ColouredText(value = x7y7.value, colour = x7y7.txtColour, hidden = x7y7.hidden)
+                    ColouredText(value = x8y7.value, colour = x8y7.txtColour, hidden = x8y7.hidden)
+                    ColouredText(value = x9y7.value, colour = x9y7.txtColour, hidden = x9y7.hidden)
                 }
                 Row() {
-                    ColouredText(x7y8.value, x7y8.txtColour)
-                    ColouredText(x8y8.value, x8y8.txtColour)
-                    ColouredText(x9y8.value, x9y8.txtColour)
+                    ColouredText(value = x7y8.value, colour = x7y8.txtColour, hidden = x7y8.hidden)
+                    ColouredText(value = x8y8.value, colour = x8y8.txtColour, hidden = x8y8.hidden)
+                    ColouredText(value = x9y8.value, colour = x9y8.txtColour, hidden = x9y8.hidden)
                 }
                 Row() {
-                    ColouredText(x7y9.value, x7y9.txtColour)
-                    ColouredText(x8y9.value, x8y9.txtColour)
-                    ColouredText(x9y9.value, x9y9.txtColour)
+                    ColouredText(value = x7y9.value, colour = x7y9.txtColour, hidden = x7y9.hidden)
+                    ColouredText(value = x8y9.value, colour = x8y9.txtColour, hidden = x8y9.hidden)
+                    ColouredText(value = x9y9.value, colour = x9y9.txtColour, hidden = x9y9.hidden)
                 }
             } // End of Right
         } // End Bottom Row

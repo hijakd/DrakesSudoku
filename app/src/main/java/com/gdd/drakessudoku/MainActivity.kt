@@ -24,16 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.gdd.drakessudoku.model.Grid
 import com.gdd.drakessudoku.model.GridCell
 import com.gdd.drakessudoku.ui.components.DrawSudokuGrid
-import com.gdd.drakessudoku.ui.theme.Black
-import com.gdd.drakessudoku.ui.theme.Blue
-import com.gdd.drakessudoku.ui.theme.DarkGrey
-import com.gdd.drakessudoku.ui.theme.DrakesSudokuTheme
-import com.gdd.drakessudoku.ui.theme.Gold
-import com.gdd.drakessudoku.ui.theme.MathBlue
-import com.gdd.drakessudoku.ui.theme.NeonGreen
-import com.gdd.drakessudoku.ui.theme.Pink
-import com.gdd.drakessudoku.ui.theme.Purple40
-import com.gdd.drakessudoku.ui.theme.Red
+import com.gdd.drakessudoku.ui.theme.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,13 +46,20 @@ fun DrakesSudokuApp() {
     NavigationSuiteScaffold(
         navigationSuiteItems = {
             AppDestinations.entries.forEach {
-                item(icon = {
-                    Icon(
-                        it.icon, contentDescription = it.label
-                    )
-                }, label = { Text(it.label) }, selected = it == currentDestination, onClick = { currentDestination = it })
+                item(
+                    icon = {
+                        Icon(
+                            it.icon,
+                            contentDescription = it.label
+                        )
+                    },
+                    label = { Text(it.label) },
+                    selected = it == currentDestination,
+                    onClick = { currentDestination = it }
+                )
             }
-        }) {
+        }
+    ) {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
             AppCore(modifier = Modifier.padding(innerPadding))
         }
@@ -72,10 +70,9 @@ enum class AppDestinations(
     val label: String,
     val icon: ImageVector,
 ) {
-    HOME("Home", Icons.Default.Home), FAVORITES("Favorites", Icons.Default.Favorite), PROFILE(
-        "Profile",
-        Icons.Default.AccountBox
-    ),
+    HOME("Home", Icons.Default.Home),
+    FAVORITES("Favorites", Icons.Default.Favorite),
+    PROFILE("Profile", Icons.Default.AccountBox),
 }
 
 @Composable
@@ -173,17 +170,12 @@ fun AppCore(modifier: Modifier = Modifier) {
 
     /* first column */
     /* x1y2 */
-    // val x1y2 = if (shuffled.first() != x2y1 && shuffled.first() != x3y1) {
-    //     shuffled.first()
-    // } else {
-    //     shuffled.last()
-    // }
-    // shuffled.remove(x1y2)
-
     val x1y2 = GridCell(
         xPosition = 1,
         yPosition = 2,
-        value = if (shuffled.first() != x2y1.value && shuffled.first() != x3y1.value) {
+        value = if (
+            shuffled.first() != x2y1.value &&
+            shuffled.first() != x3y1.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -192,12 +184,14 @@ fun AppCore(modifier: Modifier = Modifier) {
         hidden = false
     )
     shuffled.remove(x1y2.value)
-
     /* x1y3 */
     val x1y3 = GridCell(
         xPosition = 1,
         yPosition = 3,
-        value = if (shuffled.first() != x1y2.value && shuffled.first() != x2y1.value && shuffled.first() != x3y1.value) {
+        value = if (
+            shuffled.first() != x1y2.value &&
+            shuffled.first() != x2y1.value &&
+            shuffled.first() != x3y1.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -264,8 +258,14 @@ fun AppCore(modifier: Modifier = Modifier) {
 
     /* Grid1 TopLeft */
     shuffled.clear()
+    /* filter remaining values not contained in Grid1 ie: not x1y1, x2y1, x3y1, x1y2 & x1y3 */
     numbers.forEach {
-        if (it != x1y1.value && it != x2y1.value && it != x3y1.value && it != x1y2.value && it != x1y3.value) {
+        if (
+            it != x1y1.value &&
+            it != x2y1.value &&
+            it != x3y1.value &&
+            it != x1y2.value &&
+            it != x1y3.value) {
             shuffled.add(it)
         }
     }
@@ -276,11 +276,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y2 = GridCell(
         xPosition = 2,
         yPosition = 2,
-        value = (if (shuffled.first() != x1y2.value && shuffled.first() != x2y1.value) {
+        value = if (
+            shuffled.first() != x1y2.value &&
+            shuffled.first() != x2y1.value) {
             shuffled.first()
         } else {
             shuffled.last()
-        }),
+        },
         txtColour = Black,
         hidden = false
     )
@@ -290,7 +292,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y2 = GridCell(
         xPosition = 3,
         yPosition = 2,
-        value = if (shuffled.first() != x1y2.value && shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x3y1.value) {
+        value = if (
+            shuffled.first() != x1y2.value &&
+            shuffled.first() != x2y1.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x3y1.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -306,7 +312,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y3 = GridCell(
         xPosition = 2,
         yPosition = 3,
-        value = if (shuffled.first() != x1y2.value && shuffled.first() != x1y3.value && shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x3y1.value && shuffled.first() != x3y2.value) {
+        value = if (
+            shuffled.first() != x1y2.value &&
+            shuffled.first() != x1y3.value &&
+            shuffled.first() != x2y1.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x3y1.value &&
+            shuffled.first() != x3y2.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -341,7 +353,9 @@ fun AppCore(modifier: Modifier = Modifier) {
     slice1.clear()
     /* filter out values in row 2 of Grid1 */
     shuffled.forEach {
-        if (it != x1y2.value && it != x2y2.value && it != x3y2.value) {
+        if (it != x1y2.value &&
+            it != x2y2.value &&
+            it != x3y2.value) {
             slice1.add(it)
         }
     }
@@ -376,7 +390,9 @@ fun AppCore(modifier: Modifier = Modifier) {
     /* row 3 */
     slice2.clear()
     shuffled.forEach {
-        if (it != x1y3.value && it != x2y3.value && it != x3y3.value) {
+        if (it != x1y3.value &&
+            it != x2y3.value &&
+            it != x3y3.value) {
             slice2.add(it)
         }
     }
@@ -385,8 +401,10 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y3 = GridCell(
         xPosition = 4,
         yPosition = 3,
-        value = if (slice2.first() != x4y2.value &&
-            slice2.first() != x5y2.value && slice2.first() != x6y2.value
+        value = if (
+            slice2.first() != x4y2.value &&
+            slice2.first() != x5y2.value &&
+            slice2.first() != x6y2.value
         ) {
             slice2.first()
         } else {
@@ -403,8 +421,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y3 = GridCell(
         xPosition = 5,
         yPosition = 3,
-        value = if (slice2.first() != x4y2.value &&
-            slice2.first() != x4y3.value && slice2.first() != x5y2.value && slice2.first() != x6y2.value
+        value = if (
+            slice2.first() != x4y2.value &&
+            slice2.first() != x4y3.value &&
+            slice2.first() != x5y2.value &&
+            slice2.first() != x6y2.value
         ) {
             slice2.first()
         } else {
@@ -419,8 +440,12 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y3 = GridCell(
         xPosition = 6,
         yPosition = 3,
-        value = if (slice2.first() != x4y2.value &&
-            slice2.first() != x4y3.value && slice2.first() != x5y2.value && slice2.first() != x5y3.value && slice2.first() != x6y2.value
+        value = if (
+            slice2.first() != x4y2.value &&
+            slice2.first() != x4y3.value &&
+            slice2.first() != x5y2.value &&
+            slice2.first() != x5y3.value &&
+            slice2.first() != x6y2.value
         ) {
             slice2.first()
         } else {
@@ -435,7 +460,9 @@ fun AppCore(modifier: Modifier = Modifier) {
     shuffled.clear()
     /* filter out values in row 1 of Grid3 */
     numbers.forEach {
-        if (it != x7y1.value && it != x8y1.value && it != x9y1.value) {
+        if (it != x7y1.value &&
+            it != x8y1.value &&
+            it != x9y1.value) {
             shuffled.add(it)
         }
     }
@@ -445,7 +472,12 @@ fun AppCore(modifier: Modifier = Modifier) {
     slice1.clear()
     /* filter out values in row 2 of Grid1 */
     shuffled.forEach {
-        if (it != x1y2.value && it != x2y2.value && it != x3y2.value && it != x4y2.value && it != x5y2.value && it != x6y2.value) {
+        if (it != x1y2.value &&
+            it != x2y2.value &&
+            it != x3y2.value &&
+            it != x4y2.value &&
+            it != x5y2.value &&
+            it != x6y2.value) {
             slice1.add(it)
         }
     }
@@ -455,7 +487,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y2 = GridCell(
         xPosition = 7,
         yPosition = 2,
-        value = if (shuffled.first() != x1y2.value && shuffled.first() != x2y2.value && shuffled.first() != x3y2.value && shuffled.first() != x4y2.value && shuffled.first() != x5y2.value && shuffled.first() != x6y2.value) {
+        value = if (
+            shuffled.first() != x1y2.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x3y2.value &&
+            shuffled.first() != x4y2.value &&
+            shuffled.first() != x5y2.value &&
+            shuffled.first() != x6y2.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -470,7 +508,14 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y2 = GridCell(
         xPosition = 8,
         yPosition = 2,
-        value = if (shuffled.first() != x1y2.value && shuffled.first() != x2y2.value && shuffled.first() != x3y2.value && shuffled.first() != x4y2.value && shuffled.first() != x5y2.value && shuffled.first() != x6y2.value && shuffled.first() != x7y2.value) {
+        value = if (
+            shuffled.first() != x1y2.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x3y2.value &&
+            shuffled.first() != x4y2.value &&
+            shuffled.first() != x5y2.value &&
+            shuffled.first() != x6y2.value &&
+            shuffled.first() != x7y2.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -484,7 +529,15 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y2 = GridCell(
         xPosition = 9,
         yPosition = 2,
-        value = if (shuffled.first() != x1y2.value && shuffled.first() != x2y2.value && shuffled.first() != x3y2.value && shuffled.first() != x4y2.value && shuffled.first() != x5y2.value && shuffled.first() != x6y2.value && shuffled.first() != x7y2.value && shuffled.first() != x8y2.value) {
+        value = if (
+            shuffled.first() != x1y2.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x3y2.value &&
+            shuffled.first() != x4y2.value &&
+            shuffled.first() != x5y2.value &&
+            shuffled.first() != x6y2.value &&
+            shuffled.first() != x7y2.value &&
+            shuffled.first() != x8y2.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -498,7 +551,12 @@ fun AppCore(modifier: Modifier = Modifier) {
     slice2.clear()
     /* filter out values in row 2 of Grid1 */
     shuffled.forEach {
-        if (it != x1y3.value && it != x2y3.value && it != x3y3.value && it != x4y3.value && it != x5y3.value && it != x6y3.value) {
+        if (it != x1y3.value &&
+            it != x2y3.value &&
+            it != x3y3.value &&
+            it != x4y3.value &&
+            it != x5y3.value &&
+            it != x6y3.value) {
             slice2.add(it)
         }
     }
@@ -507,7 +565,16 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y3 = GridCell(
         xPosition = 7,
         yPosition = 3,
-        value = if (shuffled.first() != x1y3.value && shuffled.first() != x2y3.value && shuffled.first() != x3y3.value && shuffled.first() != x4y3.value && shuffled.first() != x5y3.value && shuffled.first() != x6y3.value && shuffled.first() != x7y2.value && shuffled.first() != x8y2.value && shuffled.first() != x9y2.value) {
+        value = if (
+            shuffled.first() != x1y3.value &&
+            shuffled.first() != x2y3.value &&
+            shuffled.first() != x3y3.value &&
+            shuffled.first() != x4y3.value &&
+            shuffled.first() != x5y3.value &&
+            shuffled.first() != x6y3.value &&
+            shuffled.first() != x7y2.value &&
+            shuffled.first() != x8y2.value &&
+            shuffled.first() != x9y2.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -521,7 +588,17 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y3 = GridCell(
         xPosition = 8,
         yPosition = 3,
-        value = if (shuffled.first() != x1y3.value && shuffled.first() != x2y3.value && shuffled.first() != x3y3.value && shuffled.first() != x4y3.value && shuffled.first() != x5y3.value && shuffled.first() != x6y3.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x8y2.value && shuffled.first() != x9y2.value) {
+        value = if (
+            shuffled.first() != x1y3.value &&
+            shuffled.first() != x2y3.value &&
+            shuffled.first() != x3y3.value &&
+            shuffled.first() != x4y3.value &&
+            shuffled.first() != x5y3.value &&
+            shuffled.first() != x6y3.value &&
+            shuffled.first() != x7y2.value &&
+            shuffled.first() != x7y3.value &&
+            shuffled.first() != x8y2.value &&
+            shuffled.first() != x9y2.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -535,7 +612,18 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y3 = GridCell(
         xPosition = 9,
         yPosition = 3,
-        value = if (shuffled.first() != x1y3.value && shuffled.first() != x2y3.value && shuffled.first() != x3y3.value && shuffled.first() != x4y3.value && shuffled.first() != x5y3.value && shuffled.first() != x6y3.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x8y2.value && shuffled.first() != x8y3.value && shuffled.first() != x9y2.value) {
+        value = if (
+            shuffled.first() != x1y3.value &&
+            shuffled.first() != x2y3.value &&
+            shuffled.first() != x3y3.value &&
+            shuffled.first() != x4y3.value &&
+            shuffled.first() != x5y3.value &&
+            shuffled.first() != x6y3.value &&
+            shuffled.first() != x7y2.value &&
+            shuffled.first() != x7y3.value &&
+            shuffled.first() != x8y2.value &&
+            shuffled.first() != x8y3.value &&
+            shuffled.first() != x9y2.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -563,7 +651,10 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y4 = GridCell(
         xPosition = 2,
         yPosition = 4,
-        value = if (shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x2y3.value) {
+        value = if (
+            shuffled.first() != x2y1.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x2y3.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -577,7 +668,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y4 = GridCell(
         xPosition = 3,
         yPosition = 4,
-        value = if (shuffled.first() != x2y4.value && shuffled.first() != x3y1.value && shuffled.first() != x3y2.value && shuffled.first() != x3y3.value) {
+        value = if (
+            shuffled.first() != x2y4.value &&
+            shuffled.first() != x3y1.value &&
+            shuffled.first() != x3y2.value &&
+            shuffled.first() != x3y3.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -592,7 +687,12 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y5 = GridCell(
         xPosition = 2,
         yPosition = 5,
-        value = if (shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x2y3.value && shuffled.first() != x2y4.value && shuffled.first() != x3y4.value) {
+        value = if (
+            shuffled.first() != x2y1.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x2y3.value &&
+            shuffled.first() != x2y4.value &&
+            shuffled.first() != x3y4.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -606,7 +706,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y5 = GridCell(
         xPosition = 3,
         yPosition = 5,
-        value = if (shuffled.first() != x2y4.value && shuffled.first() != x2y5.value && shuffled.first() != x3y1.value && shuffled.first() != x3y2.value && shuffled.first() != x3y3.value && shuffled.first() != x3y4.value) {
+        value = if (
+            shuffled.first() != x2y4.value &&
+            shuffled.first() != x2y5.value &&
+            shuffled.first() != x3y1.value &&
+            shuffled.first() != x3y2.value &&
+            shuffled.first() != x3y3.value &&
+            shuffled.first() != x3y4.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -621,7 +727,15 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y6 = GridCell(
         xPosition = 2,
         yPosition = 6,
-        value = if (shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x2y3.value && shuffled.first() != x2y4.value && shuffled.first() != x2y5.value && shuffled.first() != x3y3.value && shuffled.first() != x3y4.value && shuffled.first() != x3y5.value) {
+        value = if (
+            shuffled.first() != x2y1.value &&
+            shuffled.first() != x2y2.value &&
+            shuffled.first() != x2y3.value &&
+            shuffled.first() != x2y4.value &&
+            shuffled.first() != x2y5.value &&
+            shuffled.first() != x3y3.value &&
+            shuffled.first() != x3y4.value &&
+            shuffled.first() != x3y5.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -650,7 +764,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y4 = GridCell(
         xPosition = 4,
         yPosition = 4,
-        value = if (shuffled.first() != x1y4.value && shuffled.first() != x2y4.value && shuffled.first() != x3y4.value && shuffled.first() != x4y1.value && shuffled.first() != x4y2.value && shuffled.first() != x4y3.value) {
+        value = if (
+            shuffled.first() != x1y4.value &&
+            shuffled.first() != x2y4.value &&
+            shuffled.first() != x3y4.value &&
+            shuffled.first() != x4y1.value &&
+            shuffled.first() != x4y2.value &&
+            shuffled.first() != x4y3.value) {
             shuffled.first()
         } else {
             shuffled.last()
@@ -665,7 +785,14 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 5,
         yPosition = 4,
         value =
-            if (shuffled.first() != x1y4.value && shuffled.first() != x2y4.value && shuffled.first() != x3y4.value && shuffled.first() != x4y4.value && shuffled.first() != x5y1.value && shuffled.first() != x5y2.value && shuffled.first() != x5y3.value) {
+            if (
+                shuffled.first() != x1y4.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x3y4.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x5y1.value &&
+                shuffled.first() != x5y2.value &&
+                shuffled.first() != x5y3.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -680,7 +807,15 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 6,
         yPosition = 4,
         value =
-            if (shuffled.first() != x1y4.value && shuffled.first() != x2y4.value && shuffled.first() != x3y4.value && shuffled.first() != x4y4.value && shuffled.first() != x5y4.value && shuffled.first() != x6y1.value && shuffled.first() != x6y2.value && shuffled.first() != x6y3.value) {
+            if (
+                shuffled.first() != x1y4.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x3y4.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x6y1.value &&
+                shuffled.first() != x6y2.value &&
+                shuffled.first() != x6y3.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -696,7 +831,16 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 4,
         yPosition = 5,
         value =
-            if (shuffled.first() != x1y5.value && shuffled.first() != x2y5.value && shuffled.first() != x3y5.value && shuffled.first() != x4y4.value && shuffled.first() != x5y1.value && shuffled.first() != x5y2.value && shuffled.first() != x5y3.value && shuffled.first() != x5y4.value && shuffled.first() != x6y4.value) {
+            if (
+                shuffled.first() != x1y5.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x5y1.value &&
+                shuffled.first() != x5y2.value &&
+                shuffled.first() != x5y3.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x6y4.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -711,7 +855,17 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 5,
         yPosition = 5,
         value =
-            if (shuffled.first() != x1y5.value && shuffled.first() != x2y5.value && shuffled.first() != x3y5.value && shuffled.first() != x4y5.value && shuffled.first() != x4y4.value && shuffled.first() != x5y1.value && shuffled.first() != x5y2.value && shuffled.first() != x5y3.value && shuffled.first() != x5y4.value && shuffled.first() != x6y4.value) {
+            if (
+                shuffled.first() != x1y5.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x5y1.value &&
+                shuffled.first() != x5y2.value &&
+                shuffled.first() != x5y3.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x6y4.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -726,7 +880,16 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 6,
         yPosition = 5,
         value =
-            if (shuffled.first() != x1y5.value && shuffled.first() != x2y5.value && shuffled.first() != x3y5.value && shuffled.first() != x4y4.value && shuffled.first() != x4y5.value && shuffled.first() != x6y1.value && shuffled.first() != x6y2.value && shuffled.first() != x6y3.value && shuffled.first() != x6y4.value) {
+            if (
+                shuffled.first() != x1y5.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x6y1.value &&
+                shuffled.first() != x6y2.value &&
+                shuffled.first() != x6y3.value &&
+                shuffled.first() != x6y4.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -742,7 +905,19 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 4,
         yPosition = 6,
         value =
-            if (shuffled.first() != x1y6.value && shuffled.first() != x2y6.value && shuffled.first() != x3y6.value && shuffled.first() != x4y1.value && shuffled.first() != x4y2.value && shuffled.first() != x4y3.value && shuffled.first() != x4y4.value && shuffled.first() != x4y5.value && shuffled.first() != x5y4.value && shuffled.first() != x5y5.value && shuffled.first() != x6y4.value && shuffled.first() != x6y5.value) {
+            if (
+                shuffled.first() != x1y6.value &&
+                shuffled.first() != x2y6.value &&
+                shuffled.first() != x3y6.value &&
+                shuffled.first() != x4y1.value &&
+                shuffled.first() != x4y2.value &&
+                shuffled.first() != x4y3.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x6y4.value &&
+                shuffled.first() != x6y5.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -757,7 +932,20 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 5,
         yPosition = 6,
         value =
-            if (shuffled.first() != x1y6.value && shuffled.first() != x2y6.value && shuffled.first() != x3y6.value && shuffled.first() != x4y4.value && shuffled.first() != x4y5.value && shuffled.first() != x4y6.value && shuffled.first() != x5y1.value && shuffled.first() != x5y2.value && shuffled.first() != x5y3.value && shuffled.first() != x5y4.value && shuffled.first() != x5y5.value && shuffled.first() != x6y4.value && shuffled.first() != x6y5.value) {
+            if (
+                shuffled.first() != x1y6.value &&
+                shuffled.first() != x2y6.value &&
+                shuffled.first() != x3y6.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x4y6.value &&
+                shuffled.first() != x5y1.value &&
+                shuffled.first() != x5y2.value &&
+                shuffled.first() != x5y3.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x6y4.value &&
+                shuffled.first() != x6y5.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -788,7 +976,16 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 7,
         yPosition = 4,
         value =
-            if (shuffled.first() != x1y4.value && shuffled.first() != x2y4.value && shuffled.first() != x3y4.value && shuffled.first() != x4y1.value && shuffled.first() != x4y2.value && shuffled.first() != x4y3.value && shuffled.first() != x4y4.value && shuffled.first() != x5y4.value && shuffled.first() != x6y4.value) {
+            if (
+                shuffled.first() != x1y4.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x3y4.value &&
+                shuffled.first() != x4y1.value &&
+                shuffled.first() != x4y2.value &&
+                shuffled.first() != x4y3.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x6y4.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -803,7 +1000,17 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 8,
         yPosition = 4,
         value =
-            if (shuffled.first() != x1y4.value && shuffled.first() != x2y4.value && shuffled.first() != x3y4.value && shuffled.first() != x4y4.value && shuffled.first() != x5y4.value && shuffled.first() != x6y4.value && shuffled.first() != x7y4.value && shuffled.first() != x8y1.value && shuffled.first() != x8y2.value && shuffled.first() != x8y3.value) {
+            if (
+                shuffled.first() != x1y4.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x3y4.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x6y4.value &&
+                shuffled.first() != x7y4.value &&
+                shuffled.first() != x8y1.value &&
+                shuffled.first() != x8y2.value &&
+                shuffled.first() != x8y3.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -818,7 +1025,18 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 9,
         yPosition = 4,
         value =
-            if (shuffled.first() != x1y4.value && shuffled.first() != x2y4.value && shuffled.first() != x3y4.value && shuffled.first() != x4y4.value && shuffled.first() != x5y4.value && shuffled.first() != x6y4.value && shuffled.first() != x7y4.value && shuffled.first() != x8y4.value && shuffled.first() != x9y1.value && shuffled.first() != x9y2.value && shuffled.first() != x9y3.value) {
+            if (
+                shuffled.first() != x1y4.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x3y4.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x6y4.value &&
+                shuffled.first() != x7y4.value &&
+                shuffled.first() != x8y4.value &&
+                shuffled.first() != x9y1.value &&
+                shuffled.first() != x9y2.value &&
+                shuffled.first() != x9y3.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -834,7 +1052,17 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 7,
         yPosition = 5,
         value =
-            if (shuffled.first() != x1y5.value && shuffled.first() != x2y5.value && shuffled.first() != x3y5.value && shuffled.first() != x4y5.value && shuffled.first() != x5y5.value && shuffled.first() != x6y5.value && shuffled.first() != x7y1.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x7y4.value) {
+            if (
+                shuffled.first() != x1y5.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x6y5.value &&
+                shuffled.first() != x7y1.value &&
+                shuffled.first() != x7y2.value &&
+                shuffled.first() != x7y3.value &&
+                shuffled.first() != x7y4.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -849,7 +1077,18 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 8,
         yPosition = 5,
         value =
-            if (shuffled.first() != x1y5.value && shuffled.first() != x2y5.value && shuffled.first() != x3y5.value && shuffled.first() != x4y5.value && shuffled.first() != x5y5.value && shuffled.first() != x6y5.value && shuffled.first() != x7y5.value && shuffled.first() != x8y1.value && shuffled.first() != x8y2.value && shuffled.first() != x8y3.value && shuffled.first() != x8y4.value) {
+            if (
+                shuffled.first() != x1y5.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x6y5.value &&
+                shuffled.first() != x7y5.value &&
+                shuffled.first() != x8y1.value &&
+                shuffled.first() != x8y2.value &&
+                shuffled.first() != x8y3.value &&
+                shuffled.first() != x8y4.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -864,7 +1103,19 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 9,
         yPosition = 5,
         value =
-            if (shuffled.first() != x1y5.value && shuffled.first() != x2y5.value && shuffled.first() != x3y5.value && shuffled.first() != x4y5.value && shuffled.first() != x5y5.value && shuffled.first() != x6y5.value && shuffled.first() != x7y5.value && shuffled.first() != x8y5.value && shuffled.first() != x9y1.value && shuffled.first() != x9y2.value && shuffled.first() != x9y3.value && shuffled.first() != x9y4.value) {
+            if (
+                shuffled.first() != x1y5.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x6y5.value &&
+                shuffled.first() != x7y5.value &&
+                shuffled.first() != x8y5.value &&
+                shuffled.first() != x9y1.value &&
+                shuffled.first() != x9y2.value &&
+                shuffled.first() != x9y3.value &&
+                shuffled.first() != x9y4.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -880,7 +1131,18 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 7,
         yPosition = 6,
         value =
-            if (shuffled.first() != x1y6.value && shuffled.first() != x2y6.value && shuffled.first() != x3y6.value && shuffled.first() != x4y6.value && shuffled.first() != x5y6.value && shuffled.first() != x6y6.value && shuffled.first() != x7y1.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x7y4.value && shuffled.first() != x7y5.value) {
+            if (
+                shuffled.first() != x1y6.value &&
+                shuffled.first() != x2y6.value &&
+                shuffled.first() != x3y6.value &&
+                shuffled.first() != x4y6.value &&
+                shuffled.first() != x5y6.value &&
+                shuffled.first() != x6y6.value &&
+                shuffled.first() != x7y1.value &&
+                shuffled.first() != x7y2.value &&
+                shuffled.first() != x7y3.value &&
+                shuffled.first() != x7y4.value &&
+                shuffled.first() != x7y5.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -895,7 +1157,19 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 8,
         yPosition = 6,
         value =
-            if (shuffled.first() != x1y6.value && shuffled.first() != x2y6.value && shuffled.first() != x3y6.value && shuffled.first() != x4y6.value && shuffled.first() != x5y6.value && shuffled.first() != x6y6.value && shuffled.first() != x7y6.value && shuffled.first() != x8y1.value && shuffled.first() != x8y2.value && shuffled.first() != x8y3.value && shuffled.first() != x8y4.value && shuffled.first() != x8y5.value) {
+            if (
+                shuffled.first() != x1y6.value &&
+                shuffled.first() != x2y6.value &&
+                shuffled.first() != x3y6.value &&
+                shuffled.first() != x4y6.value &&
+                shuffled.first() != x5y6.value &&
+                shuffled.first() != x6y6.value &&
+                shuffled.first() != x7y6.value &&
+                shuffled.first() != x8y1.value &&
+                shuffled.first() != x8y2.value &&
+                shuffled.first() != x8y3.value &&
+                shuffled.first() != x8y4.value &&
+                shuffled.first() != x8y5.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -929,7 +1203,13 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 2,
         yPosition = 7,
         value =
-            if (shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x2y3.value && shuffled.first() != x2y4.value && shuffled.first() != x2y5.value && shuffled.first() != x2y6.value) {
+            if (
+                shuffled.first() != x2y1.value &&
+                shuffled.first() != x2y2.value &&
+                shuffled.first() != x2y3.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x2y6.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -944,7 +1224,14 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 3,
         yPosition = 7,
         value =
-            if (shuffled.first() != x2y7.value && shuffled.first() != x3y1.value && shuffled.first() != x3y2.value && shuffled.first() != x3y3.value && shuffled.first() != x3y4.value && shuffled.first() != x3y5.value && shuffled.first() != x3y6.value) {
+            if (
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y1.value &&
+                shuffled.first() != x3y2.value &&
+                shuffled.first() != x3y3.value &&
+                shuffled.first() != x3y4.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x3y6.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -960,7 +1247,15 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 2,
         yPosition = 8,
         value =
-            if (shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x2y3.value && shuffled.first() != x2y4.value && shuffled.first() != x2y5.value && shuffled.first() != x2y6.value && shuffled.first() != x2y7.value && shuffled.first() != x3y7.value) {
+            if (
+                shuffled.first() != x2y1.value &&
+                shuffled.first() != x2y2.value &&
+                shuffled.first() != x2y3.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x2y6.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y7.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -975,7 +1270,15 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 3,
         yPosition = 8,
         value =
-            if (shuffled.first() != x2y7.value && shuffled.first() != x3y1.value && shuffled.first() != x3y2.value && shuffled.first() != x3y3.value && shuffled.first() != x3y4.value && shuffled.first() != x3y5.value && shuffled.first() != x3y6.value && shuffled.first() != x3y7.value) {
+            if (
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y1.value &&
+                shuffled.first() != x3y2.value &&
+                shuffled.first() != x3y3.value &&
+                shuffled.first() != x3y4.value &&
+                shuffled.first() != x3y5.value &&
+                shuffled.first() != x3y6.value &&
+                shuffled.first() != x3y7.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -991,7 +1294,17 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 2,
         yPosition = 9,
         value =
-            if (shuffled.first() != x2y1.value && shuffled.first() != x2y2.value && shuffled.first() != x2y3.value && shuffled.first() != x2y4.value && shuffled.first() != x2y5.value && shuffled.first() != x2y6.value && shuffled.first() != x2y7.value && shuffled.first() != x2y8.value && shuffled.first() != x3y7.value && shuffled.first() != x3y8.value) {
+            if (
+                shuffled.first() != x2y1.value &&
+                shuffled.first() != x2y2.value &&
+                shuffled.first() != x2y3.value &&
+                shuffled.first() != x2y4.value &&
+                shuffled.first() != x2y5.value &&
+                shuffled.first() != x2y6.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x2y8.value &&
+                shuffled.first() != x3y7.value &&
+                shuffled.first() != x3y8.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1023,7 +1336,16 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 4,
         yPosition = 7,
         value =
-            if (shuffled.first() != x1y7.value && shuffled.first() != x2y7.value && shuffled.first() != x3y7.value && shuffled.first() != x4y1.value && shuffled.first() != x4y2.value && shuffled.first() != x4y3.value && shuffled.first() != x4y4.value && shuffled.first() != x4y5.value && shuffled.first() != x4y6.value) {
+            if (
+                shuffled.first() != x1y7.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y7.value &&
+                shuffled.first() != x4y1.value &&
+                shuffled.first() != x4y2.value &&
+                shuffled.first() != x4y3.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x4y6.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1038,7 +1360,17 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 5,
         yPosition = 7,
         value =
-            if (shuffled.first() != x1y7.value && shuffled.first() != x2y7.value && shuffled.first() != x3y7.value && shuffled.first() != x4y7.value && shuffled.first() != x5y1.value && shuffled.first() != x5y2.value && shuffled.first() != x5y3.value && shuffled.first() != x5y4.value && shuffled.first() != x5y5.value && shuffled.first() != x5y6.value) {
+            if (
+                shuffled.first() != x1y7.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y7.value &&
+                shuffled.first() != x4y7.value &&
+                shuffled.first() != x5y1.value &&
+                shuffled.first() != x5y2.value &&
+                shuffled.first() != x5y3.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x5y6.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1053,7 +1385,18 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 6,
         yPosition = 7,
         value =
-            if (shuffled.first() != x1y7.value && shuffled.first() != x2y7.value && shuffled.first() != x3y7.value && shuffled.first() != x4y7.value && shuffled.first() != x5y7.value && shuffled.first() != x6y1.value && shuffled.first() != x6y2.value && shuffled.first() != x6y3.value && shuffled.first() != x6y4.value && shuffled.first() != x6y5.value && shuffled.first() != x6y6.value) {
+            if (
+                shuffled.first() != x1y7.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y7.value &&
+                shuffled.first() != x4y7.value &&
+                shuffled.first() != x5y7.value &&
+                shuffled.first() != x6y1.value &&
+                shuffled.first() != x6y2.value &&
+                shuffled.first() != x6y3.value &&
+                shuffled.first() != x6y4.value &&
+                shuffled.first() != x6y5.value &&
+                shuffled.first() != x6y6.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1069,7 +1412,17 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 4,
         yPosition = 8,
         value =
-            if (shuffled.first() != x1y8.value && shuffled.first() != x2y8.value && shuffled.first() != x3y8.value && shuffled.first() != x4y1.value && shuffled.first() != x4y2.value && shuffled.first() != x4y3.value && shuffled.first() != x4y4.value && shuffled.first() != x4y5.value && shuffled.first() != x4y6.value && shuffled.first() != x4y7.value
+            if (
+                shuffled.first() != x1y8.value &&
+                shuffled.first() != x2y8.value &&
+                shuffled.first() != x3y8.value &&
+                shuffled.first() != x4y1.value &&
+                shuffled.first() != x4y2.value &&
+                shuffled.first() != x4y3.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x4y6.value &&
+                shuffled.first() != x4y7.value
             ) {
                 shuffled.first()
             } else {
@@ -1085,7 +1438,18 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 5,
         yPosition = 8,
         value =
-            if (shuffled.first() != x1y8.value && shuffled.first() != x2y8.value && shuffled.first() != x3y8.value && shuffled.first() != x4y8.value && shuffled.first() != x5y1.value && shuffled.first() != x5y2.value && shuffled.first() != x5y3.value && shuffled.first() != x5y4.value && shuffled.first() != x5y5.value && shuffled.first() != x5y6.value && shuffled.first() != x5y7.value
+            if (
+                shuffled.first() != x1y8.value &&
+                shuffled.first() != x2y8.value &&
+                shuffled.first() != x3y8.value &&
+                shuffled.first() != x4y8.value &&
+                shuffled.first() != x5y1.value &&
+                shuffled.first() != x5y2.value &&
+                shuffled.first() != x5y3.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x5y6.value &&
+                shuffled.first() != x5y7.value
             ) {
                 shuffled.first()
             } else {
@@ -1101,7 +1465,19 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 6,
         yPosition = 8,
         value =
-            if (shuffled.first() != x1y8.value && shuffled.first() != x2y8.value && shuffled.first() != x3y8.value && shuffled.first() != x4y8.value && shuffled.first() != x5y8.value && shuffled.first() != x6y1.value && shuffled.first() != x6y2.value && shuffled.first() != x6y3.value && shuffled.first() != x6y4.value && shuffled.first() != x6y5.value && shuffled.first() != x6y6.value && shuffled.first() != x6y7.value
+            if (
+                shuffled.first() != x1y8.value &&
+                shuffled.first() != x2y8.value &&
+                shuffled.first() != x3y8.value &&
+                shuffled.first() != x4y8.value &&
+                shuffled.first() != x5y8.value &&
+                shuffled.first() != x6y1.value &&
+                shuffled.first() != x6y2.value &&
+                shuffled.first() != x6y3.value &&
+                shuffled.first() != x6y4.value &&
+                shuffled.first() != x6y5.value &&
+                shuffled.first() != x6y6.value &&
+                shuffled.first() != x6y7.value
             ) {
                 shuffled.first()
             } else {
@@ -1118,7 +1494,18 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 4,
         yPosition = 9,
         value =
-            if (shuffled.first() != x1y9.value && shuffled.first() != x2y9.value && shuffled.first() != x3y9.value && shuffled.first() != x4y1.value && shuffled.first() != x4y2.value && shuffled.first() != x4y3.value && shuffled.first() != x4y4.value && shuffled.first() != x4y5.value && shuffled.first() != x4y6.value && shuffled.first() != x4y7.value && shuffled.first() != x4y8.value
+            if (
+                shuffled.first() != x1y9.value &&
+                shuffled.first() != x2y9.value &&
+                shuffled.first() != x3y9.value &&
+                shuffled.first() != x4y1.value &&
+                shuffled.first() != x4y2.value &&
+                shuffled.first() != x4y3.value &&
+                shuffled.first() != x4y4.value &&
+                shuffled.first() != x4y5.value &&
+                shuffled.first() != x4y6.value &&
+                shuffled.first() != x4y7.value &&
+                shuffled.first() != x4y8.value
             ) {
                 shuffled.first()
             } else {
@@ -1134,7 +1521,19 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 5,
         yPosition = 9,
         value =
-            if (shuffled.first() != x1y9.value && shuffled.first() != x2y9.value && shuffled.first() != x3y9.value && shuffled.first() != x4y9.value && shuffled.first() != x5y1.value && shuffled.first() != x5y2.value && shuffled.first() != x5y3.value && shuffled.first() != x5y4.value && shuffled.first() != x5y5.value && shuffled.first() != x5y6.value && shuffled.first() != x5y7.value && shuffled.first() != x5y8.value) {
+            if (
+                shuffled.first() != x1y9.value &&
+                shuffled.first() != x2y9.value &&
+                shuffled.first() != x3y9.value &&
+                shuffled.first() != x4y9.value &&
+                shuffled.first() != x5y1.value &&
+                shuffled.first() != x5y2.value &&
+                shuffled.first() != x5y3.value &&
+                shuffled.first() != x5y4.value &&
+                shuffled.first() != x5y5.value &&
+                shuffled.first() != x5y6.value &&
+                shuffled.first() != x5y7.value &&
+                shuffled.first() != x5y8.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1167,7 +1566,19 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 7,
         yPosition = 7,
         value =
-            if (shuffled.first() != x1y7.value && shuffled.first() != x2y7.value && shuffled.first() != x3y7.value && shuffled.first() != x4y7.value && shuffled.first() != x5y7.value && shuffled.first() != x6y7.value && shuffled.first() != x7y1.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x7y4.value && shuffled.first() != x7y5.value && shuffled.first() != x7y6.value) {
+            if (
+                shuffled.first() != x1y7.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y7.value &&
+                shuffled.first() != x4y7.value &&
+                shuffled.first() != x5y7.value &&
+                shuffled.first() != x6y7.value &&
+                shuffled.first() != x7y1.value &&
+                shuffled.first() != x7y2.value &&
+                shuffled.first() != x7y3.value &&
+                shuffled.first() != x7y4.value &&
+                shuffled.first() != x7y5.value &&
+                shuffled.first() != x7y6.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1182,7 +1593,20 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 8,
         yPosition = 7,
         value =
-            if (shuffled.first() != x1y7.value && shuffled.first() != x2y7.value && shuffled.first() != x3y7.value && shuffled.first() != x4y7.value && shuffled.first() != x5y7.value && shuffled.first() != x6y7.value && shuffled.first() != x7y1.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x7y4.value && shuffled.first() != x7y5.value && shuffled.first() != x7y6.value && shuffled.first() != x7y7.value) {
+            if (
+                shuffled.first() != x1y7.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y7.value &&
+                shuffled.first() != x4y7.value &&
+                shuffled.first() != x5y7.value &&
+                shuffled.first() != x6y7.value &&
+                shuffled.first() != x7y1.value &&
+                shuffled.first() != x7y2.value &&
+                shuffled.first() != x7y3.value &&
+                shuffled.first() != x7y4.value &&
+                shuffled.first() != x7y5.value &&
+                shuffled.first() != x7y6.value &&
+                shuffled.first() != x7y7.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1197,7 +1621,21 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 9,
         yPosition = 7,
         value =
-            if (shuffled.first() != x1y7.value && shuffled.first() != x2y7.value && shuffled.first() != x3y7.value && shuffled.first() != x4y7.value && shuffled.first() != x5y7.value && shuffled.first() != x6y7.value && shuffled.first() != x7y7.value && shuffled.first() != x8y7.value && shuffled.first() != x9y1.value && shuffled.first() != x9y2.value && shuffled.first() != x9y3.value && shuffled.first() != x9y4.value && shuffled.first() != x9y5.value && shuffled.first() != x9y6.value) {
+            if (
+                shuffled.first() != x1y7.value &&
+                shuffled.first() != x2y7.value &&
+                shuffled.first() != x3y7.value &&
+                shuffled.first() != x4y7.value &&
+                shuffled.first() != x5y7.value &&
+                shuffled.first() != x6y7.value &&
+                shuffled.first() != x7y7.value &&
+                shuffled.first() != x8y7.value &&
+                shuffled.first() != x9y1.value &&
+                shuffled.first() != x9y2.value &&
+                shuffled.first() != x9y3.value &&
+                shuffled.first() != x9y4.value &&
+                shuffled.first() != x9y5.value &&
+                shuffled.first() != x9y6.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1213,7 +1651,20 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 7,
         yPosition = 8,
         value =
-            if (shuffled.first() != x1y8.value && shuffled.first() != x2y8.value && shuffled.first() != x3y8.value && shuffled.first() != x4y8.value && shuffled.first() != x5y8.value && shuffled.first() != x6y8.value && shuffled.first() != x7y1.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x7y4.value && shuffled.first() != x7y5.value && shuffled.first() != x7y6.value && shuffled.first() != x7y7.value) {
+            if (
+                shuffled.first() != x1y8.value &&
+                shuffled.first() != x2y8.value &&
+                shuffled.first() != x3y8.value &&
+                shuffled.first() != x4y8.value &&
+                shuffled.first() != x5y8.value &&
+                shuffled.first() != x6y8.value &&
+                shuffled.first() != x7y1.value &&
+                shuffled.first() != x7y2.value &&
+                shuffled.first() != x7y3.value &&
+                shuffled.first() != x7y4.value &&
+                shuffled.first() != x7y5.value &&
+                shuffled.first() != x7y6.value &&
+                shuffled.first() != x7y7.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1228,7 +1679,23 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 8,
         yPosition = 8,
         value =
-            if (shuffled.first() != x1y8.value && shuffled.first() != x2y8.value && shuffled.first() != x3y8.value && shuffled.first() != x4y8.value && shuffled.first() != x5y8.value && shuffled.first() != x6y8.value && shuffled.first() != x7y7.value && shuffled.first() != x7y8.value && shuffled.first() != x8y1.value && shuffled.first() != x8y2.value && shuffled.first() != x8y3.value && shuffled.first() != x8y4.value && shuffled.first() != x8y5.value && shuffled.first() != x8y6.value && shuffled.first() != x8y7.value && shuffled.first() != x9y7.value) {
+            if (
+                shuffled.first() != x1y8.value &&
+                shuffled.first() != x2y8.value &&
+                shuffled.first() != x3y8.value &&
+                shuffled.first() != x4y8.value &&
+                shuffled.first() != x5y8.value &&
+                shuffled.first() != x6y8.value &&
+                shuffled.first() != x7y7.value &&
+                shuffled.first() != x7y8.value &&
+                shuffled.first() != x8y1.value &&
+                shuffled.first() != x8y2.value &&
+                shuffled.first() != x8y3.value &&
+                shuffled.first() != x8y4.value &&
+                shuffled.first() != x8y5.value &&
+                shuffled.first() != x8y6.value &&
+                shuffled.first() != x8y7.value &&
+                shuffled.first() != x9y7.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1243,7 +1710,24 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 9,
         yPosition = 8,
         value =
-            if (shuffled.first() != x1y8.value && shuffled.first() != x2y8.value && shuffled.first() != x3y8.value && shuffled.first() != x4y8.value && shuffled.first() != x5y8.value && shuffled.first() != x6y8.value && shuffled.first() != x7y7.value && shuffled.first() != x7y8.value && shuffled.first() != x8y7.value && shuffled.first() != x8y8.value && shuffled.first() != x9y1.value && shuffled.first() != x9y2.value && shuffled.first() != x9y3.value && shuffled.first() != x9y4.value && shuffled.first() != x9y5.value && shuffled.first() != x9y6.value && shuffled.first() != x9y7.value) {
+            if (
+                shuffled.first() != x1y8.value &&
+                shuffled.first() != x2y8.value &&
+                shuffled.first() != x3y8.value &&
+                shuffled.first() != x4y8.value &&
+                shuffled.first() != x5y8.value &&
+                shuffled.first() != x6y8.value &&
+                shuffled.first() != x7y7.value &&
+                shuffled.first() != x7y8.value &&
+                shuffled.first() != x8y7.value &&
+                shuffled.first() != x8y8.value &&
+                shuffled.first() != x9y1.value &&
+                shuffled.first() != x9y2.value &&
+                shuffled.first() != x9y3.value &&
+                shuffled.first() != x9y4.value &&
+                shuffled.first() != x9y5.value &&
+                shuffled.first() != x9y6.value &&
+                shuffled.first() != x9y7.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1259,7 +1743,25 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 7,
         yPosition = 9,
         value =
-            if (shuffled.first() != x1y9.value && shuffled.first() != x2y9.value && shuffled.first() != x3y9.value && shuffled.first() != x4y9.value && shuffled.first() != x5y9.value && shuffled.first() != x6y9.value && shuffled.first() != x7y1.value && shuffled.first() != x7y2.value && shuffled.first() != x7y3.value && shuffled.first() != x7y4.value && shuffled.first() != x7y5.value && shuffled.first() != x7y6.value && shuffled.first() != x7y7.value && shuffled.first() != x7y8.value && shuffled.first() != x8y7.value && shuffled.first() != x8y8.value && shuffled.first() != x9y7.value && shuffled.first() != x9y8.value) {
+            if (
+                shuffled.first() != x1y9.value &&
+                shuffled.first() != x2y9.value &&
+                shuffled.first() != x3y9.value &&
+                shuffled.first() != x4y9.value &&
+                shuffled.first() != x5y9.value &&
+                shuffled.first() != x6y9.value &&
+                shuffled.first() != x7y1.value &&
+                shuffled.first() != x7y2.value &&
+                shuffled.first() != x7y3.value &&
+                shuffled.first() != x7y4.value &&
+                shuffled.first() != x7y5.value &&
+                shuffled.first() != x7y6.value &&
+                shuffled.first() != x7y7.value &&
+                shuffled.first() != x7y8.value &&
+                shuffled.first() != x8y7.value &&
+                shuffled.first() != x8y8.value &&
+                shuffled.first() != x9y7.value &&
+                shuffled.first() != x9y8.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1274,7 +1776,26 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 8,
         yPosition = 9,
         value =
-            if (shuffled.first() != x1y9.value && shuffled.first() != x2y9.value && shuffled.first() != x3y9.value && shuffled.first() != x4y9.value && shuffled.first() != x5y9.value && shuffled.first() != x6y9.value && shuffled.first() != x7y7.value && shuffled.first() != x7y8.value && shuffled.first() != x7y9.value && shuffled.first() != x8y1.value && shuffled.first() != x8y2.value && shuffled.first() != x8y3.value && shuffled.first() != x8y4.value && shuffled.first() != x8y5.value && shuffled.first() != x8y6.value && shuffled.first() != x8y7.value && shuffled.first() != x8y8.value && shuffled.first() != x9y7.value && shuffled.first() != x9y8.value) {
+            if (
+                shuffled.first() != x1y9.value &&
+                shuffled.first() != x2y9.value &&
+                shuffled.first() != x3y9.value &&
+                shuffled.first() != x4y9.value &&
+                shuffled.first() != x5y9.value &&
+                shuffled.first() != x6y9.value &&
+                shuffled.first() != x7y7.value &&
+                shuffled.first() != x7y8.value &&
+                shuffled.first() != x7y9.value &&
+                shuffled.first() != x8y1.value &&
+                shuffled.first() != x8y2.value &&
+                shuffled.first() != x8y3.value &&
+                shuffled.first() != x8y4.value &&
+                shuffled.first() != x8y5.value &&
+                shuffled.first() != x8y6.value &&
+                shuffled.first() != x8y7.value &&
+                shuffled.first() != x8y8.value &&
+                shuffled.first() != x9y7.value &&
+                shuffled.first() != x9y8.value) {
                 shuffled.first()
             } else {
                 shuffled.last()
@@ -1400,6 +1921,7 @@ fun AppCore(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.size(10.dp))
     }
 } // End of AppCore
+
 
 @Preview(showBackground = true)
 @Composable
