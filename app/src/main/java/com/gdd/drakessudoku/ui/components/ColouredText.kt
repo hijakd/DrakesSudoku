@@ -1,4 +1,4 @@
-package com.gdd.drakessudoku.components
+package com.gdd.drakessudoku.ui.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
