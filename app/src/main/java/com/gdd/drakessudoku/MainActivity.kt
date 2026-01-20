@@ -1,17 +1,10 @@
 package com.gdd.drakessudoku
 
-import android.R.attr.name
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Favorite
@@ -20,28 +13,17 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color.Companion.Blue
-import androidx.compose.ui.graphics.Color.Companion.Red
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import com.gdd.drakessudoku.components.ColouredText
-import com.gdd.drakessudoku.ui.theme.Black
-import com.gdd.drakessudoku.ui.theme.DarkGrey
-import com.gdd.drakessudoku.ui.theme.DrakesSudokuTheme
-import com.gdd.drakessudoku.ui.theme.Gold
-import com.gdd.drakessudoku.ui.theme.MathBlue
-import com.gdd.drakessudoku.ui.theme.NeonGreen
-import com.gdd.drakessudoku.ui.theme.Purple40
-import com.gdd.drakessudoku.utils.GridSet
+import com.gdd.drakessudoku.ui.theme.*
+import com.gdd.drakessudoku.utils.getGridSet
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,15 +65,6 @@ fun DrakesSudokuApp() {
     }
 }
 
-enum class AppDestinations(
-    val label: String,
-    val icon: ImageVector,
-) {
-    HOME("Home", Icons.Default.Home),
-    FAVORITES("Favorites", Icons.Default.Favorite),
-    PROFILE("Profile", Icons.Default.AccountBox),
-}
-
 @Composable
 fun AppCore(modifier: Modifier = Modifier) {
 
@@ -108,8 +81,8 @@ fun AppCore(modifier: Modifier = Modifier) {
     val txtMod9 = Modifier.padding(horizontal = 5.dp, vertical = 1.dp)
 
 
-    val numbers = mutableListOf(1,2,3,4,5,6,7,8,9)
-    val tmpNums = mutableListOf(1,2,3,4,5,6,7,8,9)
+    val numbers = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val tmpNums = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     val row2Tmp = mutableListOf(0)
     val row1 = mutableListOf(seed)
     val col1 = mutableListOf(seed)
@@ -147,17 +120,17 @@ fun AppCore(modifier: Modifier = Modifier) {
     }
 
     // var possibleSize = One2.three.size
-    var possibleSize = GridSet(row1[0], row1[1], row1[2]).size
+    var possibleSize = getGridSet(row1[0], row1[1], row1[2]).size
     val grid1Seed = (0..possibleSize).random()
     val grid2Seed = (0..possibleSize).random()
 
     // val grid1Set = One2.three[grid1Seed].toString()
-    val grid1Set = GridSet(row1[0], row1[1], row1[2])[grid1Seed].toString()
-    val grid2Set = GridSet(row1[3], row1[4], row1[5])[grid1Seed].toString()
+    val grid1Set = getGridSet(row1[0], row1[1], row1[2])[grid1Seed].toString()
+    val grid2Set = getGridSet(row1[3], row1[4], row1[5])[grid1Seed].toString()
     val grid1List = mutableListOf(0)
 
     grid1Set.forEach { char -> grid1List.add(char.digitToInt()) }
-    if (grid1List.contains(0)){
+    if (grid1List.contains(0)) {
         grid1List.remove(0)
     }
 
@@ -200,9 +173,6 @@ fun AppCore(modifier: Modifier = Modifier) {
         // }
         */
 
-
-
-
     /* grid1.add(seed)     // grid1[0]
     grid1.add(row1[1])  // grid1[1]
     grid1.add(row1[2])  // grid1[2]
@@ -224,7 +194,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     // grid1.add(grid1List[6])  // grid1[6]
     // grid1.add(grid1List[7])  // grid1[7]
     // grid1.add(grid1List[8])  // grid1[8]
-
 
 
     Column(modifier = modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -425,6 +394,15 @@ fun AppCore(modifier: Modifier = Modifier) {
     }
 
 } // End of AppCore
+
+enum class AppDestinations(
+    val label: String,
+    val icon: ImageVector,
+) {
+    HOME("Home", Icons.Default.Home),
+    FAVORITES("Favorites", Icons.Default.Favorite),
+    PROFILE("Profile", Icons.Default.AccountBox),
+}
 
 @Preview(showBackground = true)
 @Composable
