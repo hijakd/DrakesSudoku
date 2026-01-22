@@ -254,22 +254,6 @@ fun selectXValue(
         }
     }
     xVal = nums.first()
-    /* while (
-        xVal != coord01.value &&
-        xVal != coord02.value &&
-        xVal != coord03.value &&
-        xVal != coord04.value &&
-        xVal != coord05.value &&
-        xVal != coord06.value &&
-        xVal != coord07.value &&
-        xVal != coord08.value &&
-        xVal != coord09.value &&
-        xVal != coord10.value &&
-        xVal != coord11.value &&
-        xVal < 10
-    ) {
-        xVal++
-    } */
     return xVal
 }
 

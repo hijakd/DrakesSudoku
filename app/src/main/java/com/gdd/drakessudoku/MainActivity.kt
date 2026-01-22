@@ -387,12 +387,14 @@ fun AppCore(modifier: Modifier = Modifier) {
         hidden = false
     )
     shuffled.remove(x2y3.value)
+    ResetShuffled(slice1, shuffled)
+    FilterList(slice1, x1y4, x1y5, x1y6)
 
     /* x2y4 - Grid4 MiddleLeft */
     val x2y4 = GridCell(
         xPosition = 2,
         yPosition = 4,
-        value = findXValue(shuffled, tmpSlice, x2y1, x2y2, x2y3),
+        value = findXValue(slice1, tmpSlice, x2y1, x2y2, x2y3),
         txtColour = Blue,
         hidden = false
     )
@@ -402,7 +404,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y5 = GridCell(
         xPosition = 2,
         yPosition = 5,
-        value = findXValue(shuffled, tmpSlice, x2y1, x2y2, x2y3, x2y4),
+        value = findXValue(slice1, tmpSlice, x2y1, x2y2, x2y3, x2y4),
         txtColour = Blue,
         hidden = false
     )
@@ -412,16 +414,18 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y6 = GridCell(
         xPosition = 2,
         yPosition = 6,
-        value = 0,
+        value = findXValue(slice1, tmpSlice, x2y1, x2y2, x2y3, x2y4, x2y5),
         txtColour = Blue,
         hidden = false
     )
+    shuffled.remove(x2y6.value)
+    FilterList(shuffled, x2y1, x2y2, x2y3, x2y4, x2y5, x2y6)
 
     /* x2y7 - Grid7 BottomLeft */
     val x2y7 = GridCell(
         xPosition = 2,
         yPosition = 7,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x1y7, x1y8, x1y9),
         txtColour = Purple40,
         hidden = false
     )
@@ -430,7 +434,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y8 = GridCell(
         xPosition = 2,
         yPosition = 8,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x1y7, x1y8, x1y9, x2y7),
         txtColour = Purple40,
         hidden = false
     )
@@ -439,181 +443,213 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y9 = GridCell(
         xPosition = 2,
         yPosition = 9,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x1y7, x1y8, x1y9, x2y7, x2y8),
         txtColour = Purple40,
         hidden = false
     )
+
+    ResetShuffled(shuffled, numbers)
+    ResetShuffled(slice1, shuffled)
+    FilterList(slice1, x1y1, x1y2, x1y3, x2y1, x2y2, x2y3, x3y1, x3y2)
 
     /* row 03 */
     /* x3y3 - Grid1 TopLeft */
     val x3y3 = GridCell(
         xPosition = 3,
         yPosition = 3,
-        value = 0,
+        value = slice1.first(),
         txtColour = Black,
         hidden = false
     )
+    FilterList(shuffled, x3y1, x3y2, x3y3)
 
     /* x4y3 - Grid2 TopCenter */
     val x4y3 = GridCell(
         xPosition = 4,
         yPosition = 3,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x4y1, x4y2),
         txtColour = Red,
         hidden = false
     )
+    shuffled.remove(x4y3.value)
 
     /* x5y3 - Grid2 TopCenter */
     val x5y3 = GridCell(
         xPosition = 5,
         yPosition = 3,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x5y1, x5y2),
         txtColour = Red,
         hidden = false
     )
+    shuffled.remove(x5y3.value)
 
     /* x6y3 - Grid2 TopCenter */
     val x6y3 = GridCell(
         xPosition = 6,
         yPosition = 3,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x6y1, x6y2),
         txtColour = Red,
         hidden = false
     )
+    shuffled.remove(x6y3.value)
 
     /* x7y3 - Grid3 TopRight */
     val x7y3 = GridCell(
         xPosition = 7,
         yPosition = 3,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x7y1, x7y2),
         txtColour = NeonGreen,
         hidden = false
     )
+    shuffled.remove(x7y3.value)
 
     /* x8y3 - Grid3 TopRight */
     val x8y3 = GridCell(
         xPosition = 8,
         yPosition = 3,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x8y1, x8y2),
         txtColour = NeonGreen,
         hidden = false
     )
+    shuffled.remove(x8y3.value)
 
     /* x9y3 - Grid3 TopRight */
     val x9y3 = GridCell(
         xPosition = 9,
         yPosition = 3,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x9y1, x9y2),
         txtColour = NeonGreen,
         hidden = false
     )
+
+    ResetShuffled(shuffled, numbers)
+    // FilterList(shuffled, x3y1, x3y2, x3y3)
+    ResetShuffled(slice1, shuffled)
+    FilterList(slice1, x1y4, x1y5, x1y6, x2y4, x2y5, x2y6)
 
     /* column 03 */
     /* x3y4 - Grid4 MiddleLeft */
     val x3y4 = GridCell(
         xPosition = 3,
         yPosition = 4,
-        value = 0,
+        value = findXValue(slice1, tmpSlice, x3y1, x3y2, x3y3),
         txtColour = Blue,
         hidden = false
     )
+    slice1.remove(x3y4.value)
 
     /* x3y5 - Grid4 MiddleLeft */
     val x3y5 = GridCell(
         xPosition = 3,
         yPosition = 5,
-        value = 0,
+        value = findXValue(slice1, tmpSlice, x3y1, x3y2, x3y3),
         txtColour = Blue,
         hidden = false
     )
+    slice1.remove(x3y5.value)
 
     /* x3y6 - Grid4 MiddleLeft */
     val x3y6 = GridCell(
         xPosition = 3,
         yPosition = 6,
-        value = 0,
+        value = findXValue(slice1, tmpSlice, x3y1, x3y2, x3y3),
         txtColour = Blue,
         hidden = false
     )
+
+    ResetShuffled(slice2, shuffled)
+    FilterList(slice2, x1y7, x1y8, x1y9, x2y7, x2y8, x2y9)
 
     /* x3y7 - Grid7 BottomLeft */
     val x3y7 = GridCell(
         xPosition = 3,
         yPosition = 7,
-        value = 0,
+        value = findXValue(slice2, tmpSlice, x3y1, x3y2, x3y3, x3y4, x3y5, x3y6),
         txtColour = Purple40,
         hidden = false
     )
+    slice2.remove(x3y7.value)
 
     /* x3y8 - Grid7 BottomLeft */
     val x3y8 = GridCell(
         xPosition = 3,
         yPosition = 8,
-        value = 0,
+        value = findXValue(slice2, tmpSlice, x3y1, x3y2, x3y3, x3y4, x3y5, x3y6),
         txtColour = Purple40,
         hidden = false
     )
+    slice2.remove(x3y8.value)
 
     /* x3y9 - Grid7 BottomLeft */
     val x3y9 = GridCell(
         xPosition = 3,
         yPosition = 9,
-        value = 0,
+        value = findXValue(slice2, tmpSlice, x3y1, x3y2, x3y3, x3y4, x3y5, x3y6),
         txtColour = Purple40,
         hidden = false
     )
 
+    ResetShuffled(shuffled, numbers)
+
     /* row 04 */
+    // findXValue(shuffled, tmpSlice, x4y1, x4y2, x4y3/* , x3y4, x3y5, x3y6 */)
     /* x4y4 - Grid5 Center */
     val x4y4 = GridCell(
         xPosition = 4,
         yPosition = 4,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x1y4, x2y4, x3y4, x4y1, x4y2, x4y3),
         txtColour = Gold,
         hidden = false
     )
+    shuffled.remove(x4y4.value)
 
     /* x5y4 - Grid5 Center */
     val x5y4 = GridCell(
         xPosition = 5,
         yPosition = 4,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x1y4, x2y4, x3y4, x5y1, x5y2, x5y3),
         txtColour = Gold,
         hidden = false
     )
+    shuffled.remove(x5y4.value)
 
     /* x6y4 - Grid5 Center */
     val x6y4 = GridCell(
         xPosition = 6,
         yPosition = 4,
-        value = 0,
+        value = findXValue(shuffled, tmpSlice, x1y4, x2y4, x3y4, x6y1, x6y2, x6y3),
         txtColour = Gold,
         hidden = false
     )
+
+    ResetShuffled(slice1, numbers)
+    FilterList(slice1, x1y4, x2y4, x3y4, x4y4, x5y4, x6y4)
 
     /* x7y4 - Grid6 MiddleRight */
     val x7y4 = GridCell(
         xPosition = 7,
         yPosition = 4,
-        value = 0,
+        value = findXValue(slice1, tmpSlice, x7y1, x7y2, x7y3),
         txtColour = DarkGrey,
         hidden = false
     )
+    slice1.remove(x7y4.value)
 
     /* x8y4 - Grid6 MiddleRight */
     val x8y4 = GridCell(
         xPosition = 8,
         yPosition = 4,
-        value = 0,
+        value = findXValue(slice1, tmpSlice, x8y1, x8y2, x8y3),
         txtColour = DarkGrey,
         hidden = false
     )
+    slice1.remove(x8y4.value)
 
     /* x9y4 - Grid6 MiddleRight */
     val x9y4 = GridCell(
         xPosition = 9,
         yPosition = 4,
-        value = 0,
+        value = findXValue(slice1, tmpSlice, x9y1, x9y2, x9y3),
         txtColour = DarkGrey,
         hidden = false
     )
