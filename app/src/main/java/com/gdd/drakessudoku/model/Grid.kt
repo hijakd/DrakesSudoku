@@ -9,6 +9,19 @@ data class Grid(
     val x3y2: GridCell,
     val x1y3: GridCell,
     val x2y3: GridCell,
+    val x3y3: GridCell
+)
+
+/*
+data class Grid(
+    val x1y1: GridCell,
+    val x2y1: GridCell,
+    val x3y1: GridCell,
+    val x1y2: GridCell,
+    val x2y2: GridCell,
+    val x3y2: GridCell,
+    val x1y3: GridCell,
+    val x2y3: GridCell,
     val x3y3: GridCell,
     val x4y1: GridCell,
     val x5y1: GridCell,
@@ -82,4 +95,4 @@ data class Grid(
     val x7y9: GridCell,
     val x8y9: GridCell,
     val x9y9: GridCell
-)
+)*/

@@ -1,9 +1,10 @@
 package com.gdd.drakessudoku.utils
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import com.gdd.drakessudoku.model.GridCell
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -19,9 +20,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -39,9 +40,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -61,9 +62,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -85,9 +86,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -111,7 +112,7 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
 @Composable
 fun selectXValue(
@@ -125,23 +126,27 @@ fun selectXValue(
     coord08: GridCell
 ): Int {
     var xVal = 0
-    while (
-        xVal != coord01.value &&
-        xVal != coord02.value &&
-        xVal != coord03.value &&
-        xVal != coord04.value &&
-        xVal != coord05.value &&
-        xVal != coord06.value &&
-        xVal != coord07.value &&
-        xVal != coord08.value &&
-        xVal < 10
-    ) {
-        xVal++
+    val nums = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+    nums.forEach {
+        if (it == coord01.value ||
+            it == coord02.value ||
+            it == coord03.value ||
+            it == coord04.value ||
+            it == coord05.value ||
+            it == coord06.value ||
+            it == coord07.value ||
+            it == coord08.value
+        ) {
+            nums.remove(it)
+        }
     }
+    Log.d("cactus", "selectXValue count = ($nums.size)")
+    xVal = nums.first()
     return xVal
 }
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -171,7 +176,7 @@ fun selectXValue(
         }
     }
     xVal = nums.first()
-    /*     // while (
+        // while (
         //     xVal != coord01.value &&
         //     xVal != coord02.value &&
         //     xVal != coord03.value &&
@@ -184,11 +189,11 @@ fun selectXValue(
         //     xVal < 10
         // ) {
         //     xVal++
-        // } */
+        // }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -218,7 +223,7 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
 @Composable
 fun selectXValue(
@@ -253,11 +258,12 @@ fun selectXValue(
             nums.remove(it)
         }
     }
+    Log.d("cactus", "selectXValue count = ($nums.size)")
     xVal = nums.first()
     return xVal
 }
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -291,9 +297,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -329,9 +335,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -369,9 +375,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
-@Composable
+/* @Composable
 fun selectXValue(
     coord01: GridCell,
     coord02: GridCell,
@@ -411,8 +417,9 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+} */
 
+/*
 @Composable
 fun selectXValue(
     coord01: GridCell,
@@ -459,4 +466,4 @@ fun selectXValue(
         xVal++
     }
     return xVal
-}
+}*/

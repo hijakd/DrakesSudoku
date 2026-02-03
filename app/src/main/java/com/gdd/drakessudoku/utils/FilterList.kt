@@ -7,6 +7,21 @@ import com.gdd.drakessudoku.model.GridCell
  * @param[inputList] list of values to be filtered
  * @param cell01 1st value to be removed from the list
  * @param cell02 2nd value to be removed from the list
+ * */
+@Composable
+fun FilterList(
+    inputList: MutableList<Int>,
+    cell01: GridCell,
+    cell02: GridCell
+) {
+    inputList.remove(cell01.value)
+    inputList.remove(cell02.value)
+}
+
+/**
+ * @param[inputList] list of values to be filtered
+ * @param cell01 1st value to be removed from the list
+ * @param cell02 2nd value to be removed from the list
  * @param cell03 3rd value to be removed from the list
  * */
 @Composable

@@ -1,6 +1,7 @@
 package com.gdd.drakessudoku
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -109,7 +110,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     tmpSlice.clear()
 
 
-    /* row 01 */
+    /* step 01 - row 01 */
     /* x1y1 -> x9y1 */
     /* x1y1 - Grid1 TopLeft */
     val x1y1 = GridCell(
@@ -206,7 +207,7 @@ fun AppCore(modifier: Modifier = Modifier) {
         shuffled.shuffle()
     }
 
-    /* column 01 */
+    /* step 02 - column 01 */
     /* x1y2 -> x1y9 */
     /* x1y2 - Grid1 TopLeft */
     val x1y2 = GridCell(
@@ -288,14 +289,14 @@ fun AppCore(modifier: Modifier = Modifier) {
     )
 
     ResetShuffled(shuffled, numbers)
+    shuffled.remove(x1y2.value)
 
-
-    /* row 02 */
+    /* step 03 - row 02 */
     /* x2y2 - Grid1 TopLeft */
     val x2y2 = GridCell(
         xPosition = 2,
         yPosition = 2,
-        value = findXValue(shuffled, tmpSlice, x1y1, x1y2, x1y3, x2y1, x3y1),
+        value = findXValue(shuffled, tmpSlice, x1y1, x1y3, x2y1, x3y1),
         txtColour = Black,
         hidden = false
     )
@@ -305,7 +306,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y2 = GridCell(
         xPosition = 3,
         yPosition = 2,
-        value = findXValue(shuffled, tmpSlice, x1y1, x1y2, x1y3, x2y1, x2y2, x3y1),
+        value = findXValue(shuffled, tmpSlice, x1y1, x1y3, x2y1, x3y1),
         txtColour = Black,
         hidden = false
     )
@@ -315,7 +316,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y2 = GridCell(
         xPosition = 4,
         yPosition = 2,
-        value = findXValue(shuffled, tmpSlice, x1y2, x2y2, x3y2, x4y1, x5y1, x6y1),
+        value = findXValue(shuffled, tmpSlice, x4y1, x5y1, x6y1),
         txtColour = Red,
         hidden = false
     )
@@ -325,7 +326,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y2 = GridCell(
         xPosition = 5,
         yPosition = 2,
-        value = findXValue(shuffled, tmpSlice, x1y2, x2y2, x3y2, x4y1, x4y2, x5y1, x6y1),
+        value = findXValue(shuffled, tmpSlice, x4y1, x5y1, x6y1),
         txtColour = Red,
         hidden = false
     )
@@ -335,12 +336,12 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y2 = GridCell(
         xPosition = 6,
         yPosition = 2,
-        value = findXValue(shuffled, tmpSlice, x1y2, x2y2, x3y2, x4y1, x4y2, x5y1, x5y2, x6y1),
+        value = findXValue(shuffled, tmpSlice, x4y1, x5y1, x6y1),
         txtColour = Red,
         hidden = false
     )
     shuffled.remove(x6y2.value)
-    FilterList(shuffled, x1y2, x2y2, x3y2, x4y2, x5y2, x6y2)
+    // FilterList(shuffled, x1y2, x2y2, x3y2, x4y2, x5y2, x6y2)
 
     /* x7y2 - Grid3 TopRight */
     val x7y2 = GridCell(
@@ -356,7 +357,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y2 = GridCell(
         xPosition = 8,
         yPosition = 2,
-        value = findXValue(shuffled, tmpSlice, x7y1, x7y2, x8y1, x9y1),
+        value = findXValue(shuffled, tmpSlice, x7y1, x8y1, x9y1),
         txtColour = NeonGreen,
         hidden = false
     )
@@ -367,8 +368,10 @@ fun AppCore(modifier: Modifier = Modifier) {
         xPosition = 9,
         yPosition = 2,
         value = if (shuffled.isEmpty()) {
+            Log.d("cactus", "step 03 - row 02: selecting row09 X")
             selectXValue(x1y2, x2y2, x3y2, x4y2, x5y2, x6y2, x7y1, x7y2, x8y1, x8y2, x9y1)
         } else {
+            Log.d("cactus", "step 03 - row 02: finding row09 X")
             findXValue(shuffled, tmpSlice, x7y1, x7y2, x8y1, x9y1)
         },
         txtColour = NeonGreen,
@@ -376,17 +379,19 @@ fun AppCore(modifier: Modifier = Modifier) {
     )
 
     ResetShuffled(shuffled, numbers)
+    FilterList(shuffled, x2y1, x2y2)
 
-    /* column 02 */
+    /* step 04 - column 02 */
     /* x2y3 - Grid1 TopLeft */
     val x2y3 = GridCell(
         xPosition = 2,
         yPosition = 3,
-        value = findXValue(shuffled, tmpSlice, x1y1, x1y2, x1y3, x2y1, x2y2, x3y1, x3y2),
+        value = findXValue(shuffled, tmpSlice, x1y1, x1y2, x1y3, x3y1, x3y2),
         txtColour = Black,
         hidden = false
     )
     shuffled.remove(x2y3.value)
+
     ResetShuffled(slice1, shuffled)
     FilterList(slice1, x1y4, x1y5, x1y6)
 
@@ -394,21 +399,23 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y4 = GridCell(
         xPosition = 2,
         yPosition = 4,
-        value = findXValue(slice1, tmpSlice, x2y1, x2y2, x2y3),
+        // value = findXValue(slice1, tmpSlice, x2y1, x2y2, x2y3),
+        value = slice1.first(),
         txtColour = Blue,
         hidden = false
     )
-    shuffled.remove(x2y4.value)
+    slice1.remove(x2y4.value)
 
     /* x2y5 - Grid4 MiddleLeft */
     val x2y5 = GridCell(
         xPosition = 2,
         yPosition = 5,
-        value = findXValue(slice1, tmpSlice, x2y1, x2y2, x2y3, x2y4),
+        // value = findXValue(slice1, tmpSlice, x2y1, x2y2, x2y3, x2y4),
+        value = slice1.first(),
         txtColour = Blue,
         hidden = false
     )
-    shuffled.remove(x2y5.value)
+    slice1.remove(x2y5.value)
 
     /* x2y6 - Grid4 MiddleLeft */
     val x2y6 = GridCell(
@@ -450,9 +457,10 @@ fun AppCore(modifier: Modifier = Modifier) {
 
     ResetShuffled(shuffled, numbers)
     ResetShuffled(slice1, shuffled)
+    /* eliminate previously assigned values of Grid01 */
     FilterList(slice1, x1y1, x1y2, x1y3, x2y1, x2y2, x2y3, x3y1, x3y2)
 
-    /* row 03 */
+    /* step 05 - row 03 */
     /* x3y3 - Grid1 TopLeft */
     val x3y3 = GridCell(
         xPosition = 3,
@@ -467,7 +475,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y3 = GridCell(
         xPosition = 4,
         yPosition = 3,
-        value = findXValue(shuffled, tmpSlice, x4y1, x4y2),
+        value = findXValue(shuffled, tmpSlice, x4y1, x4y2, x5y1, x5y2, x6y1, x6y2),
         txtColour = Red,
         hidden = false
     )
@@ -477,7 +485,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y3 = GridCell(
         xPosition = 5,
         yPosition = 3,
-        value = findXValue(shuffled, tmpSlice, x5y1, x5y2),
+        value = findXValue(shuffled, tmpSlice, x4y1, x4y2, x5y1, x5y2, x6y1, x6y2),
         txtColour = Red,
         hidden = false
     )
@@ -487,7 +495,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y3 = GridCell(
         xPosition = 6,
         yPosition = 3,
-        value = findXValue(shuffled, tmpSlice, x6y1, x6y2),
+        value = findXValue(shuffled, tmpSlice, x4y1, x4y2, x5y1, x5y2, x6y1, x6y2),
         txtColour = Red,
         hidden = false
     )
@@ -497,7 +505,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y3 = GridCell(
         xPosition = 7,
         yPosition = 3,
-        value = findXValue(shuffled, tmpSlice, x7y1, x7y2),
+        value = findXValue(shuffled, tmpSlice, x7y1, x7y2, x8y1, x8y2, x9y1, x9y2),
         txtColour = NeonGreen,
         hidden = false
     )
@@ -507,7 +515,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y3 = GridCell(
         xPosition = 8,
         yPosition = 3,
-        value = findXValue(shuffled, tmpSlice, x8y1, x8y2),
+        value = findXValue(shuffled, tmpSlice, x7y1, x7y2, x8y1, x8y2, x9y1, x9y2),
         txtColour = NeonGreen,
         hidden = false
     )
@@ -517,7 +525,14 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y3 = GridCell(
         xPosition = 9,
         yPosition = 3,
-        value = findXValue(shuffled, tmpSlice, x9y1, x9y2),
+        // value = findXValue(shuffled, tmpSlice, x7y1, x7y2, x8y1, x8y2, x9y1, x9y2),
+        value = if (shuffled.isEmpty()){
+            Log.d("cactus", "step 05 - row 03: selecting col09 X")
+            selectXValue(x7y1, x7y2, x7y3, x8y1, x8y2, x8y3, x9y1, x9y2)
+        } else {
+            Log.d("cactus", "step 05 - row 03: finding col09 X")
+            findXValue(shuffled, tmpSlice, x7y1, x7y2, x8y1, x8y2, x9y1, x9y2)
+        },
         txtColour = NeonGreen,
         hidden = false
     )
@@ -527,7 +542,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     ResetShuffled(slice1, shuffled)
     FilterList(slice1, x1y4, x1y5, x1y6, x2y4, x2y5, x2y6)
 
-    /* column 03 */
+    /* step 06 - column 03 */
     /* x3y4 - Grid4 MiddleLeft */
     val x3y4 = GridCell(
         xPosition = 3,
@@ -552,7 +567,14 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y6 = GridCell(
         xPosition = 3,
         yPosition = 6,
-        value = findXValue(slice1, tmpSlice, x3y1, x3y2, x3y3),
+        // value = findXValue(slice1, tmpSlice, x3y1, x3y2, x3y3),
+        value = if (shuffled.isEmpty()) {
+            Log.d("cactus", "step 06 - col 03: selecting row06 X")
+            selectXValue(x1y4, x1y5, x1y6, x2y4, x2y5, x2y6, x3y1, x3y2, x3y3, x3y4, x3y5)
+        } else {
+            Log.d("cactus", "step 06 - col 03: finding row06 X")
+            findXValue(slice1, tmpSlice, x3y1, x3y2, x3y3)
+        },
         txtColour = Blue,
         hidden = false
     )
@@ -584,20 +606,27 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y9 = GridCell(
         xPosition = 3,
         yPosition = 9,
-        value = findXValue(slice2, tmpSlice, x3y1, x3y2, x3y3, x3y4, x3y5, x3y6),
+        // value = findXValue(slice2, tmpSlice, x3y1, x3y2, x3y3, x3y4, x3y5, x3y6),
+        value = if (slice2.isEmpty()){
+            Log.d("cactus", "step 06 - col 03: selecting row09 X")
+            selectXValue(x1y7, x1y8, x1y9, x2y7, x2y8, x2y9, x3y7, x3y8)
+        } else {
+            Log.d("cactus", "step 06 - col 03: finding row09 X")
+            findXValue(slice2, tmpSlice, x3y1, x3y2, x3y3, x3y4, x3y5, x3y6)
+        },
         txtColour = Purple40,
         hidden = false
     )
 
     ResetShuffled(shuffled, numbers)
+    FilterList(shuffled, x1y4, x2y4, x3y4)
 
-    /* row 04 */
-    // findXValue(shuffled, tmpSlice, x4y1, x4y2, x4y3/* , x3y4, x3y5, x3y6 */)
+    /* step 07 - row 04 */
     /* x4y4 - Grid5 Center */
     val x4y4 = GridCell(
         xPosition = 4,
         yPosition = 4,
-        value = findXValue(shuffled, tmpSlice, x1y4, x2y4, x3y4, x4y1, x4y2, x4y3),
+        value = findXValue(shuffled, tmpSlice, x4y1, x4y2, x4y3),
         txtColour = Gold,
         hidden = false
     )
@@ -607,7 +636,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y4 = GridCell(
         xPosition = 5,
         yPosition = 4,
-        value = findXValue(shuffled, tmpSlice, x1y4, x2y4, x3y4, x5y1, x5y2, x5y3),
+        value = findXValue(shuffled, tmpSlice, x5y1, x5y2, x5y3),
         txtColour = Gold,
         hidden = false
     )
@@ -617,7 +646,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y4 = GridCell(
         xPosition = 6,
         yPosition = 4,
-        value = findXValue(shuffled, tmpSlice, x1y4, x2y4, x3y4, x6y1, x6y2, x6y3),
+        value = findXValue(shuffled, tmpSlice, x6y1, x6y2, x6y3),
         txtColour = Gold,
         hidden = false
     )
@@ -755,12 +784,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y5 = GridCell(
         xPosition = 9,
         yPosition = 5,
-        value = findXValue(shuffled, tmpSlice, x7y4, x8y4, x9y1, x9y2, x9y3, x9y4),
+        // value = findXValue(shuffled, tmpSlice, x7y4, x8y4, x9y1, x9y2, x9y3, x9y4),
+        value = 0,
         txtColour = DarkGrey,
         hidden = false
     )
 
-    /* column 05 */
+    /* step 08 - column 05 */
     ResetShuffled(shuffled, numbers)
     FilterList(shuffled, x5y1, x5y2, x5y3, x5y4, x5y5)
 
@@ -798,12 +828,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y9 = GridCell(
         xPosition = 5,
         yPosition = 9,
-        value = findXValue(shuffled, tmpSlice, x1y9, x2y9, x3y9, x4y9),
+        // value = findXValue(shuffled, tmpSlice, x1y9, x2y9, x3y9, x4y9),
+        value = 0,
         txtColour = MathBlue,
         hidden = false
     )
 
-    /* row 06 */
+    /* step 09 - row 06 */
     ResetShuffled(shuffled, numbers)
     FilterList(shuffled, x1y6, x2y6, x3y6, x4y6, x5y6)
 
@@ -841,12 +872,13 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y6 = GridCell(
         xPosition = 8,
         yPosition = 6,
-        value = findXValue(shuffled, tmpSlice, x7y4, x7y5, x7y6, x8y4, x8y5, x8y6, x9y1, x9y2, x9y3, x9y4, x9y5),
+        // value = findXValue(shuffled, tmpSlice, x7y4, x7y5, x7y6, x8y4, x8y5, x8y6, x9y1, x9y2, x9y3, x9y4, x9y5),
+        value = 0,
         txtColour = DarkGrey,
         hidden = false
     )
 
-    /* column 06 */
+    /* step 10 - column 06 */
     /* x6y7 - Grid8 BottomCenter */
     val x6y7 = GridCell(
         xPosition = 6,
@@ -874,7 +906,7 @@ fun AppCore(modifier: Modifier = Modifier) {
         hidden = false
     )
 
-    /* row 07 */
+    /* step 11 - row 07 */
     /* x7y7 - Grid9 BottomRight */
     val x7y7 = GridCell(
         xPosition = 7,
@@ -902,7 +934,7 @@ fun AppCore(modifier: Modifier = Modifier) {
         hidden = false
     )
 
-    /* column 07 */
+    /* step 12 - column 07 */
     /* x7y8 - Grid9 BottomRight */
     val x7y8 = GridCell(
         xPosition = 7,
@@ -939,7 +971,7 @@ fun AppCore(modifier: Modifier = Modifier) {
         hidden = false
     )
 
-    /* row 08 */
+    /* step 13 - row 08 */
     /* x8y9 - Grid9 BottomRight */
     val x8y9 = GridCell(
         xPosition = 8,
@@ -1124,6 +1156,18 @@ private fun randomFromSlice3(
  * */
 @Composable
 fun ResetShuffled(inputList: MutableList<Int>, numbers: MutableList<Int>) {
+    inputList.clear()
+    numbers.forEach { inputList.add(it) }
+    inputList.shuffle()
+}
+
+/**
+ * The input list is "reset" using list.clear() before being populated from the source list.
+ * @param[inputList] list to be reset (cleared then shuffled)
+ * */
+@Composable
+fun ResetShuffled(inputList: MutableList<Int>) {
+    val numbers = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     inputList.clear()
     numbers.forEach { inputList.add(it) }
     inputList.shuffle()
