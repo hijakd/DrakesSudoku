@@ -12,6 +12,17 @@ data class Grid(
     val x3y3: GridCell
 )
 
+data class GridList(
+    val x1y1: Int,
+    val x2y1: Int,
+    val x3y1: Int,
+    val x1y2: Int,
+    val x2y2: Int,
+    val x3y2: Int,
+    val x1y3: Int,
+    val x2y3: Int,
+    val x3y3: Int,
+    )
 /*
 data class Grid(
     val x1y1: GridCell,
