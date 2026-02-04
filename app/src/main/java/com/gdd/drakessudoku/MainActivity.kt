@@ -99,7 +99,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     shuffled.shuffle()
 
 
-    /* ROW 01 position values */
+    /* ROW 01 populate position values */
     val posX1y1 = mutableListOf(shuffled[0])
     val posX2y1 = mutableListOf(shuffled[1])
     val posX3y1 = mutableListOf(shuffled[2])
@@ -117,30 +117,191 @@ fun AppCore(modifier: Modifier = Modifier) {
     }
 
 
-    /* ROW 02 position values */
+    /* ROW 02 populate possible values */
     val posX1y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y2.shuffle()
+    val posX2y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y2.shuffle()
+    val posX3y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y2.shuffle()
+    val posX4y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y2.shuffle()
+    val posX5y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y2.shuffle()
+    val posX6y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y2.shuffle()
+    val posX7y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y2.shuffle()
+    val posX8y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y2.shuffle()
+    val posX9y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y2.shuffle()
+
+
+    /* ROW 03 populate possible values */
+    val posX1y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX1y3.shuffle()
+    val posX2y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y3.shuffle()
+    val posX3y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y3.shuffle()
+    val posX4y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y3.shuffle()
+    val posX5y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y3.shuffle()
+    val posX6y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y3.shuffle()
+    val posX7y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y3.shuffle()
+    val posX8y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y3.shuffle()
+    val posX9y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y3.shuffle()
+
+
+    /* ROW 04 populate possible values */
+    val posX1y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX1y4.shuffle()
+    val posX2y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y4.shuffle()
+    val posX3y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y4.shuffle()
+    val posX4y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y4.shuffle()
+    val posX5y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y4.shuffle()
+    val posX6y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y4.shuffle()
+    val posX7y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y4.shuffle()
+    val posX8y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y4.shuffle()
+    val posX9y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y4.shuffle()
+
+
+    /* ROW 05 populate possible values */
+    val posX1y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX1y5.shuffle()
+    val posX2y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y5.shuffle()
+    val posX3y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y5.shuffle()
+    val posX4y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y5.shuffle()
+    val posX5y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y5.shuffle()
+    val posX6y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y5.shuffle()
+    val posX7y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y5.shuffle()
+    val posX8y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y5.shuffle()
+    val posX9y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y5.shuffle()
+
+    
+    /* ROW 06 populate possible values */
+    val posX1y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX1y6.shuffle()
+    val posX2y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y6.shuffle()
+    val posX3y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y6.shuffle()
+    val posX4y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y6.shuffle()
+    val posX5y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y6.shuffle()
+    val posX6y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y6.shuffle()
+    val posX7y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y6.shuffle()
+    val posX8y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y6.shuffle()
+    val posX9y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y6.shuffle()
+
+
+    /* ROW 07 populate possible values */
+    val posX1y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX1y7.shuffle()
+    val posX2y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y7.shuffle()
+    val posX3y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y7.shuffle()
+    val posX4y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y7.shuffle()
+    val posX5y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y7.shuffle()
+    val posX6y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y7.shuffle()
+    val posX7y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y7.shuffle()
+    val posX8y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y7.shuffle()
+    val posX9y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y7.shuffle()
+
+
+    /* ROW 08 populate possible values */
+    val posX1y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX1y8.shuffle()
+    val posX2y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y8.shuffle()
+    val posX3y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y8.shuffle()
+    val posX4y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y8.shuffle()
+    val posX5y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y8.shuffle()
+    val posX6y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y8.shuffle()
+    val posX7y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y8.shuffle()
+    val posX8y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y8.shuffle()
+    val posX9y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y8.shuffle()
+
+
+    /* ROW 09 populate possible values */
+    val posX1y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX1y9.shuffle()
+    val posX2y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX2y9.shuffle()
+    val posX3y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX3y9.shuffle()
+    val posX4y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX4y9.shuffle()
+    val posX5y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX5y9.shuffle()
+    val posX6y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX6y9.shuffle()
+    val posX7y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX7y9.shuffle()
+    val posX8y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX8y9.shuffle()
+    val posX9y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    posX9y9.shuffle()
+
+
+
+    /* ROW 02 eliminate values */
     posX1y2.remove(posX1y1.first())
     posX1y2.remove(posX2y1.first())
     posX1y2.remove(posX3y1.first())
 
-    val posX2y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y2.shuffle()
     posX2y2.remove(posX1y1.first())
     posX2y2.remove(posX1y2.first())
     posX2y2.remove(posX2y1.first())
     posX2y2.remove(posX3y1.first())
 
-    val posX3y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y2.shuffle()
-    posX3y2.remove(posX1y1.first())
     posX3y2.remove(posX1y2.first())
     posX3y2.remove(posX2y1.first())
     posX3y2.remove(posX2y2.first())
     posX3y2.remove(posX3y1.first())
+    posX3y2.remove(posX1y1.first())
 
-    val posX4y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y2.shuffle()
     posX4y2.remove(posX1y2.first())
     posX4y2.remove(posX2y2.first())
     posX4y2.remove(posX3y2.first())
@@ -148,8 +309,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y2.remove(posX5y1.first())
     posX4y2.remove(posX6y1.first())
 
-    val posX5y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y2.shuffle()
     posX5y2.remove(posX1y2.first())
     posX5y2.remove(posX2y2.first())
     posX5y2.remove(posX3y2.first())
@@ -158,8 +317,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y2.remove(posX5y1.first())
     posX5y2.remove(posX6y1.first())
 
-    val posX6y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y2.shuffle()
     posX6y2.remove(posX1y2.first())
     posX6y2.remove(posX2y2.first())
     posX6y2.remove(posX3y2.first())
@@ -169,8 +326,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y2.remove(posX5y2.first())
     posX6y2.remove(posX6y1.first())
 
-    val posX7y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y2.shuffle()
     posX7y2.remove(posX1y2.first())
     posX7y2.remove(posX2y2.first())
     posX7y2.remove(posX3y2.first())
@@ -181,8 +336,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y2.remove(posX8y1.first())
     posX7y2.remove(posX9y1.first())
 
-    val posX8y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y2.shuffle()
     posX8y2.remove(posX1y2.first())
     posX8y2.remove(posX2y2.first())
     posX8y2.remove(posX3y2.first())
@@ -194,8 +347,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y2.remove(posX8y1.first())
     posX8y2.remove(posX9y1.first())
 
-    val posX9y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y2.shuffle()
     posX9y2.remove(posX1y2.first())
     posX9y2.remove(posX2y2.first())
     posX9y2.remove(posX3y2.first())
@@ -208,10 +359,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y2.remove(posX8y2.first())
     posX9y2.remove(posX9y1.first())
 
-
-    /* ROW 03 position values */
-    val posX1y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX1y3.shuffle()
+    /* ROW 03 eliminate values */
     posX1y3.remove(posX1y1.first())
     posX1y3.remove(posX1y2.first())
     posX1y3.remove(posX2y1.first())
@@ -219,8 +367,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX1y3.remove(posX3y1.first())
     posX1y3.remove(posX3y2.first())
 
-    val posX2y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y3.shuffle()
     posX2y3.remove(posX1y1.first())
     posX2y3.remove(posX1y2.first())
     posX2y3.remove(posX1y3.first())
@@ -229,8 +375,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX2y3.remove(posX3y1.first())
     posX2y3.remove(posX3y2.first())
 
-    val posX3y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y3.shuffle()
     posX3y3.remove(posX1y1.first())
     posX3y3.remove(posX1y2.first())
     posX3y3.remove(posX1y3.first())
@@ -240,8 +384,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX3y3.remove(posX3y1.first())
     posX3y3.remove(posX3y2.first())
 
-    val posX4y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y3.shuffle()
     posX4y3.remove(posX1y3.first())
     posX4y3.remove(posX2y3.first())
     posX4y3.remove(posX3y3.first())
@@ -252,8 +394,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y3.remove(posX6y1.first())
     posX4y3.remove(posX6y2.first())
 
-    val posX5y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y3.shuffle()
     posX5y3.remove(posX1y3.first())
     posX5y3.remove(posX2y3.first())
     posX5y3.remove(posX3y3.first())
@@ -265,8 +405,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y3.remove(posX6y1.first())
     posX5y3.remove(posX6y2.first())
 
-    val posX6y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y3.shuffle()
     posX6y3.remove(posX1y3.first())
     posX6y3.remove(posX2y3.first())
     posX6y3.remove(posX3y3.first())
@@ -279,8 +417,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y3.remove(posX6y1.first())
     posX6y3.remove(posX6y2.first())
 
-    val posX7y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y3.shuffle()
     posX7y3.remove(posX1y3.first())
     posX7y3.remove(posX2y3.first())
     posX7y3.remove(posX3y3.first())
@@ -291,8 +427,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y3.remove(posX8y1.first())
     posX7y3.remove(posX9y1.first())
 
-    val posX8y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y3.shuffle()
     posX8y3.remove(posX1y3.first())
     posX8y3.remove(posX2y3.first())
     posX8y3.remove(posX3y3.first())
@@ -307,8 +441,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y3.remove(posX9y1.first())
     posX8y3.remove(posX9y2.first())
 
-    val posX9y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y3.shuffle()
     posX9y3.remove(posX1y3.first())
     posX9y3.remove(posX2y3.first())
     posX9y3.remove(posX3y3.first())
@@ -324,31 +456,22 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y3.remove(posX9y1.first())
     posX9y3.remove(posX9y2.first())
 
-
-    /* ROW 04 position values */
-    val posX1y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX1y4.shuffle()
+    /* ROW 04 eliminate values */
     posX1y4.remove(posX1y1.first())
     posX1y4.remove(posX1y2.first())
     posX1y4.remove(posX1y3.first())
 
-    val posX2y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y4.shuffle()
     posX2y4.remove(posX1y4.first())
     posX2y4.remove(posX2y1.first())
     posX2y4.remove(posX2y2.first())
     posX2y4.remove(posX2y3.first())
 
-    val posX3y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y4.shuffle()
     posX3y4.remove(posX1y4.first())
     posX3y4.remove(posX2y4.first())
     posX3y4.remove(posX3y1.first())
     posX3y4.remove(posX3y2.first())
     posX3y4.remove(posX3y3.first())
 
-    val posX4y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y4.shuffle()
     posX4y4.remove(posX1y4.first())
     posX4y4.remove(posX2y4.first())
     posX4y4.remove(posX3y4.first())
@@ -356,8 +479,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y4.remove(posX4y2.first())
     posX4y4.remove(posX4y3.first())
 
-    val posX5y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y4.shuffle()
     posX5y4.remove(posX1y4.first())
     posX5y4.remove(posX2y4.first())
     posX5y4.remove(posX3y4.first())
@@ -366,8 +487,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y4.remove(posX5y2.first())
     posX5y4.remove(posX5y3.first())
 
-    val posX6y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y4.shuffle()
     posX6y4.remove(posX1y4.first())
     posX6y4.remove(posX2y4.first())
     posX6y4.remove(posX3y4.first())
@@ -377,8 +496,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y4.remove(posX6y2.first())
     posX6y4.remove(posX6y3.first())
 
-    val posX7y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y4.shuffle()
     posX7y4.remove(posX1y4.first())
     posX7y4.remove(posX2y4.first())
     posX7y4.remove(posX3y4.first())
@@ -389,8 +506,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y4.remove(posX7y2.first())
     posX7y4.remove(posX7y3.first())
 
-    val posX8y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y4.shuffle()
     posX8y4.remove(posX1y4.first())
     posX8y4.remove(posX2y4.first())
     posX8y4.remove(posX3y4.first())
@@ -402,8 +517,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y4.remove(posX8y2.first())
     posX8y4.remove(posX8y3.first())
 
-    val posX9y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y4.shuffle()
     posX9y4.remove(posX1y4.first())
     posX9y4.remove(posX2y4.first())
     posX9y4.remove(posX3y4.first())
@@ -416,10 +529,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y4.remove(posX9y2.first())
     posX9y4.remove(posX9y3.first())
 
-
-    /* ROW 05 position values */
-    val posX1y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX1y5.shuffle()
+    /* ROW 05 eliminate values */
     posX1y5.remove(posX1y1.first())
     posX1y5.remove(posX1y2.first())
     posX1y5.remove(posX1y3.first())
@@ -427,8 +537,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX1y5.remove(posX2y4.first())
     posX1y5.remove(posX3y4.first())
 
-    val posX2y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y5.shuffle()
     posX2y5.remove(posX1y1.first())
     posX2y5.remove(posX1y2.first())
     posX2y5.remove(posX1y3.first())
@@ -437,8 +545,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX2y5.remove(posX2y4.first())
     posX2y5.remove(posX3y4.first())
 
-    val posX3y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y5.shuffle()
     posX3y5.remove(posX1y1.first())
     posX3y5.remove(posX1y2.first())
     posX3y5.remove(posX1y3.first())
@@ -448,8 +554,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX3y5.remove(posX2y5.first())
     posX3y5.remove(posX3y4.first())
 
-    val posX4y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y5.shuffle()
     posX4y5.remove(posX1y5.first())
     posX4y5.remove(posX2y5.first())
     posX4y5.remove(posX3y5.first())
@@ -460,8 +564,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y5.remove(posX5y4.first())
     posX4y5.remove(posX6y4.first())
 
-    val posX5y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y5.shuffle()
     posX5y5.remove(posX1y5.first())
     posX5y5.remove(posX2y5.first())
     posX5y5.remove(posX3y5.first())
@@ -473,8 +575,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y5.remove(posX5y4.first())
     posX5y5.remove(posX6y4.first())
 
-    val posX6y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y5.shuffle()
     posX6y5.remove(posX1y5.first())
     posX6y5.remove(posX2y5.first())
     posX6y5.remove(posX3y5.first())
@@ -487,8 +587,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y5.remove(posX6y3.first())
     posX6y5.remove(posX6y4.first())
 
-    val posX7y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y5.shuffle()
     posX7y5.remove(posX1y5.first())
     posX7y5.remove(posX2y5.first())
     posX7y5.remove(posX3y5.first())
@@ -502,8 +600,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y5.remove(posX8y4.first())
     posX7y5.remove(posX9y4.first())
 
-    val posX8y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y5.shuffle()
     posX8y5.remove(posX1y5.first())
     posX8y5.remove(posX2y5.first())
     posX8y5.remove(posX3y5.first())
@@ -518,8 +614,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y5.remove(posX8y4.first())
     posX8y5.remove(posX9y4.first())
 
-    val posX9y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y5.shuffle()
     posX9y5.remove(posX1y5.first())
     posX9y5.remove(posX2y5.first())
     posX9y5.remove(posX3y5.first())
@@ -535,10 +629,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y5.remove(posX9y3.first())
     posX9y5.remove(posX9y4.first())
 
-
-    /* ROW 06 position values */
-    val posX1y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX1y6.shuffle()
+    /* ROW 06 eliminate values */
     posX1y6.remove(posX1y1.first())
     posX1y6.remove(posX1y2.first())
     posX1y6.remove(posX1y3.first())
@@ -549,8 +640,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX1y6.remove(posX3y4.first())
     posX1y6.remove(posX3y5.first())
 
-    val posX2y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y6.shuffle()
     posX2y6.remove(posX1y6.first())
     posX2y6.remove(posX2y1.first())
     posX2y6.remove(posX2y2.first())
@@ -558,8 +647,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX2y6.remove(posX2y4.first())
     posX2y6.remove(posX2y5.first())
 
-    val posX3y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y6.shuffle()
     posX3y6.remove(posX1y4.first())
     posX3y6.remove(posX1y5.first())
     posX3y6.remove(posX1y6.first())
@@ -572,8 +659,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX3y6.remove(posX3y4.first())
     posX3y6.remove(posX3y5.first())
 
-    val posX4y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y6.shuffle()
     posX4y6.remove(posX1y6.first())
     posX4y6.remove(posX2y6.first())
     posX4y6.remove(posX3y6.first())
@@ -587,8 +672,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y6.remove(posX6y4.first())
     posX4y6.remove(posX6y5.first())
 
-    val posX5y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y6.shuffle()
     posX5y6.remove(posX1y6.first())
     posX5y6.remove(posX2y6.first())
     posX5y6.remove(posX3y6.first())
@@ -602,8 +685,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y6.remove(posX6y4.first())
     posX5y6.remove(posX6y5.first())
 
-    val posX6y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y6.shuffle()
     posX6y6.remove(posX1y6.first())
     posX6y6.remove(posX2y6.first())
     posX6y6.remove(posX3y6.first())
@@ -619,8 +700,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y6.remove(posX6y4.first())
     posX6y6.remove(posX6y5.first())
 
-    val posX7y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y6.shuffle()
     posX7y6.remove(posX1y6.first())
     posX7y6.remove(posX2y6.first())
     posX7y6.remove(posX3y6.first())
@@ -637,8 +716,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y6.remove(posX9y4.first())
     posX7y6.remove(posX9y5.first())
 
-    val posX8y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y6.shuffle()
     posX8y6.remove(posX1y6.first())
     posX8y6.remove(posX2y6.first())
     posX8y6.remove(posX3y6.first())
@@ -653,8 +730,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y6.remove(posX9y4.first())
     posX8y6.remove(posX9y5.first())
 
-    val posX9y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y6.shuffle()
     posX9y6.remove(posX1y6.first())
     posX9y6.remove(posX2y6.first())
     posX9y6.remove(posX3y6.first())
@@ -670,10 +745,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y6.remove(posX9y4.first())
     posX9y6.remove(posX9y5.first())
 
-
-    /* ROW 07 position values */
-    val posX1y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX1y7.shuffle()
+    /* ROW 07 eliminate values */
     posX1y7.remove(posX1y1.first())
     posX1y7.remove(posX1y2.first())
     posX1y7.remove(posX1y3.first())
@@ -681,9 +753,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX1y7.remove(posX1y5.first())
     posX1y7.remove(posX1y6.first())
 
-
-    val posX2y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y7.shuffle()
     posX2y7.remove(posX1y7.first())
     posX2y7.remove(posX2y1.first())
     posX2y7.remove(posX2y2.first())
@@ -692,8 +761,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX2y7.remove(posX2y5.first())
     posX2y7.remove(posX2y6.first())
 
-    val posX3y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y7.shuffle()
     posX3y7.remove(posX1y7.first())
     posX3y7.remove(posX2y7.first())
     posX3y7.remove(posX3y1.first())
@@ -703,8 +770,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX3y7.remove(posX3y5.first())
     posX3y7.remove(posX3y6.first())
 
-    val posX4y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y7.shuffle()
     posX4y7.remove(posX1y7.first())
     posX4y7.remove(posX2y7.first())
     posX4y7.remove(posX3y7.first())
@@ -715,8 +780,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y7.remove(posX4y5.first())
     posX4y7.remove(posX4y6.first())
 
-    val posX5y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y7.shuffle()
     posX5y7.remove(posX1y7.first())
     posX5y7.remove(posX2y7.first())
     posX5y7.remove(posX3y7.first())
@@ -728,8 +791,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y7.remove(posX5y5.first())
     posX5y7.remove(posX5y6.first())
 
-    val posX6y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y7.shuffle()
     posX6y7.remove(posX1y7.first())
     posX6y7.remove(posX2y7.first())
     posX6y7.remove(posX3y7.first())
@@ -742,8 +803,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y7.remove(posX6y5.first())
     posX6y7.remove(posX6y6.first())
 
-    val posX7y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y7.shuffle()
     posX7y7.remove(posX1y7.first())
     posX7y7.remove(posX2y7.first())
     posX7y7.remove(posX3y7.first())
@@ -757,8 +816,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y7.remove(posX7y5.first())
     posX7y7.remove(posX7y6.first())
 
-    val posX8y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y7.shuffle()
     posX8y7.remove(posX1y7.first())
     posX8y7.remove(posX2y7.first())
     posX8y7.remove(posX3y7.first())
@@ -773,8 +830,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y7.remove(posX8y5.first())
     posX8y7.remove(posX8y6.first())
 
-    val posX9y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y7.shuffle()
     posX9y7.remove(posX1y7.first())
     posX9y7.remove(posX2y7.first())
     posX9y7.remove(posX3y7.first())
@@ -790,10 +845,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y7.remove(posX9y5.first())
     posX9y7.remove(posX9y6.first())
 
-
-    /* ROW 08 position values */
-    val posX1y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX1y8.shuffle()
+    /* ROW 08 eliminate values */
     posX1y8.remove(posX1y1.first())
     posX1y8.remove(posX1y2.first())
     posX1y8.remove(posX1y3.first())
@@ -804,8 +856,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX1y8.remove(posX2y7.first())
     posX1y8.remove(posX3y7.first())
 
-    val posX2y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y8.shuffle()
     posX2y8.remove(posX1y7.first())
     posX2y8.remove(posX1y8.first())
     posX2y8.remove(posX2y1.first())
@@ -817,8 +867,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX2y8.remove(posX2y7.first())
     posX2y8.remove(posX3y7.first())
 
-    val posX3y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y8.shuffle()
     posX3y8.remove(posX1y7.first())
     posX3y8.remove(posX1y8.first())
     posX3y8.remove(posX2y7.first())
@@ -831,8 +879,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX3y8.remove(posX3y6.first())
     posX3y8.remove(posX3y7.first())
 
-    val posX4y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y8.shuffle()
     posX4y8.remove(posX1y8.first())
     posX4y8.remove(posX2y8.first())
     posX4y8.remove(posX3y8.first())
@@ -846,8 +892,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y8.remove(posX5y7.first())
     posX4y8.remove(posX6y7.first())
 
-    val posX5y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y8.shuffle()
     posX5y8.remove(posX1y8.first())
     posX5y8.remove(posX2y8.first())
     posX5y8.remove(posX3y8.first())
@@ -862,14 +906,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y8.remove(posX5y7.first())
     posX5y8.remove(posX6y7.first())
 
-    val posX6y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y8.shuffle()
     posX6y8.remove(posX1y8.first())
     posX6y8.remove(posX2y8.first())
     posX6y8.remove(posX3y8.first())
     posX6y8.remove(posX4y7.first())
     posX6y8.remove(posX4y8.first())
-    posX6y8.remove(posX5y1.first())
     posX6y8.remove(posX5y2.first())
     posX6y8.remove(posX5y3.first())
     posX6y8.remove(posX5y4.first())
@@ -877,10 +918,9 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y8.remove(posX5y6.first())
     posX6y8.remove(posX5y7.first())
     posX6y8.remove(posX5y8.first())
+    posX6y8.remove(posX6y1.first())
     posX6y8.remove(posX6y7.first())
 
-    val posX7y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y8.shuffle()
     posX7y8.remove(posX1y8.first())
     posX7y8.remove(posX2y8.first())
     posX7y8.remove(posX3y8.first())
@@ -897,8 +937,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y8.remove(posX8y7.first())
     posX7y8.remove(posX9y7.first())
 
-    val posX8y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y8.shuffle()
     posX8y8.remove(posX1y8.first())
     posX8y8.remove(posX2y8.first())
     posX8y8.remove(posX3y8.first())
@@ -915,8 +953,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y8.remove(posX8y7.first())
     posX8y8.remove(posX9y7.first())
 
-    val posX9y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y8.shuffle()
     posX9y8.remove(posX1y8.first())
     posX9y8.remove(posX2y8.first())
     posX9y8.remove(posX3y8.first())
@@ -934,10 +970,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y8.remove(posX9y6.first())
     posX9y8.remove(posX9y7.first())
 
-
-    /* ROW 09 position values */
-    val posX1y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX1y9.shuffle()
+    /* ROW 09 eliminate values */
     posX1y9.remove(posX1y1.first())
     posX1y9.remove(posX1y2.first())
     posX1y9.remove(posX1y3.first())
@@ -947,8 +980,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX1y9.remove(posX1y7.first())
     posX1y9.remove(posX1y8.first())
 
-    val posX2y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX2y9.shuffle()
     posX2y9.remove(posX1y7.first())
     posX2y9.remove(posX1y8.first())
     posX2y9.remove(posX1y9.first())
@@ -963,8 +994,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX2y9.remove(posX3y7.first())
     posX2y9.remove(posX3y8.first())
 
-    val posX3y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX3y9.shuffle()
     posX3y9.remove(posX1y7.first())
     posX3y9.remove(posX1y8.first())
     posX3y9.remove(posX1y9.first())
@@ -978,12 +1007,10 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX3y9.remove(posX3y5.first())
     posX3y9.remove(posX3y6.first())
     posX3y9.remove(posX3y7.first())
-    posX3y9.remove(posX3y8.first())
     posX3y9.remove(posX3y7.first())
     posX3y9.remove(posX3y8.first())
+    posX3y9.remove(posX3y8.first())
 
-    val posX4y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX4y9.shuffle()
     posX4y9.remove(posX1y9.first())
     posX4y9.remove(posX2y9.first())
     posX4y9.remove(posX3y9.first())
@@ -1000,8 +1027,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX4y9.remove(posX6y7.first())
     posX4y9.remove(posX6y8.first())
 
-    val posX5y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX5y9.shuffle()
     posX5y9.remove(posX1y9.first())
     posX5y9.remove(posX2y9.first())
     posX5y9.remove(posX3y9.first())
@@ -1019,8 +1044,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX5y9.remove(posX6y7.first())
     posX5y9.remove(posX6y8.first())
 
-    val posX6y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX6y9.shuffle()
     posX6y9.remove(posX1y9.first())
     posX6y9.remove(posX2y9.first())
     posX6y9.remove(posX3y9.first())
@@ -1039,8 +1062,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX6y9.remove(posX6y7.first())
     posX6y9.remove(posX6y8.first())
 
-    val posX7y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX7y9.shuffle()
     posX7y9.remove(posX1y9.first())
     posX7y9.remove(posX2y9.first())
     posX7y9.remove(posX3y9.first())
@@ -1060,8 +1081,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX7y9.remove(posX9y7.first())
     posX7y9.remove(posX9y8.first())
 
-    val posX8y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX8y9.shuffle()
     posX8y9.remove(posX1y9.first())
     posX8y9.remove(posX2y9.first())
     posX8y9.remove(posX3y9.first())
@@ -1082,8 +1101,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX8y9.remove(posX9y7.first())
     posX8y9.remove(posX9y8.first())
 
-    val posX9y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y9.shuffle()
     posX9y9.remove(posX1y9.first())
     posX9y9.remove(posX2y9.first())
     posX9y9.remove(posX3y9.first())
@@ -1106,12 +1123,14 @@ fun AppCore(modifier: Modifier = Modifier) {
     posX9y9.remove(posX9y8.first())
 
 
+
+
     val slice1 = mutableListOf(0)
     val slice2 = mutableListOf(0)
     val slice3 = mutableListOf(0)
     val tmpSlice = mutableListOf(0)
 
-    val grid01 = GridList(
+    /* val grid01 = GridList(
         x1y1 = posX1y1[0],
         x2y1 = posX2y1[0],
         x3y1 = posX3y1[0],
@@ -1217,29 +1236,7 @@ fun AppCore(modifier: Modifier = Modifier) {
         x1y3 = posX7y9[0],
         x2y3 = posX8y9[0],
         x3y3 = posX9y9[0]
-    )
-
-    // while (grid01.x1y1.count() > 1){
-    //     grid01.x1y1.remove(grid01.x1y1.last())
-    // }
-
-    // if (grid01.x1y1.count() > 1){
-    //     val tmp = grid01.x1y1[0]
-    //     grid01.x1y1.clear()
-    //     grid01.x1y1.add(tmp)
-    // }
-
-    // xValue = grid01.x1y1.first()
-
-    // grid02.x1y1.remove(grid01.x1y1.first())
-    // grid03.x1y1.remove(grid01.x1y1.first())
-    // grid04.x1y1.remove(grid01.x1y1.first())
-    // grid05.x1y1.remove(grid01.x1y1.first())
-    // grid06.x1y1.remove(grid01.x1y1.first())
-    // grid07.x1y1.remove(grid01.x1y1.first())
-    // grid08.x1y1.remove(grid01.x1y1.first())
-    // grid09.x1y1.remove(grid01.x1y1.first())
-
+    ) */
 
 
     /* row 01 */
@@ -1247,7 +1244,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y1 = GridCell(
         xPosition = 1,
         yPosition = 1,
-        value = grid01.x1y1,
+        value = posX1y1[0],
         txtColour = Black,
         hidden = false
     )
@@ -1256,7 +1253,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y1 = GridCell(
         xPosition = 2,
         yPosition = 1,
-        value = grid01.x2y1,
+        value = posX2y1[0],
         txtColour = Black,
         hidden = false
     )
@@ -1265,7 +1262,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y1 = GridCell(
         xPosition = 3,
         yPosition = 1,
-        value = grid01.x3y1,
+        value = posX3y1[0],
         txtColour = Black,
         hidden = false
     )
@@ -1274,7 +1271,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y1 = GridCell(
         xPosition = 4,
         yPosition = 1,
-        value = grid02.x1y1,
+        value = posX4y1[0],
         txtColour = Red,
         hidden = false
     )
@@ -1283,7 +1280,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y1 = GridCell(
         xPosition = 5,
         yPosition = 1,
-        value = grid02.x2y1,
+        value = posX5y1[0],
         txtColour = Red,
         hidden = false
     )
@@ -1292,7 +1289,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y1 = GridCell(
         xPosition = 6,
         yPosition = 1,
-        value = grid02.x3y1,
+        value = posX6y1[0],
         txtColour = Red,
         hidden = false
     )
@@ -1301,7 +1298,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y1 = GridCell(
         xPosition = 7,
         yPosition = 1,
-        value = grid03.x1y1,
+        value = posX7y1[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1310,7 +1307,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y1 = GridCell(
         xPosition = 8,
         yPosition = 1,
-        value = grid03.x2y1,
+        value = posX8y1[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1319,18 +1316,17 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y1 = GridCell(
         xPosition = 9,
         yPosition = 1,
-        value = grid03.x3y1,
+        value = posX9y1[0],
         txtColour = NeonGreen,
         hidden = false
     )
-
 
     /* column 01 */
     /* x1y2 - Grid1 TopLeft */
     val x1y2 = GridCell(
         xPosition = 1,
         yPosition = 2,
-        value = grid01.x1y2,
+        value = posX1y2[0],
         txtColour = Black,
         hidden = false
     )
@@ -1339,7 +1335,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y3 = GridCell(
         xPosition = 1,
         yPosition = 3,
-        value = grid01.x1y3,
+        value = posX1y3[0],
         txtColour = Black,
         hidden = false
     )
@@ -1348,7 +1344,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y4 = GridCell(
         xPosition = 1,
         yPosition = 4,
-        value = grid04.x1y1,
+        value = posX1y4[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1357,7 +1353,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y5 = GridCell(
         xPosition = 1,
         yPosition = 5,
-        value = grid04.x1y2,
+        value = posX1y5[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1366,7 +1362,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y6 = GridCell(
         xPosition = 1,
         yPosition = 6,
-        value = grid04.x1y3,
+        value = posX1y6[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1375,7 +1371,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y7 = GridCell(
         xPosition = 1,
         yPosition = 7,
-        value = grid07.x1y1,
+        value = posX1y7[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1384,7 +1380,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y8 = GridCell(
         xPosition = 1,
         yPosition = 8,
-        value = grid07.x1y2,
+        value = posX1y8[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1393,7 +1389,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y9 = GridCell(
         xPosition = 1,
         yPosition = 9,
-        value = grid07.x1y3,
+        value = posX1y9[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1404,7 +1400,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y2 = GridCell(
         xPosition = 2,
         yPosition = 2,
-        value = grid01.x2y2,
+        value = posX2y2[0],
         txtColour = Black,
         hidden = false
     )
@@ -1413,7 +1409,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y2 = GridCell(
         xPosition = 3,
         yPosition = 2,
-        value = grid01.x3y2,
+        value = posX3y2[0],
         txtColour = Black,
         hidden = false
     )
@@ -1423,7 +1419,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y3 = GridCell(
         xPosition = 2,
         yPosition = 3,
-        value = grid01.x2y3,
+        value = posX2y3[0],
         txtColour = Black,
         hidden = false
     )
@@ -1432,7 +1428,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y3 = GridCell(
         xPosition = 3,
         yPosition = 3,
-        value = grid01.x3y3,
+        value = posX3y3[0],
         txtColour = Black,
         hidden = false
     )
@@ -1443,7 +1439,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y2 = GridCell(
         xPosition = 4,
         yPosition = 2,
-        value = grid02.x1y2,
+        value = posX4y2[0],
         txtColour = Red,
         hidden = false
     )
@@ -1452,7 +1448,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y2 = GridCell(
         xPosition = 5,
         yPosition = 2,
-        value = grid02.x2y2,
+        value = posX5y2[0],
         txtColour = Red,
         hidden = false
     )
@@ -1461,11 +1457,10 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y2 = GridCell(
         xPosition = 6,
         yPosition = 2,
-        value = grid02.x3y2,
+        value = posX6y2[0],
         txtColour = Red,
         hidden = false
     )
-
 
     /* Grid2 TopCenter */
     /* row 3 */
@@ -1473,7 +1468,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y3 = GridCell(
         xPosition = 4,
         yPosition = 3,
-        value = grid02.x1y3,
+        value = posX4y3[0],
         txtColour = Red,
         hidden = false
     )
@@ -1482,7 +1477,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y3 = GridCell(
         xPosition = 5,
         yPosition = 3,
-        value = grid02.x2y3,
+        value = posX5y3[0],
         txtColour = Red,
         hidden = false
     )
@@ -1491,11 +1486,10 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y3 = GridCell(
         xPosition = 6,
         yPosition = 3,
-        value = grid02.x3y3,
+        value = posX6y3[0],
         txtColour = Red,
         hidden = false
     )
-
 
     /* Grid3 TopRight */
     /* row 2 */
@@ -1503,7 +1497,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y2 = GridCell(
         xPosition = 7,
         yPosition = 2,
-        value = grid03.x1y2,
+        value = posX7y2[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1512,7 +1506,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y2 = GridCell(
         xPosition = 8,
         yPosition = 2,
-        value = grid03.x2y2,
+        value = posX8y2[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1521,7 +1515,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y2 = GridCell(
         xPosition = 9,
         yPosition = 2,
-        value = grid03.x3y2,
+        value = posX9y2[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1531,7 +1525,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y3 = GridCell(
         xPosition = 7,
         yPosition = 3,
-        value = grid03.x1y3,
+        value = posX7y3[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1540,7 +1534,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y3 = GridCell(
         xPosition = 8,
         yPosition = 3,
-        value = grid03.x2y3,
+        value = posX8y3[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1549,7 +1543,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y3 = GridCell(
         xPosition = 9,
         yPosition = 3,
-        value = grid03.x3y3,
+        value = posX9y3[0],
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1560,7 +1554,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y4 = GridCell(
         xPosition = 2,
         yPosition = 4,
-        value = grid04.x2y1,
+        value = posX2y4[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1569,7 +1563,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y4 = GridCell(
         xPosition = 3,
         yPosition = 4,
-        value = grid04.x3y1,
+        value = posX3y4[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1579,7 +1573,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y5 = GridCell(
         xPosition = 2,
         yPosition = 5,
-        value = grid04.x2y2,
+        value = posX2y5[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1588,7 +1582,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y5 = GridCell(
         xPosition = 3,
         yPosition = 5,
-        value = grid04.x3y2,
+        value = posX3y5[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1597,7 +1591,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y6 = GridCell(
         xPosition = 2,
         yPosition = 6,
-        value = grid04.x2y3,
+        value = posX2y6[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1606,7 +1600,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y6 = GridCell(
         xPosition = 3,
         yPosition = 6,
-        value = grid04.x3y3,
+        value = posX3y6[0],
         txtColour = Blue,
         hidden = false
     )
@@ -1617,17 +1611,16 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y4 = GridCell(
         xPosition = 4,
         yPosition = 4,
-        value = grid05.x1y1,
+        value = posX4y4[0],
         txtColour = Gold,
         hidden = false
     )
-
 
     /* x5y4 - Grid5 Center */
     val x5y4 = GridCell(
         xPosition = 5,
         yPosition = 4,
-        value = grid05.x2y1,
+        value = posX5y4[0],
         txtColour = Gold,
         hidden = false
     )
@@ -1637,7 +1630,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y4 = GridCell(
         xPosition = 6,
         yPosition = 4,
-        value = grid05.x3y1,
+        value = posX6y4[0],
         txtColour = Gold,
         hidden = false
     )
@@ -1648,7 +1641,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y5 = GridCell(
         xPosition = 4,
         yPosition = 5,
-        value = grid05.x1y2,
+        value = posX4y5[0],
         txtColour = Gold,
         hidden = false
     )
@@ -1658,7 +1651,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y5 = GridCell(
         xPosition = 5,
         yPosition = 5,
-        value = grid05.x2y2,
+        value = posX5y5[0],
         txtColour = Gold,
         hidden = false
     )
@@ -1667,38 +1660,35 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y5 = GridCell(
         xPosition = 6,
         yPosition = 5,
-        value = grid05.x3y2,
+        value = posX6y5[0],
         txtColour = Gold,
         hidden = false
     )
-
 
     /* row 6 */
     /* x4y6 - Grid5 Center */
     val x4y6 = GridCell(
         xPosition = 4,
         yPosition = 6,
-        value = grid05.x1y3,
+        value = posX4y6[0],
         txtColour = Gold,
         hidden = false
     )
-
 
     /* x5y6 - Grid5 Center */
     val x5y6 = GridCell(
         xPosition = 5,
         yPosition = 6,
-        value = grid05.x2y3,
+        value = posX5y6[0],
         txtColour = Gold,
         hidden = false
     )
-
 
     /* x6y6 - Grid5 Center */
     val x6y6 = GridCell(
         xPosition = 6,
         yPosition = 6,
-        value = grid05.x3y3,
+        value = posX6y6[0],
         txtColour = Gold,
         hidden = false
     )
@@ -1709,7 +1699,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y4 = GridCell(
         xPosition = 7,
         yPosition = 4,
-        value = grid06.x1y1,
+        value = posX7y4[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1718,7 +1708,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y4 = GridCell(
         xPosition = 8,
         yPosition = 4,
-        value = grid06.x2y1,
+        value = posX8y4[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1727,18 +1717,17 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y4 = GridCell(
         xPosition = 9,
         yPosition = 4,
-        value = grid06.x3y1,
+        value = posX9y4[0],
         txtColour = DarkGrey,
         hidden = false
     )
-
 
     /* row 5 */
     /* x7y5 - Grid6 MiddleRight */
     val x7y5 = GridCell(
         xPosition = 7,
         yPosition = 5,
-        value = grid06.x1y2,
+        value = posX7y5[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1747,7 +1736,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y5 = GridCell(
         xPosition = 8,
         yPosition = 5,
-        value = grid06.x2y2,
+        value = posX8y5[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1756,7 +1745,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y5 = GridCell(
         xPosition = 9,
         yPosition = 5,
-        value = grid06.x3y2,
+        value = posX9y5[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1766,7 +1755,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y6 = GridCell(
         xPosition = 7,
         yPosition = 6,
-        value = grid06.x1y3,
+        value = posX7y6[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1775,7 +1764,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y6 = GridCell(
         xPosition = 8,
         yPosition = 6,
-        value = grid06.x2y3,
+        value = posX8y6[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1784,7 +1773,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y6 = GridCell(
         xPosition = 8,
         yPosition = 6,
-        value = grid06.x3y3,
+        value = posX9y6[0],
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1795,7 +1784,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y7 = GridCell(
         xPosition = 2,
         yPosition = 7,
-        value = grid07.x1y1,
+        value = posX2y7[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1804,7 +1793,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y7 = GridCell(
         xPosition = 3,
         yPosition = 7,
-        value = grid07.x2y1,
+        value = posX3y7[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1814,7 +1803,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y8 = GridCell(
         xPosition = 2,
         yPosition = 8,
-        value = grid07.x3y1,
+        value = posX2y8[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1823,7 +1812,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y8 = GridCell(
         xPosition = 3,
         yPosition = 8,
-        value = grid07.x1y2,
+        value = posX3y8[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1833,7 +1822,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y9 = GridCell(
         xPosition = 2,
         yPosition = 9,
-        value = grid07.x2y2,
+        value = posX2y9[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1842,7 +1831,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y9 = GridCell(
         xPosition = 3,
         yPosition = 9,
-        value = grid07.x3y2,
+        value = posX3y9[0],
         txtColour = Purple40,
         hidden = false
     )
@@ -1853,7 +1842,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y7 = GridCell(
         xPosition = 4,
         yPosition = 7,
-        value = grid07.x1y3,
+        value = posX4y7[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1862,7 +1851,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y7 = GridCell(
         xPosition = 5,
         yPosition = 7,
-        value = grid07.x2y3,
+        value = posX5y7[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1871,7 +1860,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y7 = GridCell(
         xPosition = 6,
         yPosition = 7,
-        value = grid07.x3y3,
+        value = posX6y7[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1881,7 +1870,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y8 = GridCell(
         xPosition = 4,
         yPosition = 8,
-        value = grid08.x1y2,
+        value = posX4y8[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1890,7 +1879,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y8 = GridCell(
         xPosition = 5,
         yPosition = 8,
-        value = grid08.x2y2,
+        value = posX5y8[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1899,7 +1888,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y8 = GridCell(
         xPosition = 6,
         yPosition = 8,
-        value = grid08.x3y2,
+        value = posX6y8[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1909,7 +1898,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y9 = GridCell(
         xPosition = 4,
         yPosition = 9,
-        value = grid08.x1y3,
+        value = posX4y9[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1918,7 +1907,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y9 = GridCell(
         xPosition = 5,
         yPosition = 9,
-        value = grid08.x2y3,
+        value = posX5y9[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1927,7 +1916,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y9 = GridCell(
         xPosition = 5,
         yPosition = 9,
-        value = grid08.x3y3,
+        value = posX6y9[0],
         txtColour = MathBlue,
         hidden = false
     )
@@ -1938,7 +1927,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y7 = GridCell(
         xPosition = 7,
         yPosition = 7,
-        value = grid09.x1y1,
+        value = posX7y7[0],
         txtColour = Pink,
         hidden = false
     )
@@ -1947,7 +1936,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y7 = GridCell(
         xPosition = 8,
         yPosition = 7,
-        value = grid09.x2y1,
+        value = posX8y7[0],
         txtColour = Pink,
         hidden = false
     )
@@ -1956,7 +1945,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y7 = GridCell(
         xPosition = 9,
         yPosition = 7,
-        value = grid09.x3y1,
+        value = posX9y7[0],
         txtColour = Pink,
         hidden = false
     )
@@ -1966,7 +1955,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y8 = GridCell(
         xPosition = 7,
         yPosition = 8,
-        value = grid09.x1y2,
+        value = posX7y8[0],
         txtColour = Pink,
         hidden = false
     )
@@ -1975,7 +1964,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y8 = GridCell(
         xPosition = 8,
         yPosition = 8,
-        value = grid09.x2y2,
+        value = posX8y8[0],
         txtColour = Pink,
         hidden = false
     )
@@ -1984,7 +1973,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y8 = GridCell(
         xPosition = 9,
         yPosition = 8,
-        value = grid09.x3y2,
+        value = posX9y8[0],
         txtColour = Pink,
         hidden = false
     )
@@ -1994,7 +1983,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y9 = GridCell(
         xPosition = 7,
         yPosition = 9,
-        value = grid09.x1y3,
+        value = posX7y9[0],
         txtColour = Pink,
         hidden = false
     )
@@ -2003,7 +1992,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y9 = GridCell(
         xPosition = 8,
         yPosition = 9,
-        value = grid09.x2y3,
+        value = posX8y9[0],
         txtColour = Pink,
         hidden = false
     )
@@ -2012,7 +2001,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y9 = GridCell(
         xPosition = 9,
         yPosition = 9,
-        value = grid09.x3y3,
+        value = posX9y9[0],
         txtColour = Pink,
         hidden = false
     )
