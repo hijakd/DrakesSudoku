@@ -22,10 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import com.gdd.drakessudoku.model.GridCell
-import com.gdd.drakessudoku.model.GridList
 import com.gdd.drakessudoku.ui.components.DrawSudokuGrid
 import com.gdd.drakessudoku.ui.theme.*
-import com.gdd.drakessudoku.utils.TrimPosition
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,25 +98,25 @@ fun AppCore(modifier: Modifier = Modifier) {
 
 
     /* ROW 01 populate position values */
-    val posX1y1 = mutableListOf(shuffled[0])
-    val posX2y1 = mutableListOf(shuffled[1])
-    val posX3y1 = mutableListOf(shuffled[2])
-    val posX4y1 = mutableListOf(shuffled[3])
-    val posX5y1 = mutableListOf(shuffled[4])
-    val posX6y1 = mutableListOf(shuffled[5])
-    val posX7y1 = mutableListOf(shuffled[6])
-    val posX8y1 = mutableListOf(shuffled[7])
-    val posX9y1 = mutableListOf(shuffled[8])
+    val posX1y1 = shuffled[0]
+    val posX2y1 = shuffled[1]
+    val posX3y1 = shuffled[2]
+    val posX4y1 = shuffled[3]
+    val posX5y1 = shuffled[4]
+    val posX6y1 = shuffled[5]
+    val posX7y1 = shuffled[6]
+    val posX8y1 = shuffled[7]
+    val posX9y1 = shuffled[8]
 
     shuffled.shuffle()
-    shuffled.remove(posX1y1.first())
-    if (shuffled.last() == posX9y1.first()){
+    /* shuffled.remove(posX1y1)
+    if (shuffled.last() == posX9y1) {
         shuffled.shuffle()
-    }
+    } */
 
 
     /* ROW 02 populate possible values */
-    val posX1y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y2.shuffle()
     val posX2y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y2.shuffle()
@@ -135,11 +133,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y2.shuffle()
     val posX9y2 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y2.shuffle()
+    posX9y2.shuffle() */
 
 
     /* ROW 03 populate possible values */
-    val posX1y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y3.shuffle()
     val posX2y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y3.shuffle()
@@ -156,11 +154,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y3.shuffle()
     val posX9y3 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y3.shuffle()
+    posX9y3.shuffle() */
 
 
     /* ROW 04 populate possible values */
-    val posX1y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y4.shuffle()
     val posX2y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y4.shuffle()
@@ -177,11 +175,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y4.shuffle()
     val posX9y4 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y4.shuffle()
+    posX9y4.shuffle() */
 
 
     /* ROW 05 populate possible values */
-    val posX1y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y5.shuffle()
     val posX2y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y5.shuffle()
@@ -198,11 +196,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y5.shuffle()
     val posX9y5 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y5.shuffle()
+    posX9y5.shuffle() */
 
-    
+
     /* ROW 06 populate possible values */
-    val posX1y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y6.shuffle()
     val posX2y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y6.shuffle()
@@ -219,11 +217,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y6.shuffle()
     val posX9y6 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y6.shuffle()
+    posX9y6.shuffle() */
 
 
     /* ROW 07 populate possible values */
-    val posX1y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y7.shuffle()
     val posX2y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y7.shuffle()
@@ -240,11 +238,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y7.shuffle()
     val posX9y7 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y7.shuffle()
+    posX9y7.shuffle() */
 
 
     /* ROW 08 populate possible values */
-    val posX1y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y8.shuffle()
     val posX2y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y8.shuffle()
@@ -261,11 +259,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y8.shuffle()
     val posX9y8 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y8.shuffle()
+    posX9y8.shuffle() */
 
 
     /* ROW 09 populate possible values */
-    val posX1y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    /* val posX1y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX1y9.shuffle()
     val posX2y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX2y9.shuffle()
@@ -282,893 +280,1072 @@ fun AppCore(modifier: Modifier = Modifier) {
     val posX8y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     posX8y9.shuffle()
     val posX9y9 = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
-    posX9y9.shuffle()
-
+    posX9y9.shuffle() */
 
 
     /* Grid01 eliminate values */
-    /* row 2 */
-    posX1y2.remove(posX1y1.first())
-    posX1y2.remove(posX2y1.first())
-    posX1y2.remove(posX3y1.first())
-    RemoveLast(posX1y2)
-
-    posX2y2.remove(posX1y1.first())
-    posX2y2.remove(posX1y2.first())
-    posX2y2.remove(posX2y1.first())
-    posX2y2.remove(posX3y1.first())
-    RemoveLast(posX2y2)
-
-    posX3y2.remove(posX1y1.first())
-    posX3y2.remove(posX1y2.first())
-    posX3y2.remove(posX2y1.first())
-    posX3y2.remove(posX2y2.first())
-    posX3y2.remove(posX3y1.first())
-    RemoveLast(posX3y2)
-
-    posX4y2.remove(posX1y2.first())
-    posX4y2.remove(posX2y2.first())
-    posX4y2.remove(posX3y2.first())
-    posX4y2.remove(posX4y1.first())
-    posX4y2.remove(posX5y1.first())
-    posX4y2.remove(posX6y1.first())
-    RemoveLast(posX4y2)
-
-    posX5y2.remove(posX1y2.first())
-    posX5y2.remove(posX2y2.first())
-    posX5y2.remove(posX3y2.first())
-    posX5y2.remove(posX4y1.first())
-    posX5y2.remove(posX4y2.first())
-    posX5y2.remove(posX5y1.first())
-    posX5y2.remove(posX6y1.first())
-    RemoveLast(posX5y2)
-
-    posX6y2.remove(posX1y2.first())
-    posX6y2.remove(posX2y2.first())
-    posX6y2.remove(posX3y2.first())
-    posX6y2.remove(posX4y1.first())
-    posX6y2.remove(posX4y2.first())
-    posX6y2.remove(posX5y1.first())
-    posX6y2.remove(posX5y2.first())
-    posX6y2.remove(posX6y1.first())
-    RemoveLast(posX6y2)
-
-    posX7y2.remove(posX1y2.first())
-    posX7y2.remove(posX2y2.first())
-    posX7y2.remove(posX3y2.first())
-    posX7y2.remove(posX4y2.first())
-    posX7y2.remove(posX5y2.first())
-    posX7y2.remove(posX6y2.first())
-    posX7y2.remove(posX7y1.first())
-    posX7y2.remove(posX8y1.first())
-    posX7y2.remove(posX9y1.first())
-    RemoveLast(posX7y2)
-
-    posX8y2.remove(posX1y2.first())
-    posX8y2.remove(posX2y2.first())
-    posX8y2.remove(posX3y2.first())
-    posX8y2.remove(posX4y2.first())
-    posX8y2.remove(posX5y2.first())
-    posX8y2.remove(posX6y2.first())
-    posX8y2.remove(posX7y1.first())
-    posX8y2.remove(posX7y2.first())
-    posX8y2.remove(posX8y1.first())
-    posX8y2.remove(posX9y1.first())
-    RemoveLast(posX8y2)
-
-    posX9y2.remove(posX1y2.first())
-    posX9y2.remove(posX2y2.first())
-    posX9y2.remove(posX3y2.first())
-    posX9y2.remove(posX4y2.first())
-    posX9y2.remove(posX5y2.first())
-    posX9y2.remove(posX6y2.first())
-    posX9y2.remove(posX7y1.first())
-    posX9y2.remove(posX7y2.first())
-    posX9y2.remove(posX8y1.first())
-    posX9y2.remove(posX8y2.first())
-    posX9y2.remove(posX9y1.first())
-
-
-    /* row 3 */
-    // posX1y3.remove(posX1y1.first())
-    // posX1y3.remove(posX1y2.first())
-    // posX1y3.remove(posX2y1.first())
-    // posX1y3.remove(posX2y2.first())
-    // posX1y3.remove(posX3y1.first())
-    // posX1y3.remove(posX3y2.first())
-
-    // posX2y3.remove(posX1y1.first())
-    // posX2y3.remove(posX1y2.first())
-    // posX2y3.remove(posX1y3.first())
-    // posX2y3.remove(posX2y1.first())
-    // posX2y3.remove(posX2y2.first())
-    // posX2y3.remove(posX3y1.first())
-    // posX2y3.remove(posX3y2.first())
-
-    // posX3y3.remove(posX1y1.first())
-    // posX3y3.remove(posX1y2.first())
-    // posX3y3.remove(posX1y3.first())
-    // posX3y3.remove(posX2y1.first())
-    // posX3y3.remove(posX2y2.first())
-    // posX3y3.remove(posX2y3.first())
-    // posX3y3.remove(posX3y1.first())
-    // posX3y3.remove(posX3y2.first())
-
-
-    /* Grid02 eliminate values */
-    /* row 2 */
-
-
-
-
-
-
-    /* row 3 */
-    // posX4y3.remove(posX1y3.first())
-    // posX4y3.remove(posX2y3.first())
-    // posX4y3.remove(posX3y3.first())
-    // posX4y3.remove(posX4y1.first())
-    // posX4y3.remove(posX4y2.first())
-    // posX4y3.remove(posX5y1.first())
-    // posX4y3.remove(posX5y2.first())
-    // posX4y3.remove(posX6y1.first())
-    // posX4y3.remove(posX6y2.first())
-
-    // posX5y3.remove(posX1y3.first())
-    // posX5y3.remove(posX2y3.first())
-    // posX5y3.remove(posX3y3.first())
-    // posX5y3.remove(posX4y1.first())
-    // posX5y3.remove(posX4y2.first())
-    // posX5y3.remove(posX4y3.first())
-    // posX5y3.remove(posX5y1.first())
-    // posX5y3.remove(posX5y2.first())
-    // posX5y3.remove(posX6y1.first())
-    // posX5y3.remove(posX6y2.first())
-
-    // posX6y3.remove(posX1y3.first())
-    // posX6y3.remove(posX2y3.first())
-    // posX6y3.remove(posX3y3.first())
-    // posX6y3.remove(posX4y1.first())
-    // posX6y3.remove(posX4y2.first())
-    // posX6y3.remove(posX4y3.first())
-    // posX6y3.remove(posX5y1.first())
-    // posX6y3.remove(posX5y2.first())
-    // posX6y3.remove(posX5y3.first())
-    // posX6y3.remove(posX6y1.first())
-    // posX6y3.remove(posX6y2.first())
-
-    /* Grid03 eliminate values */
-    /* row 2 */
-
-
-
-
-
-
-    /* row 3 */
-    // posX7y3.remove(posX1y3.first())
-    // posX7y3.remove(posX2y3.first())
-    // posX7y3.remove(posX3y3.first())
-    // posX7y3.remove(posX4y3.first())
-    // posX7y3.remove(posX5y3.first())
-    // posX7y3.remove(posX6y3.first())
-    // posX7y3.remove(posX7y1.first())
-    // posX7y3.remove(posX8y1.first())
-    // posX7y3.remove(posX9y1.first())
-
-    // posX8y3.remove(posX1y3.first())
-    // posX8y3.remove(posX2y3.first())
-    // posX8y3.remove(posX3y3.first())
-    // posX8y3.remove(posX4y3.first())
-    // posX8y3.remove(posX5y3.first())
-    // posX8y3.remove(posX6y3.first())
-    // posX8y3.remove(posX7y1.first())
-    // posX8y3.remove(posX7y2.first())
-    // posX8y3.remove(posX7y3.first())
-    // posX8y3.remove(posX8y1.first())
-    // posX8y3.remove(posX8y2.first())
-    // posX8y3.remove(posX9y1.first())
-    // posX8y3.remove(posX9y2.first())
-
-    // posX9y3.remove(posX1y3.first())
-    // posX9y3.remove(posX2y3.first())
-    // posX9y3.remove(posX3y3.first())
-    // posX9y3.remove(posX4y3.first())
-    // posX9y3.remove(posX5y3.first())
-    // posX9y3.remove(posX6y3.first())
-    // posX9y3.remove(posX7y1.first())
-    // posX9y3.remove(posX7y2.first())
-    // posX9y3.remove(posX7y3.first())
-    // posX9y3.remove(posX8y1.first())
-    // posX9y3.remove(posX8y2.first())
-    // posX9y3.remove(posX8y3.first())
-    // posX9y3.remove(posX9y1.first())
-    // posX9y3.remove(posX9y2.first())
-
-
-    /* Grid04 eliminate values */
-    /* row 4 */
-    // posX1y4.remove(posX1y1.first())
-    // posX1y4.remove(posX1y2.first())
-    // posX1y4.remove(posX1y3.first())
-
-    // posX2y4.remove(posX1y4.first())
-    // posX2y4.remove(posX2y1.first())
-    // posX2y4.remove(posX2y2.first())
-    // posX2y4.remove(posX2y3.first())
-
-    // posX3y4.remove(posX1y4.first())
-    // posX3y4.remove(posX2y4.first())
-    // posX3y4.remove(posX3y1.first())
-    // posX3y4.remove(posX3y2.first())
-    // posX3y4.remove(posX3y3.first())
-
-    /* row 5 */
-    // posX1y5.remove(posX1y1.first())
-    // posX1y5.remove(posX1y2.first())
-    // posX1y5.remove(posX1y3.first())
-    // posX1y5.remove(posX1y4.first())
-    // posX1y5.remove(posX2y4.first())
-    // posX1y5.remove(posX3y4.first())
-
-    // posX2y5.remove(posX1y1.first())
-    // posX2y5.remove(posX1y2.first())
-    // posX2y5.remove(posX1y3.first())
-    // posX2y5.remove(posX1y4.first())
-    // posX2y5.remove(posX1y5.first())
-    // posX2y5.remove(posX2y4.first())
-    // posX2y5.remove(posX3y4.first())
-
-    // posX3y5.remove(posX1y1.first())
-    // posX3y5.remove(posX1y2.first())
-    // posX3y5.remove(posX1y3.first())
-    // posX3y5.remove(posX1y4.first())
-    // posX3y5.remove(posX1y5.first())
-    // posX3y5.remove(posX2y4.first())
-    // posX3y5.remove(posX2y5.first())
-    // posX3y5.remove(posX3y4.first())
-
-    /* row 6 */
-    // posX1y6.remove(posX1y1.first())
-    // posX1y6.remove(posX1y2.first())
-    // posX1y6.remove(posX1y3.first())
-    // posX1y6.remove(posX1y4.first())
-    // posX1y6.remove(posX1y5.first())
-    // posX1y6.remove(posX2y4.first())
-    // posX1y6.remove(posX2y5.first())
-    // posX1y6.remove(posX3y4.first())
-    // posX1y6.remove(posX3y5.first())
-
-    // posX2y6.remove(posX1y6.first())
-    // posX2y6.remove(posX2y1.first())
-    // posX2y6.remove(posX2y2.first())
-    // posX2y6.remove(posX2y3.first())
-    // posX2y6.remove(posX2y4.first())
-    // posX2y6.remove(posX2y5.first())
-
-    // posX3y6.remove(posX1y4.first())
-    // posX3y6.remove(posX1y5.first())
-    // posX3y6.remove(posX1y6.first())
-    // posX3y6.remove(posX2y4.first())
-    // posX3y6.remove(posX2y5.first())
-    // posX3y6.remove(posX2y6.first())
-    // posX3y6.remove(posX3y1.first())
-    // posX3y6.remove(posX3y2.first())
-    // posX3y6.remove(posX3y3.first())
-    // posX3y6.remove(posX3y4.first())
-    // posX3y6.remove(posX3y5.first())
-
-
-    /* Grid05 eliminate values */
-    /* row 4 */
-    // posX4y4.remove(posX1y4.first())
-    // posX4y4.remove(posX2y4.first())
-    // posX4y4.remove(posX3y4.first())
-    // posX4y4.remove(posX4y1.first())
-    // posX4y4.remove(posX4y2.first())
-    // posX4y4.remove(posX4y3.first())
-
-    // posX5y4.remove(posX1y4.first())
-    // posX5y4.remove(posX2y4.first())
-    // posX5y4.remove(posX3y4.first())
-    // posX5y4.remove(posX4y4.first())
-    // posX5y4.remove(posX5y1.first())
-    // posX5y4.remove(posX5y2.first())
-    // posX5y4.remove(posX5y3.first())
-
-    // posX6y4.remove(posX1y4.first())
-    // posX6y4.remove(posX2y4.first())
-    // posX6y4.remove(posX3y4.first())
-    // posX6y4.remove(posX4y4.first())
-    // posX6y4.remove(posX5y4.first())
-    // posX6y4.remove(posX6y1.first())
-    // posX6y4.remove(posX6y2.first())
-    // posX6y4.remove(posX6y3.first())
-
-    /* row 5 */
-    // posX4y5.remove(posX1y5.first())
-    // posX4y5.remove(posX2y5.first())
-    // posX4y5.remove(posX3y5.first())
-    // posX4y5.remove(posX4y1.first())
-    // posX4y5.remove(posX4y2.first())
-    // posX4y5.remove(posX4y3.first())
-    // posX4y5.remove(posX4y4.first())
-    // posX4y5.remove(posX5y4.first())
-    // posX4y5.remove(posX6y4.first())
-
-    // posX5y5.remove(posX1y5.first())
-    // posX5y5.remove(posX2y5.first())
-    // posX5y5.remove(posX3y5.first())
-    // posX5y5.remove(posX4y4.first())
-    // posX5y5.remove(posX4y5.first())
-    // posX5y5.remove(posX5y1.first())
-    // posX5y5.remove(posX5y2.first())
-    // posX5y5.remove(posX5y3.first())
-    // posX5y5.remove(posX5y4.first())
-    // posX5y5.remove(posX6y4.first())
-
-    // posX6y5.remove(posX1y5.first())
-    // posX6y5.remove(posX2y5.first())
-    // posX6y5.remove(posX3y5.first())
-    // posX6y5.remove(posX4y4.first())
-    // posX6y5.remove(posX4y5.first())
-    // posX6y5.remove(posX5y4.first())
-    // posX6y5.remove(posX5y5.first())
-    // posX6y5.remove(posX6y1.first())
-    // posX6y5.remove(posX6y2.first())
-    // posX6y5.remove(posX6y3.first())
-    // posX6y5.remove(posX6y4.first())
-
-    /* row 6 */
-    // posX4y6.remove(posX1y6.first())
-    // posX4y6.remove(posX2y6.first())
-    // posX4y6.remove(posX3y6.first())
-    // posX4y6.remove(posX4y1.first())
-    // posX4y6.remove(posX4y2.first())
-    // posX4y6.remove(posX4y3.first())
-    // posX4y6.remove(posX4y4.first())
-    // posX4y6.remove(posX4y5.first())
-    // posX4y6.remove(posX5y4.first())
-    // posX4y6.remove(posX5y5.first())
-    // posX4y6.remove(posX6y4.first())
-    // posX4y6.remove(posX6y5.first())
-
-    // posX5y6.remove(posX1y6.first())
-    // posX5y6.remove(posX2y6.first())
-    // posX5y6.remove(posX3y6.first())
-    // posX5y6.remove(posX4y5.first())
-    // posX5y6.remove(posX4y6.first())
-    // posX5y6.remove(posX5y1.first())
-    // posX5y6.remove(posX5y2.first())
-    // posX5y6.remove(posX5y3.first())
-    // posX5y6.remove(posX5y4.first())
-    // posX5y6.remove(posX5y5.first())
-    // posX5y6.remove(posX6y4.first())
-    // posX5y6.remove(posX6y5.first())
-
-    // posX6y6.remove(posX1y6.first())
-    // posX6y6.remove(posX2y6.first())
-    // posX6y6.remove(posX3y6.first())
-    // posX6y6.remove(posX4y4.first())
-    // posX6y6.remove(posX4y5.first())
-    // posX6y6.remove(posX4y6.first())
-    // posX6y6.remove(posX5y4.first())
-    // posX6y6.remove(posX5y5.first())
-    // posX6y6.remove(posX5y6[0])
-    // posX6y6.remove(posX6y1.first())
-    // posX6y6.remove(posX6y2.first())
-    // posX6y6.remove(posX6y3.first())
-    // posX6y6.remove(posX6y4.first())
-    // posX6y6.remove(posX6y5.first())
-
-
-    /* Grid06 eliminate values */
-    /* row 4 */
-    // posX7y4.remove(posX7y1.first())
-    // posX7y4.remove(posX7y2.first())
-    // posX7y4.remove(posX7y3.first())
-    // posX7y4.remove(posX1y4.first())
-    // posX7y4.remove(posX2y4.first())
-    // posX7y4.remove(posX3y4.first())
-    // posX7y4.remove(posX4y4.first())
-    // posX7y4.remove(posX5y4.first())
-    // posX7y4.remove(posX6y4.first())
-
-    // posX8y4.remove(posX8y1.first())
-    // posX8y4.remove(posX8y2.first())
-    // posX8y4.remove(posX8y3.first())
-    // posX8y4.remove(posX1y4.first())
-    // posX8y4.remove(posX2y4.first())
-    // posX8y4.remove(posX3y4.first())
-    // posX8y4.remove(posX4y4.first())
-    // posX8y4.remove(posX5y4.first())
-    // posX8y4.remove(posX6y4.first())
-    // posX8y4.remove(posX7y4.first())
-
-    // posX9y4.remove(posX1y4.first())
-    // posX9y4.remove(posX2y4.first())
-    // posX9y4.remove(posX3y4.first())
-    // posX9y4.remove(posX4y4.first())
-    // posX9y4.remove(posX5y4.first())
-    // posX9y4.remove(posX6y4.first())
-    // posX9y4.remove(posX7y4.first())
-    // posX9y4.remove(posX8y4.first())
-    // posX9y4.remove(posX9y1.first())
-    // posX9y4.remove(posX9y2.first())
-    // posX9y4.remove(posX9y3.first())
-
-    /* row 5 */
-    // posX7y5.remove(posX1y5.first())
-    // posX7y5.remove(posX2y5.first())
-    // posX7y5.remove(posX3y5.first())
-    // posX7y5.remove(posX4y5.first())
-    // posX7y5.remove(posX5y5.first())
-    // posX7y5.remove(posX6y5.first())
-    // posX7y5.remove(posX7y1.first())
-    // posX7y5.remove(posX7y2.first())
-    // posX7y5.remove(posX7y3.first())
-    // posX7y5.remove(posX7y4.first())
-    // posX7y5.remove(posX8y4.first())
-    // posX7y5.remove(posX9y4[0])
-
-    // posX8y5.remove(posX1y5.first())
-    // posX8y5.remove(posX2y5.first())
-    // posX8y5.remove(posX3y5.first())
-    // posX8y5.remove(posX4y5.first())
-    // posX8y5.remove(posX5y5.first())
-    // posX8y5.remove(posX6y5.first())
-    // posX8y5.remove(posX7y4.first())
-    // posX8y5.remove(posX7y5.first())
-    // posX8y5.remove(posX8y1.first())
-    // posX8y5.remove(posX8y2.first())
-    // posX8y5.remove(posX8y3.first())
-    // posX8y5.remove(posX8y4.first())
-    // posX8y5.remove(posX9y4.first())
-
-    // posX9y5.remove(posX1y5.first())
-    // posX9y5.remove(posX2y5.first())
-    // posX9y5.remove(posX3y5.first())
-    // posX9y5.remove(posX4y5.first())
-    // posX9y5.remove(posX5y5.first())
-    // posX9y5.remove(posX6y5.first())
-    // posX9y5.remove(posX7y4.first())
-    // posX9y5.remove(posX7y5.first())
-    // posX9y5.remove(posX8y4.first())
-    // posX9y5.remove(posX8y5.first())
-    // posX9y5.remove(posX9y1.first())
-    // posX9y5.remove(posX9y2.first())
-    // posX9y5.remove(posX9y3.first())
-    // posX9y5.remove(posX9y4.first())
-
-    /* row 6 */
-    // posX7y6.remove(posX1y6.first())
-    // posX7y6.remove(posX2y6.first())
-    // posX7y6.remove(posX3y6.first())
-    // posX7y6.remove(posX4y6.first())
-    // posX7y6.remove(posX5y6.first())
-    // posX7y6.remove(posX6y6[0])
-    // posX7y6.remove(posX7y1.first())
-    // posX7y6.remove(posX7y2.first())
-    // posX7y6.remove(posX7y3.first())
-    // posX7y6.remove(posX7y4.first())
-    // posX7y6.remove(posX7y5.first())
-    // posX7y6.remove(posX8y4.first())
-    // posX7y6.remove(posX8y5.first())
-    // posX7y6.remove(posX9y4.first())
-    // posX7y6.remove(posX9y5.first())
-
-    // posX8y6.remove(posX1y6.first())
-    // posX8y6.remove(posX2y6.first())
-    // posX8y6.remove(posX3y6.first())
-    // posX8y6.remove(posX4y6.first())
-    // posX8y6.remove(posX5y6.first())
-    // posX8y6.remove(posX6y6.first())
-    // posX8y6.remove(posX7y4.first())
-    // posX8y6.remove(posX7y5.first())
-    // posX8y6.remove(posX7y6.first())
-    // posX8y6.remove(posX8y4.first())
-    // posX8y6.remove(posX8y5.first())
-    // posX8y6.remove(posX9y4.first())
-    // posX8y6.remove(posX9y5.first())
-
-    // posX9y6.remove(posX1y6.first())
-    // posX9y6.remove(posX2y6.first())
-    // posX9y6.remove(posX3y6.first())
-    // posX9y6.remove(posX4y6.first())
-    // posX9y6.remove(posX5y6.first())
-    // posX9y6.remove(posX6y6.first())
-    // posX9y6.remove(posX7y4.first())
-    // posX9y6.remove(posX7y5.first())
-    // posX9y6.remove(posX7y6.first())
-    // posX9y6.remove(posX8y4.first())
-    // posX9y6.remove(posX8y5.first())
-    // posX9y6.remove(posX8y6.first())
-    // posX9y6.remove(posX9y4.first())
-    // posX9y6.remove(posX9y5.first())
-
-    /* Grid07 eliminate values */
-    /* row 7 */
-    // posX1y7.remove(posX1y1.first())
-    // posX1y7.remove(posX1y2.first())
-    // posX1y7.remove(posX1y3.first())
-    // posX1y7.remove(posX1y4.first())
-    // posX1y7.remove(posX1y5.first())
-    // posX1y7.remove(posX1y6.first())
-
-    // posX2y7.remove(posX1y7.first())
-    // posX2y7.remove(posX2y1.first())
-    // posX2y7.remove(posX2y2.first())
-    // posX2y7.remove(posX2y3.first())
-    // posX2y7.remove(posX2y4.first())
-    // posX2y7.remove(posX2y5.first())
-    // posX2y7.remove(posX2y6.first())
-
-    // posX3y7.remove(posX1y7.first())
-    // posX3y7.remove(posX2y7.first())
-    // posX3y7.remove(posX3y1.first())
-    // posX3y7.remove(posX3y2.first())
-    // posX3y7.remove(posX3y3.first())
-    // posX3y7.remove(posX3y4.first())
-    // posX3y7.remove(posX3y5.first())
-    // posX3y7.remove(posX3y6.first())
-
-    // posX1y8.remove(posX1y1.first())
-    // posX1y8.remove(posX1y2.first())
-    // posX1y8.remove(posX1y3.first())
-    // posX1y8.remove(posX1y4.first())
-    // posX1y8.remove(posX1y5.first())
-    // posX1y8.remove(posX1y6.first())
-    // posX1y8.remove(posX1y7.first())
-    // posX1y8.remove(posX2y7.first())
-    // posX1y8.remove(posX3y7.first())
-
-    // posX2y8.remove(posX1y7.first())
-    // posX2y8.remove(posX1y8.first())
-    // posX2y8.remove(posX2y1.first())
-    // posX2y8.remove(posX2y2.first())
-    // posX2y8.remove(posX2y3.first())
-    // posX2y8.remove(posX2y4.first())
-    // posX2y8.remove(posX2y5.first())
-    // posX2y8.remove(posX2y6.first())
-    // posX2y8.remove(posX2y7.first())
-    // posX2y8.remove(posX3y7.first())
-
-    // posX3y8.remove(posX1y7.first())
-    // posX3y8.remove(posX1y8.first())
-    // posX3y8.remove(posX2y7.first())
-    // posX3y8.remove(posX2y8.first())
-    // posX3y8.remove(posX3y1.first())
-    // posX3y8.remove(posX3y2.first())
-    // posX3y8.remove(posX3y3.first())
-    // posX3y8.remove(posX3y4.first())
-    // posX3y8.remove(posX3y5.first())
-    // posX3y8.remove(posX3y6.first())
-    // posX3y8.remove(posX3y7.first())
-
-    // posX1y9.remove(posX1y1.first())
-    // posX1y9.remove(posX1y2.first())
-    // posX1y9.remove(posX1y3.first())
-    // posX1y9.remove(posX1y4.first())
-    // posX1y9.remove(posX1y5.first())
-    // posX1y9.remove(posX1y6.first())
-    // posX1y9.remove(posX1y7.first())
-    // posX1y9.remove(posX1y8.first())
-
-    // posX2y9.remove(posX1y7.first())
-    // posX2y9.remove(posX1y8.first())
-    // posX2y9.remove(posX1y9.first())
-    // posX2y9.remove(posX2y1.first())
-    // posX2y9.remove(posX2y2.first())
-    // posX2y9.remove(posX2y3.first())
-    // posX2y9.remove(posX2y4.first())
-    // posX2y9.remove(posX2y5.first())
-    // posX2y9.remove(posX2y6.first())
-    // posX2y9.remove(posX2y7.first())
-    // posX2y9.remove(posX2y8.first())
-    // posX2y9.remove(posX3y7.first())
-    // posX2y9.remove(posX3y8.first())
-
-    // posX3y9.remove(posX1y7.first())
-    // posX3y9.remove(posX1y8.first())
-    // posX3y9.remove(posX1y9.first())
-    // posX3y9.remove(posX2y7.first())
-    // posX3y9.remove(posX2y8.first())
-    // posX3y9.remove(posX2y9.first())
-    // posX3y9.remove(posX3y1.first())
-    // posX3y9.remove(posX3y2.first())
-    // posX3y9.remove(posX3y3.first())
-    // posX3y9.remove(posX3y4.first())
-    // posX3y9.remove(posX3y5.first())
-    // posX3y9.remove(posX3y6.first())
-    // posX3y9.remove(posX3y7.first())
-    // posX3y9.remove(posX3y7.first())
-    // posX3y9.remove(posX3y8.first())
-    // posX3y9.remove(posX3y8.first())
+    /* eliminate values - row 2 */
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX3y1)
+
+    TrimToOneElement(shuffled)
+    val posX1y2 = shuffled.first()
+    
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX3y1)
+    TrimToOneElement(shuffled)
+    val posX2y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y1)
+    TrimToOneElement(shuffled)
+    val posX3y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX6y1)
+    TrimToOneElement(shuffled)
+    val posX4y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX6y1)
+    TrimToOneElement(shuffled)
+    val posX5y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX6y1)
+    TrimToOneElement(shuffled)
+    val posX6y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX9y1)
+    TrimToOneElement(shuffled)
+    val posX7y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX9y1)
+    TrimToOneElement(shuffled)
+    val posX8y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX9y1)
+    TrimToOneElement(shuffled)
+    val posX9y2 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+
+    /* eliminate values - row 3 */
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    TrimToOneElement(shuffled)
+    val posX1y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    TrimToOneElement(shuffled)
+    val posX2y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    TrimToOneElement(shuffled)
+    val posX3y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    TrimToOneElement(shuffled)
+    val posX4y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    TrimToOneElement(shuffled)
+    val posX5y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    TrimToOneElement(shuffled)
+    val posX6y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    TrimToOneElement(shuffled)
+    val posX7y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    TrimToOneElement(shuffled)
+    val posX8y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX8y3)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    TrimToOneElement(shuffled)
+    val posX9y3 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+
+    /* eliminate values - row 4 */
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    TrimToOneElement(shuffled)
+    val posX1y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX2y3)
+    TrimToOneElement(shuffled)
+    val posX2y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+    
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX3y3)
+    TrimToOneElement(shuffled)
+    val posX3y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    TrimToOneElement(shuffled)
+    val posX4y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX5y3)
+    TrimToOneElement(shuffled)
+    val posX5y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX6y3)
+    TrimToOneElement(shuffled)
+    val posX6y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    TrimToOneElement(shuffled)
+    val posX7y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX8y3)
+    TrimToOneElement(shuffled)
+    val posX8y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    shuffled.remove(posX9y3)
+    TrimToOneElement(shuffled)
+    val posX9y4 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+
+    /* eliminate values - row 5 */
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    TrimToOneElement(shuffled)
+    val posX1y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX3y4)
+    TrimToOneElement(shuffled)
+    val posX2y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y4)
+    TrimToOneElement(shuffled)
+    val posX3y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX6y4)
+    TrimToOneElement(shuffled)
+    val posX4y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX6y4)
+    TrimToOneElement(shuffled)
+    val posX5y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX6y4)
+    TrimToOneElement(shuffled)
+    val posX6y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX6y5)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX9y4)
+    TrimToOneElement(shuffled)
+    val posX7y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX6y5)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX8y3)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX9y4)
+    TrimToOneElement(shuffled)
+    val posX8y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX6y5)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX8y5)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    shuffled.remove(posX9y3)
+    shuffled.remove(posX9y4)
+    TrimToOneElement(shuffled)
+    val posX9y5 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+
+    /* eliminate values - row 6 */
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX3y5)
+    TrimToOneElement(shuffled)
+    val posX1y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX2y5)
+    TrimToOneElement(shuffled)
+    val posX2y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX3y5)
+    TrimToOneElement(shuffled)
+    val posX3y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX6y5)
+    TrimToOneElement(shuffled)
+    val posX4y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX4y6)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX6y5)
+    TrimToOneElement(shuffled)
+    val posX5y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX4y6)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX5y6)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX6y5)
+    TrimToOneElement(shuffled)
+    val posX6y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX4y6)
+    shuffled.remove(posX5y6)
+    shuffled.remove(posX6y6)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX8y5)
+    shuffled.remove(posX9y4)
+    shuffled.remove(posX9y5)
+    TrimToOneElement(shuffled)
+    val posX7y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX4y6)
+    shuffled.remove(posX5y6)
+    shuffled.remove(posX6y6)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX7y6)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX8y5)
+    shuffled.remove(posX9y4)
+    shuffled.remove(posX9y5)
+    TrimToOneElement(shuffled)
+    val posX8y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX4y6)
+    shuffled.remove(posX5y6)
+    shuffled.remove(posX6y6)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX7y6)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX8y5)
+    shuffled.remove(posX8y6)
+    shuffled.remove(posX9y4)
+    shuffled.remove(posX9y5)
+    TrimToOneElement(shuffled)
+    val posX9y6 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    /* eliminate values - row 7 */
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX1y6)
+    TrimToOneElement(shuffled)
+    val posX1y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX2y6)
+    TrimToOneElement(shuffled)
+    val posX2y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX3y6)
+    TrimToOneElement(shuffled)
+    val posX3y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX4y6)
+    TrimToOneElement(shuffled)
+    val posX4y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX5y6)
+    TrimToOneElement(shuffled)
+    val posX5y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX6y5)
+    shuffled.remove(posX6y6)
+    TrimToOneElement(shuffled)
+    val posX6y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX6y7)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX7y6)
+    TrimToOneElement(shuffled)
+    val posX7y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX6y7)
+    shuffled.remove(posX7y7)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX8y3)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX8y5)
+    shuffled.remove(posX8y6)
+    TrimToOneElement(shuffled)
+    val posX8y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX6y7)
+    shuffled.remove(posX7y7)
+    shuffled.remove(posX8y7)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    shuffled.remove(posX9y3)
+    shuffled.remove(posX9y4)
+    shuffled.remove(posX9y5)
+    shuffled.remove(posX9y6)
+    TrimToOneElement(shuffled)
+    val posX9y7 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
 
     /* Grid08 eliminate values */
-    /* row 7 */
-    // posX4y7.remove(posX1y7.first())
-    // posX4y7.remove(posX2y7.first())
-    // posX4y7.remove(posX3y7.first())
-    // posX4y7.remove(posX4y1.first())
-    // posX4y7.remove(posX4y2.first())
-    // posX4y7.remove(posX4y3.first())
-    // posX4y7.remove(posX4y4.first())
-    // posX4y7.remove(posX4y5.first())
-    // posX4y7.remove(posX4y6.first())
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    TrimToOneElement(shuffled)
+    val posX1y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX5y7.remove(posX1y7.first())
-    // posX5y7.remove(posX2y7.first())
-    // posX5y7.remove(posX3y7.first())
-    // posX5y7.remove(posX4y7.first())
-    // posX5y7.remove(posX5y1.first())
-    // posX5y7.remove(posX5y2.first())
-    // posX5y7.remove(posX5y3.first())
-    // posX5y7.remove(posX5y4.first())
-    // posX5y7.remove(posX5y5.first())
-    // posX5y7.remove(posX5y6.first())
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX3y7)
+    TrimToOneElement(shuffled)
+    val posX2y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX6y7.remove(posX1y7.first())
-    // posX6y7.remove(posX2y7.first())
-    // posX6y7.remove(posX3y7.first())
-    // posX6y7.remove(posX4y7.first())
-    // posX6y7.remove(posX5y7.first())
-    // posX6y7.remove(posX6y1.first())
-    // posX6y7.remove(posX6y2.first())
-    // posX6y7.remove(posX6y3.first())
-    // posX6y7.remove(posX6y4.first())
-    // posX6y7.remove(posX6y5.first())
-    // posX6y7.remove(posX6y6.first())
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX3y7)
+    TrimToOneElement(shuffled)
+    val posX3y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    /* row 8 */
-    // posX4y8.remove(posX1y8.first())
-    // posX4y8.remove(posX2y8.first())
-    // posX4y8.remove(posX3y8.first())
-    // posX4y8.remove(posX4y1.first())
-    // posX4y8.remove(posX4y2.first())
-    // posX4y8.remove(posX4y3.first())
-    // posX4y8.remove(posX4y4.first())
-    // posX4y8.remove(posX4y5.first())
-    // posX4y8.remove(posX4y6.first())
-    // posX4y8.remove(posX4y7.first())
-    // posX4y8.remove(posX5y7.first())
-    // posX4y8.remove(posX6y7.first())
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y8)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX4y6)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX6y7)
+    TrimToOneElement(shuffled)
+    val posX4y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX5y8.remove(posX1y8.first())
-    // posX5y8.remove(posX2y8.first())
-    // posX5y8.remove(posX3y8.first())
-    // posX5y8.remove(posX4y7.first())
-    // posX5y8.remove(posX4y8.first())
-    // posX5y8.remove(posX5y1.first())
-    // posX5y8.remove(posX5y2.first())
-    // posX5y8.remove(posX5y3.first())
-    // posX5y8.remove(posX5y4.first())
-    // posX5y8.remove(posX5y5.first())
-    // posX5y8.remove(posX5y6.first())
-    // posX5y8.remove(posX5y7.first())
-    // posX5y8.remove(posX6y7.first())
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y8)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX5y6)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX6y7)
+    TrimToOneElement(shuffled)
+    val posX5y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX6y8.remove(posX1y8.first())
-    // posX6y8.remove(posX2y8.first())
-    // posX6y8.remove(posX3y8.first())
-    // posX6y8.remove(posX4y7.first())
-    // posX6y8.remove(posX4y8.first())
-    // posX6y8.remove(posX5y2.first())
-    // posX6y8.remove(posX5y3.first())
-    // posX6y8.remove(posX5y4.first())
-    // posX6y8.remove(posX5y5.first())
-    // posX6y8.remove(posX5y6.first())
-    // posX6y8.remove(posX5y7.first())
-    // posX6y8.remove(posX5y8.first())
-    // posX6y8.remove(posX6y1.first())
-    // posX6y8.remove(posX6y7.first())
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y8)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX5y8)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX6y5)
+    shuffled.remove(posX6y6)
+    shuffled.remove(posX6y7)
+    TrimToOneElement(shuffled)
+    val posX6y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    /* row 9 */
-    // posX4y9.remove(posX1y9.first())
-    // posX4y9.remove(posX2y9.first())
-    // posX4y9.remove(posX3y9.first())
-    // posX4y9.remove(posX4y1.first())
-    // posX4y9.remove(posX4y2.first())
-    // posX4y9.remove(posX4y3.first())
-    // posX4y9.remove(posX4y4.first())
-    // posX4y9.remove(posX4y5.first())
-    // posX4y9.remove(posX4y6.first())
-    // posX4y9.remove(posX4y7.first())
-    // posX4y9.remove(posX4y8.first())
-    // posX4y9.remove(posX5y7.first())
-    // posX4y9.remove(posX5y8.first())
-    // posX4y9.remove(posX6y7.first())
-    // posX4y9.remove(posX6y8.first())
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y8)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX5y8)
+    shuffled.remove(posX6y8)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX7y6)
+    shuffled.remove(posX7y7)
+    shuffled.remove(posX8y7)
+    shuffled.remove(posX9y7)
+    TrimToOneElement(shuffled)
+    val posX7y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX5y9.remove(posX1y9.first())
-    // posX5y9.remove(posX2y9.first())
-    // posX5y9.remove(posX3y9.first())
-    // posX5y9.remove(posX4y7.first())
-    // posX5y9.remove(posX4y8.first())
-    // posX5y9.remove(posX4y9.first())
-    // posX5y9.remove(posX5y1.first())
-    // posX5y9.remove(posX5y2.first())
-    // posX5y9.remove(posX5y3.first())
-    // posX5y9.remove(posX5y4.first())
-    // posX5y9.remove(posX5y5.first())
-    // posX5y9.remove(posX5y6.first())
-    // posX5y9.remove(posX5y7.first())
-    // posX5y9.remove(posX5y8.first())
-    // posX5y9.remove(posX6y7.first())
-    // posX5y9.remove(posX6y8.first())
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y8)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX5y8)
+    shuffled.remove(posX6y8)
+    shuffled.remove(posX7y7)
+    shuffled.remove(posX7y8)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX8y3)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX8y5)
+    shuffled.remove(posX8y6)
+    shuffled.remove(posX8y7)
+    shuffled.remove(posX9y7)
+    TrimToOneElement(shuffled)
+    val posX8y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX6y9.remove(posX1y9.first())
-    // posX6y9.remove(posX2y9.first())
-    // posX6y9.remove(posX3y9.first())
-    // posX6y9.remove(posX4y7.first())
-    // posX6y9.remove(posX4y8.first())
-    // posX6y9.remove(posX4y9.first())
-    // posX6y9.remove(posX5y7.first())
-    // posX6y9.remove(posX5y8.first())
-    // posX6y9.remove(posX5y9.first())
-    // posX6y9.remove(posX6y1.first())
-    // posX6y9.remove(posX6y2.first())
-    // posX6y9.remove(posX6y3.first())
-    // posX6y9.remove(posX6y4.first())
-    // posX6y9.remove(posX6y5.first())
-    // posX6y9.remove(posX6y6.first())
-    // posX6y9.remove(posX6y7.first())
-    // posX6y9.remove(posX6y8.first())
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y8)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX5y8)
+    shuffled.remove(posX6y8)
+    shuffled.remove(posX7y8)
+    shuffled.remove(posX8y7)
+    shuffled.remove(posX8y8)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    shuffled.remove(posX9y3)
+    shuffled.remove(posX9y4)
+    shuffled.remove(posX9y5)
+    shuffled.remove(posX9y6)
+    shuffled.remove(posX9y7)
+    TrimToOneElement(shuffled)
+    val posX9y8 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    /* Grid09 eliminate values */
-    /* row 7 */
-    // posX7y7.remove(posX1y7.first())
-    // posX7y7.remove(posX2y7.first())
-    // posX7y7.remove(posX3y7.first())
-    // posX7y7.remove(posX4y7.first())
-    // posX7y7.remove(posX5y7.first())
-    // posX7y7.remove(posX6y7.first())
-    // posX7y7.remove(posX7y1.first())
-    // posX7y7.remove(posX7y2.first())
-    // posX7y7.remove(posX7y3.first())
-    // posX7y7.remove(posX7y4.first())
-    // posX7y7.remove(posX7y5.first())
-    // posX7y7.remove(posX7y6.first())
 
-    // posX8y7.remove(posX1y7.first())
-    // posX8y7.remove(posX2y7.first())
-    // posX8y7.remove(posX3y7.first())
-    // posX8y7.remove(posX4y7.first())
-    // posX8y7.remove(posX5y7.first())
-    // posX8y7.remove(posX6y7.first())
-    // posX8y7.remove(posX7y7.first())
-    // posX8y7.remove(posX8y1.first())
-    // posX8y7.remove(posX8y2.first())
-    // posX8y7.remove(posX8y3.first())
-    // posX8y7.remove(posX8y4.first())
-    // posX8y7.remove(posX8y5.first())
-    // posX8y7.remove(posX8y6.first())
+    /* eliminate values - row 9 */
+    shuffled.remove(posX1y1)
+    shuffled.remove(posX1y2)
+    shuffled.remove(posX1y3)
+    shuffled.remove(posX1y4)
+    shuffled.remove(posX1y5)
+    shuffled.remove(posX1y6)
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX1y8)
+    TrimToOneElement(shuffled)
+    val posX1y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX9y7.remove(posX1y7.first())
-    // posX9y7.remove(posX2y7.first())
-    // posX9y7.remove(posX3y7.first())
-    // posX9y7.remove(posX4y7.first())
-    // posX9y7.remove(posX5y7.first())
-    // posX9y7.remove(posX6y7.first())
-    // posX9y7.remove(posX7y7.first())
-    // posX9y7.remove(posX8y7.first())
-    // posX9y7.remove(posX9y1.first())
-    // posX9y7.remove(posX9y2.first())
-    // posX9y7.remove(posX9y3.first())
-    // posX9y7.remove(posX9y4.first())
-    // posX9y7.remove(posX9y5.first())
-    // posX9y7.remove(posX9y6.first())
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y1)
+    shuffled.remove(posX2y2)
+    shuffled.remove(posX2y3)
+    shuffled.remove(posX2y4)
+    shuffled.remove(posX2y5)
+    shuffled.remove(posX2y6)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX3y8)
+    TrimToOneElement(shuffled)
+    val posX2y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    /* row 8 */
-    // posX7y8.remove(posX1y8.first())
-    // posX7y8.remove(posX2y8.first())
-    // posX7y8.remove(posX3y8.first())
-    // posX7y8.remove(posX4y8.first())
-    // posX7y8.remove(posX5y8.first())
-    // posX7y8.remove(posX6y8.first())
-    // posX7y8.remove(posX7y1.first())
-    // posX7y8.remove(posX7y2.first())
-    // posX7y8.remove(posX7y3.first())
-    // posX7y8.remove(posX7y4.first())
-    // posX7y8.remove(posX7y5.first())
-    // posX7y8.remove(posX7y6.first())
-    // posX7y8.remove(posX7y7.first())
-    // posX7y8.remove(posX8y7.first())
-    // posX7y8.remove(posX9y7.first())
+    shuffled.remove(posX1y7)
+    shuffled.remove(posX1y8)
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y7)
+    shuffled.remove(posX2y8)
+    shuffled.remove(posX2y9)
+    shuffled.remove(posX3y1)
+    shuffled.remove(posX3y2)
+    shuffled.remove(posX3y3)
+    shuffled.remove(posX3y4)
+    shuffled.remove(posX3y5)
+    shuffled.remove(posX3y6)
+    shuffled.remove(posX3y7)
+    shuffled.remove(posX3y8)
+    TrimToOneElement(shuffled)
+    val posX3y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX8y8.remove(posX1y8.first())
-    // posX8y8.remove(posX2y8.first())
-    // posX8y8.remove(posX3y8.first())
-    // posX8y8.remove(posX4y8.first())
-    // posX8y8.remove(posX5y8.first())
-    // posX8y8.remove(posX6y8.first())
-    // posX8y8.remove(posX7y8.first())
-    // posX8y8.remove(posX8y1.first())
-    // posX8y8.remove(posX8y2.first())
-    // posX8y8.remove(posX8y3.first())
-    // posX8y8.remove(posX8y4.first())
-    // posX8y8.remove(posX8y5.first())
-    // posX8y8.remove(posX8y6.first())
-    // posX8y8.remove(posX8y7.first())
-    // posX8y8.remove(posX9y7.first())
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y9)
+    shuffled.remove(posX3y9)
+    shuffled.remove(posX4y1)
+    shuffled.remove(posX4y2)
+    shuffled.remove(posX4y3)
+    shuffled.remove(posX4y4)
+    shuffled.remove(posX4y5)
+    shuffled.remove(posX4y6)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX5y8)
+    shuffled.remove(posX6y7)
+    shuffled.remove(posX6y8)
+    TrimToOneElement(shuffled)
+    val posX4y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX9y8.remove(posX1y8.first())
-    // posX9y8.remove(posX2y8.first())
-    // posX9y8.remove(posX3y8.first())
-    // posX9y8.remove(posX4y8.first())
-    // posX9y8.remove(posX5y8.first())
-    // posX9y8.remove(posX6y8.first())
-    // posX9y8.remove(posX7y8.first())
-    // posX9y8.remove(posX8y7.first())
-    // posX9y8.remove(posX8y8.first())
-    // posX9y8.remove(posX9y1.first())
-    // posX9y8.remove(posX9y2.first())
-    // posX9y8.remove(posX9y3.first())
-    // posX9y8.remove(posX9y4.first())
-    // posX9y8.remove(posX9y5.first())
-    // posX9y8.remove(posX9y6.first())
-    // posX9y8.remove(posX9y7.first())
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y9)
+    shuffled.remove(posX3y9)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX4y9)
+    shuffled.remove(posX5y1)
+    shuffled.remove(posX5y2)
+    shuffled.remove(posX5y3)
+    shuffled.remove(posX5y4)
+    shuffled.remove(posX5y5)
+    shuffled.remove(posX5y6)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX5y8)
+    shuffled.remove(posX6y7)
+    shuffled.remove(posX6y8)
+    TrimToOneElement(shuffled)
+    val posX5y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    /* row 9 */
-    // posX7y9.remove(posX1y9.first())
-    // posX7y9.remove(posX2y9.first())
-    // posX7y9.remove(posX3y9.first())
-    // posX7y9.remove(posX4y9.first())
-    // posX7y9.remove(posX5y9.first())
-    // posX7y9.remove(posX6y9.first())
-    // posX7y9.remove(posX7y1.first())
-    // posX7y9.remove(posX7y2.first())
-    // posX7y9.remove(posX7y3.first())
-    // posX7y9.remove(posX7y4.first())
-    // posX7y9.remove(posX7y5.first())
-    // posX7y9.remove(posX7y6.first())
-    // posX7y9.remove(posX7y7.first())
-    // posX7y9.remove(posX7y8.first())
-    // posX7y9.remove(posX8y7.first())
-    // posX7y9.remove(posX8y8.first())
-    // posX7y9.remove(posX9y7.first())
-    // posX7y9.remove(posX9y8.first())
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y9)
+    shuffled.remove(posX3y9)
+    shuffled.remove(posX4y7)
+    shuffled.remove(posX4y8)
+    shuffled.remove(posX4y9)
+    shuffled.remove(posX5y7)
+    shuffled.remove(posX5y8)
+    shuffled.remove(posX5y9)
+    shuffled.remove(posX6y1)
+    shuffled.remove(posX6y2)
+    shuffled.remove(posX6y3)
+    shuffled.remove(posX6y4)
+    shuffled.remove(posX6y5)
+    shuffled.remove(posX6y6)
+    shuffled.remove(posX6y7)
+    shuffled.remove(posX6y8)
+    TrimToOneElement(shuffled)
+    val posX6y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX8y9.remove(posX1y9.first())
-    // posX8y9.remove(posX2y9.first())
-    // posX8y9.remove(posX3y9.first())
-    // posX8y9.remove(posX4y9.first())
-    // posX8y9.remove(posX5y9.first())
-    // posX8y9.remove(posX6y9.first())
-    // posX8y9.remove(posX7y7.first())
-    // posX8y9.remove(posX7y8.first())
-    // posX8y9.remove(posX7y9.first())
-    // posX8y9.remove(posX8y1.first())
-    // posX8y9.remove(posX8y2.first())
-    // posX8y9.remove(posX8y3.first())
-    // posX8y9.remove(posX8y4.first())
-    // posX8y9.remove(posX8y5.first())
-    // posX8y9.remove(posX8y6.first())
-    // posX8y9.remove(posX8y7.first())
-    // posX8y9.remove(posX8y8.first())
-    // posX8y9.remove(posX9y7.first())
-    // posX8y9.remove(posX9y8.first())
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y9)
+    shuffled.remove(posX3y9)
+    shuffled.remove(posX4y9)
+    shuffled.remove(posX5y9)
+    shuffled.remove(posX6y9)
+    shuffled.remove(posX7y1)
+    shuffled.remove(posX7y2)
+    shuffled.remove(posX7y3)
+    shuffled.remove(posX7y4)
+    shuffled.remove(posX7y5)
+    shuffled.remove(posX7y6)
+    shuffled.remove(posX7y7)
+    shuffled.remove(posX7y8)
+    shuffled.remove(posX8y7)
+    shuffled.remove(posX8y8)
+    shuffled.remove(posX9y7)
+    shuffled.remove(posX9y8)
+    TrimToOneElement(shuffled)
+    val posX7y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
 
-    // posX9y9.remove(posX1y9.first())
-    // posX9y9.remove(posX2y9.first())
-    // posX9y9.remove(posX3y9.first())
-    // posX9y9.remove(posX4y9.first())
-    // posX9y9.remove(posX5y9.first())
-    // posX9y9.remove(posX6y9.first())
-    // posX9y9.remove(posX7y7.first())
-    // posX9y9.remove(posX7y8.first())
-    // posX9y9.remove(posX7y9.first())
-    // posX9y9.remove(posX8y7.first())
-    // posX9y9.remove(posX8y8.first())
-    // posX9y9.remove(posX8y9.first())
-    // posX9y9.remove(posX9y1.first())
-    // posX9y9.remove(posX9y2.first())
-    // posX9y9.remove(posX9y3.first())
-    // posX9y9.remove(posX9y4.first())
-    // posX9y9.remove(posX9y5.first())
-    // posX9y9.remove(posX9y6.first())
-    // posX9y9.remove(posX9y7.first())
-    // posX9y9.remove(posX9y8.first())
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y9)
+    shuffled.remove(posX3y9)
+    shuffled.remove(posX4y9)
+    shuffled.remove(posX5y9)
+    shuffled.remove(posX6y9)
+    shuffled.remove(posX7y7)
+    shuffled.remove(posX7y8)
+    shuffled.remove(posX7y9)
+    shuffled.remove(posX8y1)
+    shuffled.remove(posX8y2)
+    shuffled.remove(posX8y3)
+    shuffled.remove(posX8y4)
+    shuffled.remove(posX8y5)
+    shuffled.remove(posX8y6)
+    shuffled.remove(posX8y7)
+    shuffled.remove(posX8y8)
+    shuffled.remove(posX9y7)
+    shuffled.remove(posX9y8)
+    TrimToOneElement(shuffled)
+    val posX8y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
+    shuffled.remove(posX1y9)
+    shuffled.remove(posX2y9)
+    shuffled.remove(posX3y9)
+    shuffled.remove(posX4y9)
+    shuffled.remove(posX5y9)
+    shuffled.remove(posX6y9)
+    shuffled.remove(posX7y7)
+    shuffled.remove(posX7y8)
+    shuffled.remove(posX7y9)
+    shuffled.remove(posX8y7)
+    shuffled.remove(posX8y8)
+    shuffled.remove(posX8y9)
+    shuffled.remove(posX9y1)
+    shuffled.remove(posX9y2)
+    shuffled.remove(posX9y3)
+    shuffled.remove(posX9y4)
+    shuffled.remove(posX9y5)
+    shuffled.remove(posX9y6)
+    shuffled.remove(posX9y7)
+    shuffled.remove(posX9y8)
+    TrimToOneElement(shuffled)
+    val posX9y9 = shuffled.first()
+    ResetShuffled(shuffled, numbers)
+
 
 
 
@@ -1178,113 +1355,6 @@ fun AppCore(modifier: Modifier = Modifier) {
     val slice3 = mutableListOf(0)
     val tmpSlice = mutableListOf(0)
 
-    /* val grid01 = GridList(
-        x1y1 = posX1y1[0],
-        x2y1 = posX2y1[0],
-        x3y1 = posX3y1[0],
-        x1y2 = posX1y2.first(),
-        x2y2 = posX2y2[0],
-        x3y2 = posX3y2[0],
-        x1y3 = posX1y3[0],
-        x2y3 = posX2y3[0],
-        x3y3 = posX3y3[0]
-    )
-
-    val grid02 = GridList(
-        x1y1 = posX4y1[0],
-        x2y1 = posX5y1[0],
-        x3y1 = posX6y1[0],
-        x1y2 = posX4y2[0],
-        x2y2 = posX5y2[0],
-        x3y2 = posX6y2[0],
-        x1y3 = posX4y3[0],
-        x2y3 = posX5y3[0],
-        x3y3 = posX6y3[0]
-    )
-
-    val grid03 = GridList(
-        x1y1 = posX7y1[0],
-        x2y1 = posX8y1[0],
-        x3y1 = posX9y1[0],
-        x1y2 = posX7y2[0],
-        x2y2 = posX8y2[0],
-        x3y2 = posX9y2[0],
-        x1y3 = posX7y3[0],
-        x2y3 = posX8y3[0],
-        x3y3 = posX9y3[0]
-    )
-
-    val grid04 = GridList(
-        x1y1 = posX1y4[0],
-        x2y1 = posX2y4[0],
-        x3y1 = posX3y4[0],
-        x1y2 = posX1y5[0],
-        x2y2 = posX2y5[0],
-        x3y2 = posX3y5[0],
-        x1y3 = posX1y6[0],
-        x2y3 = posX2y6[0],
-        x3y3 = posX3y6[0]
-    )
-
-    val grid05 = GridList(
-        x1y1 = posX4y4[0],
-        x2y1 = posX5y4[0],
-        x3y1 = posX6y4[0],
-        x1y2 = posX4y5[0],
-        x2y2 = posX5y5[0],
-        x3y2 = posX6y5[0],
-        x1y3 = posX4y6[0],
-        x2y3 = posX5y6[0],
-        x3y3 = posX6y6[0]
-    )
-
-    val grid06 = GridList(
-        x1y1 = posX7y4[0],
-        x2y1 = posX8y4[0],
-        x3y1 = posX9y4[0],
-        x1y2 = posX7y5[0],
-        x2y2 = posX8y5[0],
-        x3y2 = posX9y5[0],
-        x1y3 = posX7y6[0],
-        x2y3 = posX8y6[0],
-        x3y3 = posX9y6[0]
-    )
-
-    val grid07 = GridList(
-        x1y1 = posX1y7[0],
-        x2y1 = posX2y7[0],
-        x3y1 = posX3y7[0],
-        x1y2 = posX1y8[0],
-        x2y2 = posX2y8[0],
-        x3y2 = posX3y8[0],
-        x1y3 = posX1y9[0],
-        x2y3 = posX2y9[0],
-        x3y3 = posX3y9[0]
-    )
-
-    val grid08 = GridList(
-        x1y1 = posX4y7[0],
-        x2y1 = posX5y7[0],
-        x3y1 = posX6y7[0],
-        x1y2 = posX4y8[0],
-        x2y2 = posX5y8[0],
-        x3y2 = posX6y8[0],
-        x1y3 = posX4y9[0],
-        x2y3 = posX5y9[0],
-        x3y3 = posX6y9[0]
-    )
-
-    val grid09 = GridList(
-        x1y1 = posX7y7[0],
-        x2y1 = posX8y7[0],
-        x3y1 = posX9y7[0],
-        x1y2 = posX7y8[0],
-        x2y2 = posX8y8[0],
-        x3y2 = posX9y8[0],
-        x1y3 = posX7y9[0],
-        x2y3 = posX8y9[0],
-        x3y3 = posX9y9[0]
-    ) */
 
 
     /* row 01 */
@@ -1292,11 +1362,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y1 = GridCell(
         xPosition = 1,
         yPosition = 1,
-        value = if (posX1y1.size >1){
-            0}
-        else {
-            posX1y1.first()
-        },
+        value = posX1y1,
         txtColour = Black,
         hidden = false
     )
@@ -1305,11 +1371,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y1 = GridCell(
         xPosition = 2,
         yPosition = 1,
-        value = if (posX2y1.size >1){
-            0}
-        else {
-            posX2y1.first()
-        },
+        value = posX2y1,
         txtColour = Black,
         hidden = false
     )
@@ -1318,11 +1380,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y1 = GridCell(
         xPosition = 3,
         yPosition = 1,
-        value = if (posX3y1.size >1){
-            0}
-        else {
-            posX3y1.first()
-        },
+        value = posX3y1,
         txtColour = Black,
         hidden = false
     )
@@ -1331,11 +1389,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y1 = GridCell(
         xPosition = 4,
         yPosition = 1,
-        value = if (posX4y1.size >1){
-            0}
-        else {
-            posX4y1.first()
-        },
+        value = posX4y1,
         txtColour = Red,
         hidden = false
     )
@@ -1344,11 +1398,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y1 = GridCell(
         xPosition = 5,
         yPosition = 1,
-        value = if (posX5y1.size >1){
-            0}
-        else {
-            posX5y1.first()
-        },
+        value = posX5y1,
         txtColour = Red,
         hidden = false
     )
@@ -1357,11 +1407,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y1 = GridCell(
         xPosition = 6,
         yPosition = 1,
-        value = if (posX6y1.size >1){
-            0}
-        else {
-            posX6y1.first()
-        },
+        value = posX6y1,
         txtColour = Red,
         hidden = false
     )
@@ -1370,11 +1416,9 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y1 = GridCell(
         xPosition = 7,
         yPosition = 1,
-        value = if (posX7y1.size >1){
-            0}
-        else {
-            posX7y1.first()
-        },
+        value =
+            posX7y1
+        ,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1383,11 +1427,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y1 = GridCell(
         xPosition = 8,
         yPosition = 1,
-        value = if (posX8y1.size >1){
-            0}
-        else {
-            posX8y1.first()
-        },
+        value = posX8y1,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1396,11 +1436,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y1 = GridCell(
         xPosition = 9,
         yPosition = 1,
-        value = if (posX9y1.size >1){
-            0}
-        else {
-            posX9y1.first()
-        },
+        value = posX9y1,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1410,11 +1446,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y2 = GridCell(
         xPosition = 1,
         yPosition = 2,
-        value = if (posX1y2.size >1){
-            0}
-        else {
-            posX1y2.first()
-        },
+        value = posX1y2,
         txtColour = Black,
         hidden = false
     )
@@ -1423,11 +1455,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y3 = GridCell(
         xPosition = 1,
         yPosition = 3,
-        value = if (posX1y3.size >1){
-            0}
-        else {
-            posX1y3.first()
-        },
+        value = posX1y3,
         txtColour = Black,
         hidden = false
     )
@@ -1436,11 +1464,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y4 = GridCell(
         xPosition = 1,
         yPosition = 4,
-        value = if (posX1y4.size >1){
-            0}
-        else {
-            posX1y4.first()
-        },
+        value = posX1y4,
         txtColour = Blue,
         hidden = false
     )
@@ -1449,11 +1473,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y5 = GridCell(
         xPosition = 1,
         yPosition = 5,
-        value = if (posX1y5.size >1){
-            0}
-        else {
-            posX1y5.first()
-        },
+        value = posX1y5,
         txtColour = Blue,
         hidden = false
     )
@@ -1462,11 +1482,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y6 = GridCell(
         xPosition = 1,
         yPosition = 6,
-        value = if (posX1y6.size >1){
-            0}
-        else {
-            posX1y6.first()
-        },
+        value = posX1y6,
         txtColour = Blue,
         hidden = false
     )
@@ -1475,11 +1491,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y7 = GridCell(
         xPosition = 1,
         yPosition = 7,
-        value = if (posX1y7.size >1){
-            0}
-        else {
-            posX1y7.first()
-        },
+        value = posX1y7,
         txtColour = Purple40,
         hidden = false
     )
@@ -1488,11 +1500,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y8 = GridCell(
         xPosition = 1,
         yPosition = 8,
-        value = if (posX1y8.size >1){
-            0}
-        else {
-            posX1y8.first()
-        },
+        value = posX1y8,
         txtColour = Purple40,
         hidden = false
     )
@@ -1501,11 +1509,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x1y9 = GridCell(
         xPosition = 1,
         yPosition = 9,
-        value = if (posX1y9.size >1){
-            0}
-        else {
-            posX1y9.first()
-        },
+        value = posX1y9,
         txtColour = Purple40,
         hidden = false
     )
@@ -1516,11 +1520,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y2 = GridCell(
         xPosition = 2,
         yPosition = 2,
-        value = if (posX2y2.size >1){
-            0}
-        else {
-            posX2y2.first()
-        },
+        value = posX2y2,
         txtColour = Black,
         hidden = false
     )
@@ -1529,11 +1529,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y2 = GridCell(
         xPosition = 3,
         yPosition = 2,
-        value = if (posX3y2.size >1){
-            0}
-        else {
-            posX3y2.first()
-        },
+        value = posX3y2,
         txtColour = Black,
         hidden = false
     )
@@ -1543,11 +1539,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y3 = GridCell(
         xPosition = 2,
         yPosition = 3,
-        value = if (posX2y3.size >1){
-            0}
-        else {
-            posX2y3.first()
-        },
+        value = posX2y3,
         txtColour = Black,
         hidden = false
     )
@@ -1556,11 +1548,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y3 = GridCell(
         xPosition = 3,
         yPosition = 3,
-        value = if (posX3y3.size >1){
-            0}
-        else {
-            posX3y3.first()
-        },
+        value = posX3y3,
         txtColour = Black,
         hidden = false
     )
@@ -1571,11 +1559,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y2 = GridCell(
         xPosition = 4,
         yPosition = 2,
-        value = if (posX4y2.size >1){
-            0}
-        else {
-            posX4y2.first()
-        },
+        value = posX4y2,
         txtColour = Red,
         hidden = false
     )
@@ -1584,11 +1568,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y2 = GridCell(
         xPosition = 5,
         yPosition = 2,
-        value = if (posX5y2.size >1){
-            0}
-        else {
-            posX5y2.first()
-        },
+        value = posX5y2,
         txtColour = Red,
         hidden = false
     )
@@ -1597,11 +1577,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y2 = GridCell(
         xPosition = 6,
         yPosition = 2,
-        value = if (posX6y2.size >1){
-            0}
-        else {
-            posX6y2.first()
-        },
+        value = posX6y2,
         txtColour = Red,
         hidden = false
     )
@@ -1612,11 +1588,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y3 = GridCell(
         xPosition = 4,
         yPosition = 3,
-        value = if (posX4y3.size >1){
-            0}
-        else {
-            posX4y3.first()
-        },
+        value = posX4y3,
         txtColour = Red,
         hidden = false
     )
@@ -1625,11 +1597,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y3 = GridCell(
         xPosition = 5,
         yPosition = 3,
-        value = if (posX5y3.size >1){
-            0}
-        else {
-            posX5y3.first()
-        },
+        value = posX5y3,
         txtColour = Red,
         hidden = false
     )
@@ -1638,11 +1606,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y3 = GridCell(
         xPosition = 6,
         yPosition = 3,
-        value = if (posX6y3.size >1){
-            0}
-        else {
-            posX6y3.first()
-        },
+        value = posX6y3,
         txtColour = Red,
         hidden = false
     )
@@ -1653,11 +1617,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y2 = GridCell(
         xPosition = 7,
         yPosition = 2,
-        value = if (posX7y2.size >1){
-            0}
-        else {
-            posX7y2.first()
-        },
+        value = posX7y2,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1666,11 +1626,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y2 = GridCell(
         xPosition = 8,
         yPosition = 2,
-        value = if (posX8y2.size >1){
-            0}
-        else {
-            posX8y2.first()
-        },
+        value = posX8y2,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1679,11 +1635,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y2 = GridCell(
         xPosition = 9,
         yPosition = 2,
-        value = if (posX9y2.size >1){
-            0}
-        else {
-            posX9y2.first()
-        },
+        value = posX9y2,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1693,11 +1645,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y3 = GridCell(
         xPosition = 7,
         yPosition = 3,
-        value = if (posX7y3.size >1){
-            0}
-        else {
-            posX7y3.first()
-        },
+        value = posX7y3,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1706,11 +1654,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y3 = GridCell(
         xPosition = 8,
         yPosition = 3,
-        value = if (posX8y3.size >1){
-            0}
-        else {
-            posX8y3.first()
-        },
+        value = posX8y3,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1719,11 +1663,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y3 = GridCell(
         xPosition = 9,
         yPosition = 3,
-        value = if (posX9y3.size >1){
-            0}
-        else {
-            posX9y3.first()
-        },
+        value = posX9y3,
         txtColour = NeonGreen,
         hidden = false
     )
@@ -1734,11 +1674,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y4 = GridCell(
         xPosition = 2,
         yPosition = 4,
-        value = if (posX2y4.size >1){
-            0}
-        else {
-            posX2y4.first()
-        },
+        value = posX2y4,
         txtColour = Blue,
         hidden = false
     )
@@ -1747,11 +1683,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y4 = GridCell(
         xPosition = 3,
         yPosition = 4,
-        value = if (posX3y4.size >1){
-            0}
-        else {
-            posX3y4.first()
-        },
+        value = posX3y4,
         txtColour = Blue,
         hidden = false
     )
@@ -1761,11 +1693,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y5 = GridCell(
         xPosition = 2,
         yPosition = 5,
-        value = if (posX2y5.size >1){
-            0}
-        else {
-            posX2y5.first()
-        },
+        value = posX2y5,
         txtColour = Blue,
         hidden = false
     )
@@ -1774,11 +1702,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y5 = GridCell(
         xPosition = 3,
         yPosition = 5,
-        value = if (posX3y5.size >1){
-            0}
-        else {
-            posX3y5.first()
-        },
+        value = posX3y5,
         txtColour = Blue,
         hidden = false
     )
@@ -1787,11 +1711,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y6 = GridCell(
         xPosition = 2,
         yPosition = 6,
-        value = if (posX2y6.size >1){
-            0}
-        else {
-            posX2y6.first()
-        },
+        value = posX2y6,
         txtColour = Blue,
         hidden = false
     )
@@ -1800,11 +1720,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y6 = GridCell(
         xPosition = 3,
         yPosition = 6,
-        value = if (posX3y6.size >1){
-            0}
-        else {
-            posX3y6.first()
-        },
+        value = posX3y6,
         txtColour = Blue,
         hidden = false
     )
@@ -1815,11 +1731,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y4 = GridCell(
         xPosition = 4,
         yPosition = 4,
-        value = if (posX4y4.size >1){
-            0}
-        else {
-            posX4y4.first()
-        },
+        value = posX4y4,
         txtColour = Gold,
         hidden = false
     )
@@ -1828,11 +1740,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y4 = GridCell(
         xPosition = 5,
         yPosition = 4,
-        value = if (posX5y4.size >1){
-            0}
-        else {
-            posX5y4.first()
-        },
+        value = posX5y4,
         txtColour = Gold,
         hidden = false
     )
@@ -1842,11 +1750,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y4 = GridCell(
         xPosition = 6,
         yPosition = 4,
-        value = if (posX6y4.size >1){
-            0}
-        else {
-            posX6y4.first()
-        },
+        value = posX6y4,
         txtColour = Gold,
         hidden = false
     )
@@ -1857,11 +1761,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y5 = GridCell(
         xPosition = 4,
         yPosition = 5,
-        value = if (posX4y5.size >1){
-            0}
-        else {
-            posX4y5.first()
-        },
+        value = posX4y5,
         txtColour = Gold,
         hidden = false
     )
@@ -1871,11 +1771,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y5 = GridCell(
         xPosition = 5,
         yPosition = 5,
-        value = if (posX5y5.size >1){
-            0}
-        else {
-            posX5y5.first()
-        },
+        value = posX5y5,
         txtColour = Gold,
         hidden = false
     )
@@ -1884,11 +1780,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y5 = GridCell(
         xPosition = 6,
         yPosition = 5,
-        value = if (posX6y5.size >1){
-            0}
-        else {
-            posX6y5.first()
-        },
+        value = posX6y5,
         txtColour = Gold,
         hidden = false
     )
@@ -1898,11 +1790,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y6 = GridCell(
         xPosition = 4,
         yPosition = 6,
-        value = if (posX4y6.size >1){
-            0}
-        else {
-            posX4y6.first()
-        },
+        value = posX4y6,
         txtColour = Gold,
         hidden = false
     )
@@ -1911,11 +1799,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y6 = GridCell(
         xPosition = 5,
         yPosition = 6,
-        value = if (posX5y6.size >1){
-            0}
-        else {
-            posX5y6.first()
-        },
+        value = posX5y6,
         txtColour = Gold,
         hidden = false
     )
@@ -1924,11 +1808,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y6 = GridCell(
         xPosition = 6,
         yPosition = 6,
-        value = if (posX6y6.size >1){
-            0}
-        else {
-            posX6y6.first()
-        },
+        value = posX6y6,
         txtColour = Gold,
         hidden = false
     )
@@ -1939,11 +1819,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y4 = GridCell(
         xPosition = 7,
         yPosition = 4,
-        value = if (posX7y4.size >1){
-            0}
-        else {
-            posX7y4.first()
-        },
+        value = posX7y4,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1952,11 +1828,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y4 = GridCell(
         xPosition = 8,
         yPosition = 4,
-        value = if (posX8y4.size >1){
-            0}
-        else {
-            posX8y4.first()
-        },
+        value = posX8y4,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1965,11 +1837,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y4 = GridCell(
         xPosition = 9,
         yPosition = 4,
-        value = if (posX9y4.size >1){
-            0}
-        else {
-            posX9y4.first()
-        },
+        value = posX9y4,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1979,11 +1847,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y5 = GridCell(
         xPosition = 7,
         yPosition = 5,
-        value = if (posX7y5.size >1){
-            0}
-        else {
-            posX7y5.first()
-        },
+        value = posX7y5,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -1992,11 +1856,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y5 = GridCell(
         xPosition = 8,
         yPosition = 5,
-        value = if (posX8y5.size >1){
-            0}
-        else {
-            posX8y5.first()
-        },
+        value = posX8y5,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -2005,11 +1865,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y5 = GridCell(
         xPosition = 9,
         yPosition = 5,
-        value = if (posX9y5.size >1){
-            0}
-        else {
-            posX9y5.first()
-        },
+        value = posX9y5,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -2019,11 +1875,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y6 = GridCell(
         xPosition = 7,
         yPosition = 6,
-        value = if (posX7y6.size >1){
-            0}
-        else {
-            posX7y6.first()
-        },
+        value = posX7y6,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -2032,11 +1884,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y6 = GridCell(
         xPosition = 8,
         yPosition = 6,
-        value = if (posX8y6.size >1){
-            0}
-        else {
-            posX8y6.first()
-        },
+        value = posX8y6,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -2045,11 +1893,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y6 = GridCell(
         xPosition = 8,
         yPosition = 6,
-        value = if (posX9y6.size >1){
-            0}
-        else {
-            posX9y6.first()
-        },
+        value = posX9y6,
         txtColour = DarkGrey,
         hidden = false
     )
@@ -2060,11 +1904,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y7 = GridCell(
         xPosition = 2,
         yPosition = 7,
-        value = if (posX2y7.size >1){
-            0}
-        else {
-            posX2y7.first()
-        },
+        value = posX2y7,
         txtColour = Purple40,
         hidden = false
     )
@@ -2073,11 +1913,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y7 = GridCell(
         xPosition = 3,
         yPosition = 7,
-        value = if (posX3y7.size >1){
-            0}
-        else {
-            posX3y7.first()
-        },
+        value = posX3y7,
         txtColour = Purple40,
         hidden = false
     )
@@ -2087,11 +1923,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y8 = GridCell(
         xPosition = 2,
         yPosition = 8,
-        value = if (posX2y8.size >1){
-            0}
-        else {
-            posX2y8.first()
-        },
+        value = posX2y8,
         txtColour = Purple40,
         hidden = false
     )
@@ -2100,11 +1932,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y8 = GridCell(
         xPosition = 3,
         yPosition = 8,
-        value = if (posX3y8.size >1){
-            0}
-        else {
-            posX3y8.first()
-        },
+        value = posX3y8,
         txtColour = Purple40,
         hidden = false
     )
@@ -2114,11 +1942,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x2y9 = GridCell(
         xPosition = 2,
         yPosition = 9,
-        value = if (posX2y9.size >1){
-            0}
-        else {
-            posX2y9.first()
-        },
+        value = posX2y9,
         txtColour = Purple40,
         hidden = false
     )
@@ -2127,11 +1951,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x3y9 = GridCell(
         xPosition = 3,
         yPosition = 9,
-        value = if (posX3y9.size >1){
-            0}
-        else {
-            posX3y9.first()
-        },
+        value = posX3y9,
         txtColour = Purple40,
         hidden = false
     )
@@ -2142,11 +1962,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y7 = GridCell(
         xPosition = 4,
         yPosition = 7,
-        value = if (posX4y7.size >1){
-            0}
-        else {
-            posX4y7.first()
-        },
+        value = posX4y7,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2155,11 +1971,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y7 = GridCell(
         xPosition = 5,
         yPosition = 7,
-        value = if (posX5y7.size >1){
-            0}
-        else {
-            posX5y7.first()
-        },
+        value = posX5y7,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2168,11 +1980,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y7 = GridCell(
         xPosition = 6,
         yPosition = 7,
-        value = if (posX6y7.size >1){
-            0}
-        else {
-            posX6y7.first()
-        },
+        value = posX6y7,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2182,11 +1990,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y8 = GridCell(
         xPosition = 4,
         yPosition = 8,
-        value = if (posX4y8.size >1){
-            0}
-        else {
-            posX4y8.first()
-        },
+        value = posX4y8,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2195,11 +1999,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y8 = GridCell(
         xPosition = 5,
         yPosition = 8,
-        value = if (posX5y8.size >1){
-            0}
-        else {
-            posX5y8.first()
-        },
+        value = posX5y8,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2208,11 +2008,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y8 = GridCell(
         xPosition = 6,
         yPosition = 8,
-        value = if (posX6y8.size >1){
-            0}
-        else {
-            posX6y8.first()
-        },
+        value = posX6y8,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2222,11 +2018,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x4y9 = GridCell(
         xPosition = 4,
         yPosition = 9,
-        value = if (posX4y9.size >1){
-            0}
-        else {
-            posX4y9.first()
-        },
+        value = posX4y9,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2235,11 +2027,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x5y9 = GridCell(
         xPosition = 5,
         yPosition = 9,
-        value = if (posX5y9.size >1){
-            0}
-        else {
-            posX5y9.first()
-        },
+        value = posX5y9,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2248,11 +2036,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x6y9 = GridCell(
         xPosition = 5,
         yPosition = 9,
-        value = if (posX6y9.size >1){
-            0}
-        else {
-            posX6y9.first()
-        },
+        value = posX6y9,
         txtColour = MathBlue,
         hidden = false
     )
@@ -2263,11 +2047,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y7 = GridCell(
         xPosition = 7,
         yPosition = 7,
-        value = if (posX7y7.size >1){
-            0}
-        else {
-            posX7y7.first()
-        },
+        value = posX7y7,
         txtColour = Pink,
         hidden = false
     )
@@ -2276,11 +2056,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y7 = GridCell(
         xPosition = 8,
         yPosition = 7,
-        value = if (posX8y7.size >1){
-            0}
-        else {
-            posX8y7.first()
-        },
+        value = posX8y7,
         txtColour = Pink,
         hidden = false
     )
@@ -2289,11 +2065,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y7 = GridCell(
         xPosition = 9,
         yPosition = 7,
-        value = if (posX9y7.size >1){
-            0}
-        else {
-            posX9y7.first()
-        },
+        value = posX9y7,
         txtColour = Pink,
         hidden = false
     )
@@ -2303,11 +2075,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y8 = GridCell(
         xPosition = 7,
         yPosition = 8,
-        value = if (posX7y8.size >1){
-            0}
-        else {
-            posX7y8.first()
-        },
+        value = posX7y8,
         txtColour = Pink,
         hidden = false
     )
@@ -2316,11 +2084,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y8 = GridCell(
         xPosition = 8,
         yPosition = 8,
-        value = if (posX8y8.size >1){
-            0}
-        else {
-            posX8y8.first()
-        },
+        value = posX8y8,
         txtColour = Pink,
         hidden = false
     )
@@ -2329,11 +2093,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y8 = GridCell(
         xPosition = 9,
         yPosition = 8,
-        value = if (posX9y8.size >1){
-            0}
-        else {
-            posX9y8.first()
-        },
+        value = posX9y8,
         txtColour = Pink,
         hidden = false
     )
@@ -2343,11 +2103,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x7y9 = GridCell(
         xPosition = 7,
         yPosition = 9,
-        value = if (posX7y9.size >1){
-            0}
-        else {
-            posX7y9.first()
-        },
+        value = posX7y9,
         txtColour = Pink,
         hidden = false
     )
@@ -2356,11 +2112,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x8y9 = GridCell(
         xPosition = 8,
         yPosition = 9,
-        value = if (posX8y9.size >1){
-            0}
-        else {
-            posX8y9.first()
-        },
+        value = posX8y9,
         txtColour = Pink,
         hidden = false
     )
@@ -2369,11 +2121,7 @@ fun AppCore(modifier: Modifier = Modifier) {
     val x9y9 = GridCell(
         xPosition = 9,
         yPosition = 9,
-        value = if (posX9y9.size >1){
-            0}
-        else {
-            posX9y9.first()
-        },
+        value = posX9y9,
         txtColour = Pink,
         hidden = false
     )
@@ -2491,7 +2239,7 @@ fun AppCore(modifier: Modifier = Modifier) {
 } // End of AppCore
 
 @Composable
-private fun RemoveLast(inputList: MutableList<Int>) {
+private fun TrimToOneElement(inputList: MutableList<Int>) {
     while (inputList.size > 1) {
         inputList.remove(inputList.last())
     }
