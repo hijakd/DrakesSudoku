@@ -1,6 +1,7 @@
 package com.gdd.drakessudoku
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -24,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.gdd.drakessudoku.model.GridCell
 import com.gdd.drakessudoku.ui.components.DrawSudokuGrid
 import com.gdd.drakessudoku.ui.theme.*
+import com.gdd.drakessudoku.utils.FilterList
 import com.gdd.drakessudoku.utils.TrimToOneElement
 
 class MainActivity : ComponentActivity() {
@@ -90,6 +92,11 @@ fun AppCore(modifier: Modifier = Modifier) {
     /* x1y8 x2y8 x3y8 */  /* x4y8 x5y8 x6y8 */  /* x7y8 x8y8 x9y8 */
     /* x1y9 x2y9 x3y9 */  /* x4y9 x5y9 x6y9 */  /* x7y9 x8y9 x9y9 */
 
+    /** TODO: rearrange order of generating values,
+     * row 1, column 1, grid 1,
+     */
+
+
     val debug = true
     var xValue = 0
     val err = 0
@@ -102,6 +109,9 @@ fun AppCore(modifier: Modifier = Modifier) {
     val slice3 = mutableListOf(0)
     val trimmedShuffle = mutableListOf(0)
     trimmedShuffle.clear()
+    val uniques = mutableSetOf(0)
+    val grid3 = mutableListOf(0)
+    grid3.clear()
 
     /* ROW 01 populate position values */
     val posX1y1 = shuffled[0]
@@ -386,36 +396,65 @@ fun AppCore(modifier: Modifier = Modifier) {
     } else {
         posX8y2 = shuffled.first()
     }
-    ResetShuffled(shuffled, numbers)
+    // ResetShuffled(shuffled, numbers)
+    ResetShuffled(shuffled)
 
-    shuffled.remove(posX1y2)
-    shuffled.remove(posX2y2)
-    shuffled.remove(posX3y2)
-    shuffled.remove(posX4y2)
-    shuffled.remove(posX5y2)
-    shuffled.remove(posX6y2)
-    shuffled.remove(posX7y1)
-    shuffled.remove(posX7y2)
-    shuffled.remove(posX8y1)
-    shuffled.remove(posX8y2)
-    shuffled.remove(posX9y1)
-    /* shuffled.forEach {
-        if (
-            it == posX1y2 ||
-            it == posX2y2 ||
-            it == posX3y2 ||
-            it == posX4y2 ||
-            it == posX5y2 ||
-            it == posX6y2 ||
-            it == posX7y1 ||
-            it == posX7y2 ||
-            it == posX8y1 ||
-            it == posX8y2 ||
-            it == posX9y1
-            ) {
-            shuffled.remove(it)
-        }
+    // Log.d("shuffled", "after posX8y2: $shuffled")
+    // FilterList(shuffled, posX1y2, posX2y2, posX3y2, posX4y2, posX5y2, posX6y2, posX7y1, posX7y2, posX8y1, posX8y2, posX9y1)
+
+    /* if (shuffled.contains(posX1y2)) {
+        shuffled.remove(posX1y2)
+    }
+    if (shuffled.contains(posX2y2)) {
+        shuffled.remove(posX2y2)
+    }
+    if (shuffled.contains(posX3y2)) {
+        shuffled.remove(posX3y2)
+    }
+    if (shuffled.contains(posX4y2)) {
+        shuffled.remove(posX4y2)
+    }
+    if (shuffled.contains(posX5y2)) {
+        shuffled.remove(posX5y2)
+    }
+    if (shuffled.contains(posX6y2)) {
+        shuffled.remove(posX6y2)
+    }
+    if (shuffled.contains(posX7y1)) {
+        shuffled.remove(posX7y1)
+    }
+    if (shuffled.contains(posX7y2)) {
+        shuffled.remove(posX7y2)
+    }
+    if (shuffled.contains(posX8y1)) {
+        shuffled.remove(posX8y1)
+    }
+    if (shuffled.contains(posX8y2)) {
+        shuffled.remove(posX8y2)
+    }
+    if (shuffled.contains(posX9y1)) {
+        shuffled.remove(posX9y1)
     } */
+
+    uniques.clear()
+    uniques.add(posX1y2)
+    uniques.add(posX2y2)
+    uniques.add(posX3y2)
+    uniques.add(posX4y2)
+    uniques.add(posX5y2)
+    uniques.add(posX6y2)
+    uniques.add(posX7y1)
+    uniques.add(posX7y2)
+    uniques.add(posX8y1)
+    uniques.add(posX8y2)
+    uniques.add(posX9y1)
+
+    // Log.d("shuffled", "after posX9y2: $shuffled")
+    // Log.d("uniques", "after posX9y2: $uniques")
+
+    shuffled.removeAll(uniques)
+    // Log.d("isEmpty", "posX9y2 - isEmpty: $shuffled")
+
     if (shuffled.size > 1) {
         TrimToOneElement(shuffled)
         posX9y2 = shuffled.first()
@@ -607,6 +646,21 @@ fun AppCore(modifier: Modifier = Modifier) {
         posX9y3 = shuffled.first()
     }
     ResetShuffled(shuffled, numbers)
+
+    if (posX9y2 == 0){
+        grid3.add(posX7y1)
+        grid3.add(posX8y1)
+        grid3.add(posX9y1)
+        grid3.add(posX7y2)
+        grid3.add(posX8y2)
+        grid3.add(posX7y3)
+        grid3.add(posX8y3)
+        grid3.add(posX9y3)
+        shuffled.removeAll(grid3)
+        Log.d("posx9y2", "AppCore: $shuffled")
+    }
+
+
 
 
     /* eliminate values - row 4 */
